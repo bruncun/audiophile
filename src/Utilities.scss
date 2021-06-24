@@ -1,0 +1,52 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "border-color": (
+      property: border-color,
+      class: border,
+      values:
+        map-merge(
+          $theme-colors,
+          (
+            "gray1": $gray1,
+          )
+        ),
+    ),
+    "color": (
+      property: color,
+      class: text,
+      values:
+        map-merge(
+          $theme-colors,
+          (
+            "white": $white,
+            "white-50": rgba($white, 0.5),
+            "black-50": rgba($black, 0.5),
+            "white-75": rgba($white, 0.75),
+          )
+        ),
+    ),
+    "font-size": (
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values:
+        map-merge(
+          $font-sizes,
+          (
+            7: $font-size-base * 0.8125,
+          )
+        ),
+    ),
+    "top": (
+      property: top,
+      values:
+        map-merge(
+          $position-values,
+          (
+            33: 33%,
+          )
+        ),
+    ),
+  )
+);
