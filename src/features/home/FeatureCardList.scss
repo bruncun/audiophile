@@ -1,16 +1,39 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
 .bg-speaker-zx-7 {
-  background-image: url(./image-speaker-zx7.jpg);
+  background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
   background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+  }
 }
 
 .bg-earphones-yx-1 {
-  background-image: url(./image-earphones-yx1.jpg);
+  background-image: url(../../assets/home/mobile/image-earphones-yx1.jpg);
   background-size: cover;
   height: 12.5rem;
+
+  @include media-breakpoint-up(sm) {
+    height: 20rem;
+    background-image: url(../../assets/home/tablet/image-earphones-yx1.jpg);
+  }
 }
 
 .bg-best-gear {
-  background-image: url(./image-best-gear.jpg);
+  background-image: url(../../assets/shared/mobile/image-best-gear.jpg);
   background-size: cover;
   height: 18.75rem;
+
+  @include media-breakpoint-up(sm) {
+    background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+  }
+}
+
+.yx-1-earphones {
+  @include media-breakpoint-up(sm) {
+    height: 20rem;
+  }
 }

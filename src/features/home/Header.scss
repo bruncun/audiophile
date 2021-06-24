@@ -1,5 +1,15 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
 .bg-header {
   background-image: url(../../assets/home/mobile/image-header.jpg);
   background-size: cover;
+  background-position-x: 50%;
   height: 37.5rem;
+
+  @include media-breakpoint-up(sm) {
+    background-image: url(../../assets/home/tablet/image-header.jpg);
+    height: 46.5rem;
+  }
 }

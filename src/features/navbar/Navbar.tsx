@@ -3,20 +3,25 @@ import cart from "assets/shared/desktop/icon-cart.svg";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-dark bg-dark border-bottom border-gray1 fixed-top">
-      <div className="container-fluid">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <a href="#">
+    <nav className="navbar navbar-dark bg-dark fixed-top">
+      <div className="container-sm border-bottom border-gray1 py-4">
+        <div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <a href="#" className="d-none d-sm-inline-block">
+            <img className="ms-5" src={logo} alt="Audiophile" />
+          </a>
+        </div>
+        <a href="#" className="d-sm-none">
           <img src={logo} alt="Audiophile" />
         </a>
         <button
