@@ -1,5 +1,8 @@
+// TODO: Implement collapse
+
 import logo from "assets/shared/desktop/logo.svg";
 import cart from "assets/shared/desktop/icon-cart.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -41,9 +44,13 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link
+                className="nav-link"
+                to="/headphones"
+                data-cy="headphones-nav-link"
+              >
                 Headphones
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">

@@ -1,4 +1,5 @@
-import Navbar from "features/navbar/Navbar";
+// TODO: Optimize responsive images across all sections
+
 import Header from "./Header";
 import CategoryCardList from "./CategoryCardList";
 import FeatureCardList from "./FeatureCardList";
@@ -7,14 +8,13 @@ import Footer from "./Footer";
 
 function Home() {
   return (
-    <>
-      <Navbar />
+    <div data-cy="home">
       <Header />
       <CategoryCardList />
       <FeatureCardList />
       <About />
       <Footer />
-    </>
+    </div>
   );
 }
 
