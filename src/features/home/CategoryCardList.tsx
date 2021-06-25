@@ -1,28 +1,20 @@
 import CategoryCard from "./CategoryCard";
-import xx99MarkOneHeadphones from "assets/home/mobile/image-feature-xx99-mark-one-headphones.png";
-import zx9Speaker from "assets/home/mobile/image-feature-zx-9-speaker.png";
-import yx1EarPhones from "assets/home/mobile/image-feature-yx-1-earphones.png";
+import headphones from "assets/shared/desktop/image-headphones.png";
+import speakers from "assets/shared/desktop/image-speakers.png";
+import earphones from "assets/shared/desktop/image-earphones.png";
 
 function CategoryCardList() {
   return (
-    <div className="container py-5 mt-5">
+    <div className="container-md py-5 mt-5">
       <div className="row">
-        <div className="col-12 col-sm-4">
-          <CategoryCard
-            imgSrc={xx99MarkOneHeadphones}
-            heading="Headphones"
-            linkHref="#"
-          />
+        <div className="col-12 col-md-4">
+          <CategoryCard imgSrc={headphones} heading="Headphones" linkHref="#" />
         </div>
-        <div className="col-12 col-sm-4">
-          <CategoryCard imgSrc={zx9Speaker} heading="Speakers" linkHref="#" />
+        <div className="col-12 col-md-4">
+          <CategoryCard imgSrc={speakers} heading="Speakers" linkHref="#" />
         </div>
-        <div className="col-12 col-sm-4">
-          <CategoryCard
-            imgSrc={yx1EarPhones}
-            heading="Earphones"
-            linkHref="#"
-          />
+        <div className="col-12 col-md-4">
+          <CategoryCard imgSrc={earphones} heading="Earphones" linkHref="#" />
         </div>
       </div>
     </div>

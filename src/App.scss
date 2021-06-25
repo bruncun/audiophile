@@ -1,12 +1,21 @@
+@import "theme";
+
+$link-hover-color: $primary;
+
 $list-inline-padding: 1rem;
 
 $font-family-base: "Manrope", sans-serif;
+
+$navbar-nav-link-padding-x: 1rem;
+
+$navbar-dark-color: #fff;
+$navbar-dark-hover-color: $primary;
 
 $navbar-padding-y: 0;
 $navbar-dark-toggler-border-color: transparent;
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Group'%3E%3Crect id='Rectangle' width='16' height='3' fill='white'/%3E%3Crect id='Rectangle Copy' y='6' width='16' height='3' fill='white'/%3E%3Crect id='Rectangle Copy 2' y='12' width='16' height='3' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+$navbar-dark-toggler-icon-bg: url("../../../src/assets/shared/tablet/icon-hamburger.svg");
 
 $container-padding-x: 1.5rem;
 
@@ -33,7 +42,6 @@ $spacers: (
   6: $spacer * 6,
 );
 
-@import "theme";
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/utilities";
@@ -68,7 +76,8 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
+.h6,
+.nav-link {
   letter-spacing: $letter-spacer * 0.5;
   text-transform: uppercase;
 }
@@ -76,4 +85,13 @@ h6,
 .navbar-toggler-icon {
   width: 16px;
   height: 15px;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: $font-size-base * 0.8125;
+}
+
+.z-1 {
+  z-index: 1;
 }

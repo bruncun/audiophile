@@ -5,11 +5,19 @@
 .bg-header {
   background-image: url(../../assets/home/mobile/image-header.jpg);
   background-size: cover;
-  background-position-x: 50%;
+  background-position-x: center;
   height: 37.5rem;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background-image: url(../../assets/home/tablet/image-header.jpg);
     height: 46.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(../../assets/home/tablet/image-header.jpg);
+    background-position-x: right;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: 50%;
   }
 }

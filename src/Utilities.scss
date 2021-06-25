@@ -38,15 +38,5 @@ $utilities: map-merge(
           )
         ),
     ),
-    "top": (
-      property: top,
-      values:
-        map-merge(
-          $position-values,
-          (
-            33: 33%,
-          )
-        ),
-    ),
   )
 );

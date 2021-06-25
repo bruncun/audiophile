@@ -6,8 +6,12 @@
   background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
   background-size: cover;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
   }
 }
 
@@ -16,9 +20,13 @@
   background-size: cover;
   height: 12.5rem;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     height: 20rem;
     background-image: url(../../assets/home/tablet/image-earphones-yx1.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(../../assets/home/desktop/image-earphones-yx1.jpg);
   }
 }
 
@@ -27,13 +35,32 @@
   background-size: cover;
   height: 18.75rem;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 36.75rem;
+    background-image: url(../../assets/shared/desktop/image-best-gear.jpg);
   }
 }
 
 .yx-1-earphones {
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     height: 20rem;
   }
+}
+
+.zx-9-speaker-desktop {
+  bottom: -13%;
+  left: -10%;
+  width: 55%;
+}
+
+.ovals-mobile {
+  top: 33%;
+}
+
+.ovals-desktop {
+  left: 30%;
 }
