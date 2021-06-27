@@ -62,9 +62,13 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Earphones
-              </a>
+              <Link
+                className="nav-link"
+                to="/speakers"
+                data-cy="speakers-nav-link"
+              >
+                Speakers
+              </Link>
             </li>
           </ul>
           <a href="#">

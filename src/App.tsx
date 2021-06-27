@@ -2,6 +2,7 @@ import Navbar from "features/navbar/Navbar";
 import Home from "features/home/Home";
 import Footer from "features/shared/Footer";
 import Headphones from "features/headphones/Headphones";
+import Speakers from "features/speakers/Speakers";
 import Earphones from "features/earphones/Earphones";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path="/earphones">
           <Earphones />
+        </Route>
+        <Route path="/speakers">
+          <Speakers />
         </Route>
         <Route path="/">
           <Home />

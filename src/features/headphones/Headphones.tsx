@@ -1,26 +1,8 @@
-import Product from "../shared/Product";
-import About from "../shared/About";
-import CategoryCardList from "../shared/CategoryCardList";
-import data from "data.json";
+import HeadphonesList from "./HeadphonesList";
+import Category from "../shared/Category";
 
 function Headphones() {
-  return (
-    <div data-cy="headphones">
-      <div className="bg-dark py-4 text-center py-md-6">
-        <h1 className="fw-bold text-white mb-0 d-md-none h2">Headphones</h1>
-        <h1 className="fw-bold text-white mb-0 d-none d-md-block display-1">
-          Headphones
-        </h1>
-      </div>
-      <div className="container-md py-5">
-        <Product product={data[3]} />
-        <Product product={data[2]} swapColOrder />
-        <Product product={data[1]} />
-        <CategoryCardList />
-        <About />
-      </div>
-    </div>
-  );
+  return <Category name="headphones" productList={<HeadphonesList />} />;
 }
 
 export default Headphones;
