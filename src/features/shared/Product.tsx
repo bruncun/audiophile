@@ -22,7 +22,7 @@ function Product({
   swapColOrder,
 }: ProductProps) {
   return (
-    <div className="mb-6 row">
+    <div className="mb-6 row" data-cy="product">
       <div
         className={`col-12 col-lg-5 ${
           swapColOrder ? "order-lg-2 offset-lg-1" : ""
