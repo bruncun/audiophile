@@ -1,5 +1,6 @@
 import Navbar from "features/navbar/Navbar";
 import Home from "features/home/Home";
+import Footer from "features/shared/Footer";
 import Headphones from "features/headphones/Headphones";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

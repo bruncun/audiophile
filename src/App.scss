@@ -1,5 +1,7 @@
 @import "theme";
 
+$border-radius: 8px;
+
 $link-hover-color: $primary;
 
 $list-inline-padding: 1rem;
@@ -96,4 +98,6 @@ h6,
   z-index: 1;
 }
 
+body {
   padding-top: 4.6875rem;
+}

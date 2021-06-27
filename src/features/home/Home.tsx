@@ -1,10 +1,9 @@
 // TODO: Optimize responsive images across all sections
 
 import Header from "./Header";
-import CategoryCardList from "./CategoryCardList";
+import CategoryCardList from "../shared/CategoryCardList";
 import FeatureCardList from "./FeatureCardList";
-import About from "./About";
-import Footer from "./Footer";
+import About from "../shared/About";
 
 function Home() {
   return (
@@ -13,7 +12,6 @@ function Home() {
       <CategoryCardList />
       <FeatureCardList />
       <About />
-      <Footer />
     </div>
   );
 }
