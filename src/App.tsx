@@ -4,6 +4,7 @@ import Footer from "features/shared/Footer";
 import Headphones from "features/headphones/Headphones";
 import Speakers from "features/speakers/Speakers";
 import Earphones from "features/earphones/Earphones";
+import Xx99MarkTwoHeadphones from "features/xx99-mark-two-headphones/Xx99MarkTwoHeadphones";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -11,14 +12,17 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/headphones">
+        <Route path="/category/headphones">
           <Headphones />
         </Route>
-        <Route path="/earphones">
+        <Route path="/category/earphones">
           <Earphones />
         </Route>
-        <Route path="/speakers">
+        <Route path="/category/speakers">
           <Speakers />
+        </Route>
+        <Route path="/product/xx99-mark-two-headphones">
+          <Xx99MarkTwoHeadphones />
         </Route>
         <Route path="/">
           <Home />

@@ -1,13 +1,13 @@
 describe("headphones", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000/headphones");
+    cy.visit("http://localhost:3000/category/headphones");
   });
 
   it("loads", function () {
     cy.get('[data-cy="headphones"]').should("exist");
   });
 
-  it.only("loads products", function () {
+  it("loads products", function () {
     cy.get('[data-cy="product"]').should("have.length", 3);
   });
 });

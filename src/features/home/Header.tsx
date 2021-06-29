@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -19,9 +20,13 @@ function Header() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button type="button" className="btn btn-primary">
+            <Link
+              className="btn btn-primary"
+              to="/product/xx99-mark-two-headphones"
+              data-cy="xx99-mark-two-headphones-link"
+            >
               See Product
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 // TODO: Implement collapse
+// TODO: Redirect to root on 404
 
 import logo from "assets/shared/desktop/logo.svg";
 import cart from "assets/shared/desktop/icon-cart.svg";
@@ -46,7 +47,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/headphones"
+                to="/category/headphones"
                 data-cy="headphones-nav-link"
               >
                 Headphones
@@ -55,7 +56,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/earphones"
+                to="/category/earphones"
                 data-cy="earphones-nav-link"
               >
                 Earphones
@@ -64,7 +65,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/speakers"
+                to="/category/speakers"
                 data-cy="speakers-nav-link"
               >
                 Speakers

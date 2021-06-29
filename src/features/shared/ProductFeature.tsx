@@ -1,18 +1,11 @@
-type Product = {
-  name: string;
-  isNew: boolean;
-  description: string;
-  image: {
-    mobile: string;
-  };
-};
+import { Product } from "types";
 
 type ProductProps = {
   product: Product;
   swapColOrder?: boolean;
 };
 
-function Product({
+function ProductFeature({
   product: {
     isNew,
     name,
@@ -50,4 +43,4 @@ function Product({
   );
 }
 
-export default Product;
+export default ProductFeature;
