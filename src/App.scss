@@ -44,6 +44,11 @@ $spacers: (
   6: $spacer * 6,
 );
 
+$modal-content-border-width: 0;
+$modal-footer-border-width: 0;
+$modal-header-border-width: 0;
+$modal-sm: 23rem;
+
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/utilities";
@@ -92,6 +97,10 @@ h6,
 .nav-link {
   font-weight: bold;
   font-size: $font-size-base * 0.8125;
+}
+
+.z-9999 {
+  z-index: 9999;
 }
 
 .z-1 {
