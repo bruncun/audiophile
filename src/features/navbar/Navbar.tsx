@@ -1,10 +1,11 @@
 // TODO: Implement collapse
 // TODO: Redirect to root on 404
+// TODO: Refactor html semantics
 
 import logo from "assets/shared/desktop/logo.svg";
 import cart from "assets/shared/desktop/icon-cart.svg";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Navbar() {
   const [showCart, setShowCart] = useState(false);
@@ -29,6 +30,7 @@ function Navbar() {
           tabIndex={-1}
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
+          data-cy="cart-modal"
         >
           <div className="modal-dialog mt-6 pt-2 mx-4 modal-sm ms-sm-auto z-9999">
             <div className="modal-content">
@@ -163,9 +165,13 @@ function Navbar() {
                 </div>
               </div>
               <div className="modal-footer pt-2">
-                <button type="button" className="btn btn-primary d-block w-100">
+                <Link
+                  to="/checkout"
+                  className="btn btn-primary d-block w-100"
+                  data-cy="cart-checkout"
+                >
                   Checkout
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -236,7 +242,11 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
-            <a href="#" onClick={() => setShowCart(true)}>
+            <a
+              href="#"
+              onClick={() => setShowCart(true)}
+              data-cy="cart-toggler"
+            >
               <img src={cart} alt="Cart" />
             </a>
           </div>

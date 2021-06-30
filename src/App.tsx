@@ -1,5 +1,6 @@
 import Navbar from "features/navbar/Navbar";
 import Home from "features/home/Home";
+import Checkout from "features/checkout/Checkout";
 import Footer from "features/shared/Footer";
 import Headphones from "features/headphones/Headphones";
 import Speakers from "features/speakers/Speakers";
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/product/xx99-mark-two-headphones">
           <Xx99MarkTwoHeadphones />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
         <Route path="/">
           <Home />

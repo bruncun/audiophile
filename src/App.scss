@@ -1,3 +1,5 @@
+// TODO: clean up value declarations
+
 @import "theme";
 
 $border-radius: 8px;
@@ -48,6 +50,20 @@ $modal-content-border-width: 0;
 $modal-footer-border-width: 0;
 $modal-header-border-width: 0;
 $modal-sm: 23rem;
+
+$form-label-font-weight: bold;
+$form-label-font-size: 0.8125rem;
+
+$input-border-color: $gray3;
+$input-padding-y: 1rem;
+$input-padding-x: 1.5rem;
+$input-font-weight: bold;
+$input-color: rgba(#000, 50%);
+
+$form-check-input-checked-color: $primary;
+$form-check-input-checked-bg-color: #fff;
+
+$form-check-input-checked-border-color: 1px solid rgba(0, 0, 0, 0.25);
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
