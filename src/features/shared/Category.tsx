@@ -1,12 +1,19 @@
 import About from "./About";
 import CategoryCardList from "./CategoryCardList";
+import { getProductsByCategory } from "api";
+import { useQuery } from "react-query";
+import ProductList from "../shared/ProductList";
 
 interface CategoryProps {
   name: string;
-  productList: React.ReactNode;
 }
 
-function Category({ name, productList }: CategoryProps) {
+function Category({ name }: CategoryProps) {
+  const { data: products } = useQuery(
+    `${name}Products`,
+    getProductsByCategory(name)
+  );
+
   return (
     <div data-cy={name}>
       <div className="bg-dark py-4 text-center py-md-6">
@@ -16,7 +23,7 @@ function Category({ name, productList }: CategoryProps) {
         </h1>
       </div>
       <div className="container-md py-5">
-        {productList}
+        {products && <ProductList products={products} />}
         <CategoryCardList />
         <About />
       </div>

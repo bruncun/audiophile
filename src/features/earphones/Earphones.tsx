@@ -1,8 +1,7 @@
-import EarphonesList from "./EarphonesList";
 import Category from "../shared/Category";
 
 function Earphones() {
-  return <Category name="earphones" productList={<EarphonesList />} />;
+  return <Category name="earphones" />;
 }
 
 export default Earphones;

@@ -1,8 +1,7 @@
-import SpeakersList from "./SpeakersList";
 import Category from "../shared/Category";
 
 function Speakers() {
-  return <Category name="speakers" productList={<SpeakersList />} />;
+  return <Category name="speakers" />;
 }
 
 export default Speakers;
