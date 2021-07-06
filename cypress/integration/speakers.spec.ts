@@ -1,6 +1,6 @@
 describe("speakers", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000/category/speakers");
+    cy.visit("http://localhost:3000/speakers");
   });
 
   it("loads", function () {

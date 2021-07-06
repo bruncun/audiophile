@@ -1,6 +1,6 @@
 describe("earphones", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000/category/earphones");
+    cy.visit("http://localhost:3000/earphones");
   });
 
   it("loads", function () {
