@@ -32,7 +32,15 @@
     "api": "json-server --watch db.json --port 3004"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app"
+    ],
+    "rules": {
+      "max-lines": [
+        "warn",
+        100
+      ]
+    }
   },
   "browserslist": {
     "production": [
