@@ -12,7 +12,7 @@ function ProductList({ products }: ProductListProps) {
         <ProductFeature
           product={product}
           key={idx}
-          swapColOrder={idx % 2 != 0}
+          swapColOrder={idx % 2 !== 0}
         />
       ))}
     </>

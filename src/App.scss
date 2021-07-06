@@ -74,6 +74,10 @@ $form-check-input-checked-border-color: 1px solid rgba(0, 0, 0, 0.25);
 
 $letter-spacer: 3px;
 
+.ls-0 {
+  letter-spacing: 0;
+}
+
 .ls-3 {
   letter-spacing: $letter-spacer;
 }

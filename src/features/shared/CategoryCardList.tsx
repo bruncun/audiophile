@@ -8,13 +8,13 @@ function CategoryCardList() {
     <div className="container-md py-5 mt-5">
       <div className="row">
         <div className="col-12 col-sm-4">
-          <CategoryCard imgSrc={headphones} heading="Headphones" linkHref="#" />
+          <CategoryCard imgSrc={headphones} name="headphones" />
         </div>
         <div className="col-12 col-sm-4">
-          <CategoryCard imgSrc={speakers} heading="Speakers" linkHref="#" />
+          <CategoryCard imgSrc={speakers} name="speakers" />
         </div>
         <div className="col-12 col-sm-4">
-          <CategoryCard imgSrc={earphones} heading="Earphones" linkHref="#" />
+          <CategoryCard imgSrc={earphones} name="earphones" />
         </div>
       </div>
     </div>

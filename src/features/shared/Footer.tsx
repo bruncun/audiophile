@@ -3,6 +3,7 @@ import logo from "assets/shared/desktop/logo.svg";
 import instagram from "assets/shared/desktop/icon-instagram.svg";
 import twitter from "assets/shared/desktop/icon-twitter.svg";
 import facebook from "assets/shared/desktop/icon-facebook.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,30 +21,30 @@ function Footer() {
             <img src={logo} alt="Audiophile" />
           </div>
           <div>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/headphones"
               className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Headphones
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/headphones"
               className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Speakers
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/earphones"
               className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-5 d-block d-md-inline-block"
             >
               Earphones
-            </a>
+            </Link>
           </div>
         </div>
         <div className="row">
@@ -62,17 +63,17 @@ function Footer() {
           </p>
           <ul className="list-inline d-md-inline-block mb-0">
             <li className="list-inline-item">
-              <a href="#">
+              <a href="https://facebook.com/audiophile">
                 <img src={facebook} alt="Facebook" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="#">
+              <a href="https://twitter.com/audiophile">
                 <img src={twitter} alt="Twitter" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="#">
+              <a href="https://instagram.com/audiophile">
                 <img src={instagram} alt="Instagram" />
               </a>
             </li>

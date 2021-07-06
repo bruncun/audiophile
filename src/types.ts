@@ -4,8 +4,16 @@ type Image = {
   desktop: string;
 };
 
+export type Order = {
+  quantity: number;
+  productSlug: string;
+};
+
 export type Product = {
+  id: number;
   name: string;
+  slug: string;
+  category: string;
   isNew: boolean;
   description: string;
   price: number;

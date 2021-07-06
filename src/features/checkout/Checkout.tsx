@@ -29,7 +29,11 @@ function Checkout() {
           <div className="modal-dialog mt-6 pt-2 mx-auto z-9999">
             <div className="modal-content">
               <div className="modal-body p-4">
-                <img src="assets/checkout/icon-check.svg" className="mb-4" />
+                <img
+                  src="assets/checkout/icon-check.svg"
+                  className="mb-4"
+                  alt="Checkmark"
+                />
                 <h2 className="fw-bold mb-3 me-md-6 pe-md-5">
                   Thank you for your order
                 </h2>
@@ -46,6 +50,7 @@ function Checkout() {
                             width="50"
                             height="50"
                             className="rounded me-4"
+                            alt="Xx99 Mark Two Headphones"
                           />
                           <div className="d-flex justify-content-between w-100 align-items-center">
                             <div className="w-100">
@@ -84,6 +89,7 @@ function Checkout() {
                             width="50"
                             height="50"
                             className="rounded me-4"
+                            alt="Xx99 Mark Two Headphones"
                           />
                           <div className="d-flex justify-content-between w-100 align-items-center">
                             <div className="w-100">
@@ -127,12 +133,7 @@ function Checkout() {
         </div>
       )}
       <div className="container-md">
-        <a
-          href="#"
-          className="mt-3 mb-4 text-black-50 text-decoration-none d-block"
-        >
-          Go Back
-        </a>
+        <span className="mt-3 mb-4 text-black-50 d-block">Go Back</span>
         <div className="row">
           <div className="col-lg-8">
             <div className="card bg-white mb-4 p-lg-5">
@@ -287,6 +288,7 @@ function Checkout() {
                         width="64"
                         height="64"
                         className="rounded me-4"
+                        alt="Xx99 Mark Two Headphones"
                       />
                       <div className="d-flex justify-content-between w-100 align-items-center">
                         <div>
@@ -306,6 +308,7 @@ function Checkout() {
                         width="64"
                         height="64"
                         className="rounded me-4"
+                        alt="Xx99 Mark Two Headphones"
                       />
                       <div className="d-flex justify-content-between w-100 align-items-center">
                         <div>
@@ -325,6 +328,7 @@ function Checkout() {
                         width="64"
                         height="64"
                         className="rounded me-4"
+                        alt="Xx99 Mark Two Headphones"
                       />
                       <div className="d-flex justify-content-between w-100 align-items-center">
                         <div>
