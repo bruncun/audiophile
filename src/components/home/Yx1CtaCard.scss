@@ -1,0 +1,7 @@
+@import "scss/shared";
+
+.yx1-cta-card {
+  @include media-breakpoint-up(md) {
+    height: 20rem;
+  }
+}

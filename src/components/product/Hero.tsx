@@ -1,6 +1,6 @@
 // TODO: Refactor context consumer to useContext
 import { Product } from "types";
-import ResponsiveImage from "features/shared/ResponsiveImage";
+import ResponsiveImage from "components/shared/ResponsiveImage";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { OrdersContext } from "OrdersContext";

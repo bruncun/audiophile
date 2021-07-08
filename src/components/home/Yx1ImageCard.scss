@@ -1,0 +1,16 @@
+@import 'scss/shared';
+
+.bg-earphones-yx-1 {
+  background-image: url(/assets/home/mobile/image-earphones-yx1.jpg);
+  background-size: cover;
+  height: 12.5rem;
+
+  @include media-breakpoint-up(md) {
+    height: 20rem;
+    background-image: url(/assets/home/tablet/image-earphones-yx1.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(/assets/home/desktop/image-earphones-yx1.jpg);
+  }
+}

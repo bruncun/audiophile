@@ -1,0 +1,16 @@
+@import 'scss/shared';
+
+.best-gear-card {
+  background-image: url(/assets/shared/mobile/image-best-gear.jpg);
+  background-size: cover;
+  height: 18.75rem;
+
+  @include media-breakpoint-up(md) {
+    background-image: url(/assets/shared/tablet/image-best-gear.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 36.75rem;
+    background-image: url(/assets/shared/desktop/image-best-gear.jpg);
+  }
+}

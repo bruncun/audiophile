@@ -1,0 +1,16 @@
+@import "scss/shared";
+
+.header {
+  background-image: url(/assets/home/mobile/image-header.jpg);
+  background-size: cover;
+  background-position: center 50%;
+
+  @include media-breakpoint-up(md) {
+    background-image: url(/assets/home/tablet/image-header.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(/assets/home/desktop/image-header.jpg);
+    background-position-x: right;
+  }
+}

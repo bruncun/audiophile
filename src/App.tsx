@@ -1,10 +1,10 @@
-import Navbar from "features/navbar/Navbar";
-import Home from "features/home/Home";
-import Checkout from "features/checkout/Checkout";
-import Footer from "features/shared/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Category from "features/shared/Category";
-import Product from "features/product/Product";
+import Navbar from "components/navbar/Navbar";
+import Home from "pages/Home";
+import Checkout from "components/checkout/Checkout";
+import Footer from "components/shared/Footer";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Category from "components/shared/Category";
+import Product from "components/product/Product";
 import { OrdersContext } from "OrdersContext";
 import { useState } from "react";
 import { Order } from "types";
@@ -29,8 +29,8 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <OrdersContext.Provider value={{ orders, addOne, removeAll }}>
+      <OrdersContext.Provider value={{ orders, addOne, removeAll }}>
+        <Router>
           <Navbar />
           <Switch>
             <Route path="/headphones">
@@ -51,8 +51,8 @@ function App() {
             </Route>
           </Switch>
           <Footer />
-        </OrdersContext.Provider>
-      </Router>
+        </Router>
+      </OrdersContext.Provider>
     </QueryClientProvider>
   );
 }

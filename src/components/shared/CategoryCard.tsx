@@ -12,7 +12,7 @@ function CategoryCard({ imgSrc, name }: CategoryCardProps) {
     <div className="py-4">
       <div className="card text-center mt-5 bg-light">
         <div className="card-body position-relative py-4">
-          <Link to={`/${name}`}>
+          <Link to={`/${name}`} data-cy={`${name}-link`}>
             <img
               className="position-absolute top-0 start-50 translate-middle category-card-image"
               src={imgSrc}

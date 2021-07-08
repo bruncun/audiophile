@@ -19,3 +19,6 @@
 -cart images
 -pluralize confirmation
 -form validation
+-metadata
+-optimize responsive images across all sections
+

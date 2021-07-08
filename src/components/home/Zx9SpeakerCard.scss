@@ -1,0 +1,28 @@
+@import "scss/shared";
+
+.zx9-speaker {
+  width: 12rem;
+
+  @include media-breakpoint-up(md) {
+    width: 25%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    bottom: -13%;
+    left: -10%;
+    width: 55%;
+  }
+}
+
+.ovals {
+  left: 50%;
+  top: 33%;
+
+  @include media-breakpoint-up(md) {
+    top: 50%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    left: 30%;
+  }
+}

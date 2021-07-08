@@ -1,5 +1,5 @@
 import { Product } from "types";
-import ResponsiveImage from "features/shared/ResponsiveImage";
+import ResponsiveImage from "components/shared/ResponsiveImage";
 import { Link } from "react-router-dom";
 
 type SuggestionsProps = {

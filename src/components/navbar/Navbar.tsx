@@ -29,11 +29,17 @@ function Navbar() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <Link to="/" className="d-none d-md-inline-block">
-              <img className="ms-5 d-lg-none" src={logo} alt="Audiophile" />
+              <img
+                className="ms-5 d-lg-none"
+                src={logo}
+                alt="Audiophile"
+                width="143"
+                height="25"
+              />
             </Link>
           </div>
           <Link to="/" className="d-md-none">
-            <img src={logo} alt="Audiophile" />
+            <img src={logo} alt="Audiophile" width="143" height="25" />
           </Link>
           <button
             className="btn btn-link p-0 d-lg-none"
@@ -46,7 +52,7 @@ function Navbar() {
             id="navbarTogglerDemo02"
           >
             <Link to="/">
-              <img src={logo} alt="Audiophile" />
+              <img src={logo} alt="Audiophile" width="143" height="25" />
             </Link>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">

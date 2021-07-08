@@ -1,4 +1,4 @@
-import About from "./About";
+import About from "components/shared/about/About";
 import CategoryCardList from "./CategoryCardList";
 import useProductsByCategory from "hooks/useProductsByCategory";
 import ProductList from "../shared/ProductList";

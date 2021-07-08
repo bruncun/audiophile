@@ -3,7 +3,7 @@ import Details from "./Details";
 import Gallery from "./Gallery";
 import Suggestions from "./Suggestions";
 import CategoryCardList from "../shared/CategoryCardList";
-import About from "../shared/About";
+import About from "components/shared/about/About";
 import { useParams } from "react-router-dom";
 import useProduct from "hooks/useProduct";
 
@@ -16,7 +16,7 @@ function Product() {
   const { data: product } = useProduct(slug);
 
   return (
-    <div data-cy="xx99-mark-two-headphones">
+    <div data-cy={slug}>
       {product && product[0] && (
         <>
           <Hero product={product[0]} />
