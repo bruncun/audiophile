@@ -1,29 +1,27 @@
+import CategoryLayout from "components/category/CategoryLayout";
+import Header from "components/category/Header";
 import About from "components/shared/about/About";
-import CategoryCardList from "./CategoryCardList";
+import CategoryList from "components/shared/CategoryList";
 import useProductsByCategory from "hooks/useProductsByCategory";
-import ProductList from "../shared/ProductList";
+import ProductList from "components/category/ProductList";
 
 interface CategoryProps {
   category: string;
 }
 
 function Category({ category }: CategoryProps) {
-  const { data: products } = useProductsByCategory(category);
+  const { isLoading, data: products } = useProductsByCategory(category);
+
+  if (isLoading) return <></>;
 
   return (
-    <div data-cy={category}>
-      <div className="bg-dark py-4 text-center py-md-6">
-        <h1 className="fw-bold text-white mb-0 d-md-none h2">{category}</h1>
-        <h1 className="fw-bold text-white mb-0 d-none d-md-block display-1">
-          {category}
-        </h1>
-      </div>
-      <div className="container-md py-5">
-        {products && <ProductList products={products} />}
-        <CategoryCardList />
-        <About />
-      </div>
-    </div>
+    <CategoryLayout
+      category={category}
+      header={<Header category={category} />}
+      productList={<ProductList products={products} />}
+      categoryList={<CategoryList />}
+      about={<About />}
+    />
   );
 }
 

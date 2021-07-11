@@ -3,6 +3,7 @@
 .best-gear-card {
   background-image: url(/assets/shared/mobile/image-best-gear.jpg);
   background-size: cover;
+  background-position: center;
   height: 18.75rem;
 
   @include media-breakpoint-up(md) {

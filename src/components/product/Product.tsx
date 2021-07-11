@@ -2,7 +2,7 @@ import Hero from "./Hero";
 import Details from "./Details";
 import Gallery from "./Gallery";
 import Suggestions from "./Suggestions";
-import CategoryCardList from "../shared/CategoryCardList";
+import CategoryList from "components/shared/CategoryList";
 import About from "components/shared/about/About";
 import { useParams } from "react-router-dom";
 import useProduct from "hooks/useProduct";
@@ -23,7 +23,7 @@ function Product() {
           <Details product={product[0]} />
           <Gallery product={product[0]} />
           <Suggestions product={product[0]} />
-          <CategoryCardList />
+          <CategoryList />
           <About />
         </>
       )}

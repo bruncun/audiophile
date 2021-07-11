@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="mt-5 bg-dark py-5 text-center text-md-start position-relative">
+    <div className="bg-dark py-5 text-center text-md-start position-relative">
       <div className="container-md position-absolute top-0 start-50 translate-middle-x orange-rectangle">
         <img
           className="align-top"

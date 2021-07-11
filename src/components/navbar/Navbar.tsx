@@ -15,7 +15,7 @@ function Navbar() {
     <>
       {showCart && <Cart onModalBackdropClick={onModalBackdropClick} />}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top z-9999">
-        <div className="container-md py-4">
+        <div className="container-md py-4 my-2">
           <div>
             <button
               className="navbar-toggler"
@@ -30,7 +30,7 @@ function Navbar() {
             </button>
             <Link to="/" className="d-none d-md-inline-block">
               <img
-                className="ms-5 d-lg-none"
+                className="ms-4 ps-3 d-lg-none"
                 src={logo}
                 alt="Audiophile"
                 width="143"

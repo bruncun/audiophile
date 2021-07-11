@@ -2,6 +2,10 @@
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
+.category-card-header {
+  font-size: 0.9375rem;
+}
+
 .category-card-image {
   width: 10rem;
 }

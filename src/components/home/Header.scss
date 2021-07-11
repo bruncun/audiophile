@@ -1,16 +1,20 @@
 @import "scss/shared";
 
 .header {
+  margin-top: -5.5625rem;
   background-image: url(/assets/home/mobile/image-header.jpg);
   background-size: cover;
-  background-position: center 50%;
+  background-position: center -1.5vh;
+  background-repeat: no-repeat;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
+    background-size: contain;
+    background-position: center;
     background-image: url(/assets/home/tablet/image-header.jpg);
   }
 
-  @include media-breakpoint-up(lg) {
-    background-image: url(/assets/home/desktop/image-header.jpg);
-    background-position-x: right;
+  @include media-breakpoint-up(xxl) {
+    background-image: url(/assets/home/desktop/image-hero.jpg);
+    background-position: right center;
   }
 }

@@ -1,5 +1,5 @@
 import Header from "components/home/Header";
-import CategoryCardList from "components/shared/CategoryCardList";
+import CategoryList from "components/shared/CategoryList";
 import HomeLayout from "components/home/HomeLayout";
 import About from "components/shared/about/About";
 import Zx9SpeakerCard from "components/home/Zx9SpeakerCard";
@@ -11,7 +11,7 @@ function Home() {
   return (
     <HomeLayout
       header={<Header />}
-      categoryCardList={<CategoryCardList />}
+      categoryList={<CategoryList />}
       zx7SpeakerCard={<Zx7SpeakerCard />}
       zx9SpeakerCard={<Zx9SpeakerCard />}
       yx1CtaCard={<Yx1CtaCard />}

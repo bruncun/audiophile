@@ -1,13 +1,10 @@
 @import "scss/shared";
 
 .header-wrapper {
-  height: 38rem;
+  height: 600px;
+  background-color: #191919;
 
   @include media-breakpoint-up(md) {
-    height: 42rem;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 45rem;
+    height: 730px;
   }
 }

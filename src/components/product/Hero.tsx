@@ -36,7 +36,7 @@ function Hero({
             {isNew && (
               <h6 className="ls-5 text-primary fw-light mb-4">New Product</h6>
             )}
-            <h2 className="fw-bold me-lg-6 mb-4">{name}</h2>
+            <h1 className="fw-bold me-lg-6 mb-4">{name}</h1>
             <p className="text-black-50 mb-4 lh-base me-lg-4">{description}</p>
             <h6 className="ls-3 mb-5 fw-bold">{formatter.format(price)}</h6>
             <div className="btn-group me-3" role="group" aria-label="Quantity">

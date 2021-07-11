@@ -8,7 +8,28 @@ $link-hover-color: $primary;
 
 $list-inline-padding: 1rem;
 
+$enable-rfs: false;
+
 $font-family-base: "Manrope", sans-serif;
+$font-size-base: 0.9375rem;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25;
+$h6-font-size: 1.125rem;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+) !default;
+
+$line-height-base: 1.667;
 
 $navbar-nav-link-padding-x: 1rem;
 
@@ -23,13 +44,32 @@ $navbar-dark-toggler-icon-bg: url("../../../src/assets/shared/tablet/icon-hambur
 
 $container-padding-x: 1.5rem;
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 737px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1148px,
+);
+
 $card-border-width: 0;
 $card-spacer-x: 1.5rem;
 $card-border-radius: 8px;
 
+$input-btn-font-size: 0.8125rem;
+$btn-line-height: 1.25rem;
 $btn-border-radius: 0;
-$btn-padding-y: 1rem;
-$btn-padding-x: 1.5rem;
+$btn-padding-y: 0.8125rem;
+$btn-padding-x: 1.8rem;
 $btn-font-weight: 700;
 $btn-hover-bg-tint-amount: 30%;
 $btn-hover-border-tint-amount: 20%;
@@ -98,22 +138,51 @@ $form-check-input-checked-border-color: 1px solid rgba(0, 0, 0, 0.25);
 
 $letter-spacer: 3px;
 
+body {
+  padding-top: 5.5625rem;
+
+  // @include media-breakpoint(xl) {
+
+  // }
+}
+
 .ls-0 {
-  letter-spacing: 0;
+  letter-spacing: 0 !important;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
 }
 
 .ls-3 {
-  letter-spacing: $letter-spacer;
+  letter-spacing: $letter-spacer !important;
 }
 
 .ls-5 {
-  letter-spacing: $letter-spacer * 3;
+  letter-spacing: 10px !important;
 }
 
 .btn {
   text-transform: uppercase;
-  letter-spacing: $letter-spacer * 0.5;
-  font-size: $font-size-base * 0.8125;
+  letter-spacing: 1px;
+}
+
+h6,
+.h6 {
+  letter-spacing: 1.3px;
+}
+
+h3,
+.h3 {
+  letter-spacing: 2px;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+}
+
+h2,
+.h2 {
 }
 
 h1,
@@ -129,7 +198,6 @@ h6,
 .h5,
 .h6,
 .nav-link {
-  letter-spacing: $letter-spacer * 0.5;
   text-transform: uppercase;
 }
 

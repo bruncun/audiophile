@@ -7,7 +7,8 @@ describe("earphones", function () {
     cy.get('[data-cy="earphones"]').should("exist");
   });
 
-  it("loads products", function () {
-    cy.get('[data-cy="product"]').should("have.length", 1);
+  it("visits yx1 earphones", function () {
+    cy.get('[data-cy="yx1-earphones-link"]').click({ force: true });
+    cy.get('[data-cy="yx1-earphones"]').should("exist");
   });
 });

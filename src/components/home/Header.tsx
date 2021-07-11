@@ -3,17 +3,19 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <div className="container-md h-100 d-flex align-items-center header">
-      <div className="row text-center text-lg-start">
-        <div className="col-lg-7">
-          <h6 className="mb-3 ls-5 text-white-50 fw-light mt-6">New Product</h6>
-          <h1 className="fw-bold display-2 mb-4 text-white d-md-none">
+    <div className="container h-100 d-flex align-items-center">
+      <div className="row text-center text-xxl-start w-100">
+        <div className="col-md-8 offset-md-2 col-xxl-7 offset-xxl-0">
+          <small className="mt-6 mb-3 text-white-50 text-uppercase ls-5 d-block">
+            New Product
+          </small>
+          <h1 className="mb-4 text-white d-md-none fw-bold">
             XX99 Mark II Headphones
           </h1>
-          <h1 className="fw-bold display-1 mb-4 text-white d-none d-md-block">
+          <h1 className="display-4 mb-4 text-white d-none d-md-block fw-bold">
             XX99 Mark II Headphones
           </h1>
-          <p className="lh-lg mb-4 text-white-75 px-md-6 mx-md-4 ps-lg-0 ms-lg-0 me-lg-6">
+          <p className="lh-lg mb-4 pb-1 pb-md-3 text-white-75 mx-3 ps-xxl-0 ms-xxl-0 me-xxl-6 pe-xxl-6">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>

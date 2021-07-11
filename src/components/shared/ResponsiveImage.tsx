@@ -15,9 +15,9 @@ function ResponsiveImage({
 }: ResponsiveImageProps) {
   return (
     <picture>
-      <source media="(min-width: 992px)" srcSet={desktop} />
-      <source media="(min-width: 768px)" srcSet={tablet} />
-      <source media="(max-width: 767px)" srcSet={mobile} />
+      <source media="(min-width: 1400px)" srcSet={desktop} />
+      <source media="(min-width: 767px)" srcSet={tablet} />
+      <source media="(max-width: 766px)" srcSet={mobile} />
       <img className={imgClassName} srcSet={desktop} alt={alt} />
     </picture>
   );

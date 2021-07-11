@@ -9,7 +9,7 @@ const getProductBySlug = async (slug: string): Promise<Product[]> => {
   return data;
 };
 
-export default function useProductsByCategory(slugs: string[]) {
+export default function useProductsBySlug(slugs: string[]) {
   return useQueries(
     slugs.map((slug) => ({
       queryKey: ["product", slug],
