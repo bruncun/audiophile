@@ -4,7 +4,7 @@ import Checkout from "components/checkout/Checkout";
 import Footer from "components/shared/Footer";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Category from "components/shared/Category";
-import Product from "components/product/Product";
+import ProductPage from "components/product/ProductPage";
 import { OrdersContext } from "OrdersContext";
 import { useState } from "react";
 import { Order } from "types";
@@ -42,7 +42,7 @@ function App() {
             <Route path="/speakers">
               <Category category="speakers" />
             </Route>
-            <Route path="/products/:slug" children={<Product />} />
+            <Route path="/products/:slug" children={<ProductPage />} />
             <Route path="/checkout">
               <Checkout />
             </Route>

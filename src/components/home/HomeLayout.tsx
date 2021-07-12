@@ -22,9 +22,11 @@ function HomeLayout({
   return (
     <div data-cy="home">
       <div className="header-wrapper header">{header}</div>
-      <div className="container-md">
-        <div className="py-5 my-4 pt-md-6 mt-md-4 mb-md-0">{categoryList}</div>
-        <div className="py-5">
+      <div className="container-md mt-5 pt-1 mt-md-6 pt-md-2 pt-xxl-4">
+        <div className="mt-3 mb-6 pb-4 pt-md-1 pb-md-0 mt-xxl-4 pb-xxl-4">
+          {categoryList}
+        </div>
+        <div className="pb-5 pb-md-4">
           <div className="mb-4 pb-md-2">{zx9SpeakerCard}</div>
           <div className="mb-4 pb-md-2">{zx7SpeakerCard}</div>
           <div className="row gx-md-3">
@@ -32,7 +34,7 @@ function HomeLayout({
             <div className="col-md-6 mb-4">{yx1CtaCard}</div>
           </div>
         </div>
-        <div className="pt-5 pb-6 mb-4">{about}</div>
+        <div className="pt-5 pb-4 pb-md-0 mb-6 mt-xxl-4 pb-xxl-4">{about}</div>
       </div>
     </div>
   );

@@ -33,18 +33,20 @@ function ProductFeature({
         </Link>
       </div>
       <div
-        className={`text-center col-12 col-lg-5 d-lg-flex align-items-center text-lg-start ${
+        className={`text-center col-12 col-lg-5 d-lg-flex align-items-center text-xxl-start ${
           swapColOrder ? "" : "offset-lg-1"
         }`}
       >
-        <div>
+        <div className="mx-md-5">
           {isNew && (
             <small className="ls-5 text-primary fw-light mb-4 text-uppercase d-block">
               New Product
             </small>
           )}
           <h3 className="fw-bold me-lg-6 mb-4 d-md-none">{name}</h3>
-          <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block">{name}</h1>
+          <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0">
+            {name}
+          </h1>
           <p className="text-black-50 mb-5 lh-base me-lg-4">{description}</p>
           <Link className="btn btn-primary" to={`/products/${slug}`}>
             See Product

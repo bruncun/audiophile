@@ -10,11 +10,13 @@ $list-inline-padding: 1rem;
 
 $enable-rfs: false;
 
+$paragraph-margin-bottom: 0;
+
 $font-family-base: "Manrope", sans-serif;
 $font-size-base: 0.9375rem;
 
 $h1-font-size: 2.5rem;
-$h2-font-size: 2.5rem;
+$h2-font-size: 2rem;
 $h3-font-size: 1.75rem;
 $h4-font-size: 1.5rem;
 $h5-font-size: 1.25;
@@ -139,11 +141,11 @@ $form-check-input-checked-border-color: 1px solid rgba(0, 0, 0, 0.25);
 $letter-spacer: 3px;
 
 body {
-  padding-top: 5.5625rem;
+  padding-top: 5.625rem;
 
-  // @include media-breakpoint(xl) {
-
-  // }
+  @include media-breakpoint-up(xxl) {
+    padding-top: 6rem;
+  }
 }
 
 .ls-0 {
@@ -201,6 +203,10 @@ h6,
   text-transform: uppercase;
 }
 
+.nav-link {
+  letter-spacing: 2px;
+}
+
 .navbar-toggler-icon {
   width: 16px;
   height: 15px;
@@ -208,7 +214,7 @@ h6,
 
 .nav-link {
   font-weight: bold;
-  font-size: $font-size-base * 0.8125;
+  font-size: 0.8125rem;
 }
 
 .z-9999 {

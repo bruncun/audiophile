@@ -6,32 +6,32 @@ type DetailsProps = {
 
 function Details({ product: { features, includes } }: DetailsProps) {
   return (
-    <div className="container-md pt-3 py-5">
-      <div className="row">
-        <div className="col-12 col-lg-7 mb-6">
-          <h1 className="fw-bold mb-4">Features</h1>
-          <p className="text-black-50">{features}</p>
-        </div>
-        <div className="col-12 col-lg-4 offset-lg-1">
-          <div className="row">
-            <div className="col-12 col-md-6 col-lg-12">
-              <h1 className="fw-bold mb-4">In The Box</h1>
-            </div>
-            <div className="col-12 col-md-6 col-lg-12">
-              <ul className="list-unstyled">
-                {includes.map(({ quantity, item }, idx) => (
-                  <li
-                    className={idx !== includes.length ? "mb-2" : ""}
-                    key={idx}
-                  >
-                    <span className="text-primary fw-bold d-inline-block me-3">
-                      {quantity}x
-                    </span>
-                    <span className="text-black-50">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <div className="row">
+      <div className="col-xxl-7 mb-6 pb-md-3 mb-xxl-0 pb-xxl-0">
+        <h3 className="fw-bold mb-4 d-xxl-none">Features</h3>
+        <h2 className="fw-bold mb-4 pb-2 d-none d-xxl-block">Features</h2>
+        <p className="text-black-50">{features}</p>
+      </div>
+      <div className="col-xxl-4 offset-xxl-1">
+        <div className="row">
+          <div className="col-md-6 col-xxl-12">
+            <h3 className="fw-bold mb-4 d-xxl-none">In The Box</h3>
+            <h2 className="fw-bold mb-4 pb-2 d-none d-xxl-block">In The Box</h2>
+          </div>
+          <div className="col-md-6 col-xxl-12">
+            <ul className="list-unstyled mb-0">
+              {includes.map(({ quantity, item }, idx) => (
+                <li
+                  className={idx !== includes.length - 1 ? "mb-2" : ""}
+                  key={idx}
+                >
+                  <span className="text-primary fw-bold d-inline-block me-3 pe-1">
+                    {quantity}x
+                  </span>
+                  <span className="text-black-50">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

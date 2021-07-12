@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <>
       {showCart && <Cart onModalBackdropClick={onModalBackdropClick} />}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top z-9999">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top z-9999 py-xxl-1 lh-1">
         <div className="container-md py-4 my-2">
           <div>
             <button
@@ -28,18 +28,18 @@ function Navbar() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <Link to="/" className="d-none d-md-inline-block">
+            <Link to="/" className="d-none d-md-inline-block lh-1">
               <img
                 className="ms-4 ps-3 d-lg-none"
                 src={logo}
                 alt="Audiophile"
                 width="143"
-                height="25"
+                height="24"
               />
             </Link>
           </div>
-          <Link to="/" className="d-md-none">
-            <img src={logo} alt="Audiophile" width="143" height="25" />
+          <Link to="/" className="d-md-none lh-1">
+            <img src={logo} alt="Audiophile" width="143" height="24" />
           </Link>
           <button
             className="btn btn-link p-0 d-lg-none"
@@ -48,13 +48,13 @@ function Navbar() {
             <img src={cart} alt="Cart" />
           </button>
           <div
-            className="collapse navbar-collapse justify-content-between"
+            className="collapse navbar-collapse position-relative justify-content-between align-items-center"
             id="navbarTogglerDemo02"
           >
-            <Link to="/">
-              <img src={logo} alt="Audiophile" width="143" height="25" />
+            <Link to="/" className="lh-1">
+              <img src={logo} alt="Audiophile" width="143" height="24" />
             </Link>
-            <ul className="navbar-nav mb-2 mb-lg-0">
+            <ul className="navbar-nav mb-2 mb-lg-0 position-absolute translate-middle start-50 top-50">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">
                   Home
@@ -72,19 +72,19 @@ function Navbar() {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  to="/earphones"
-                  data-cy="earphones-nav-link"
+                  to="/speakers"
+                  data-cy="speakers-nav-link"
                 >
-                  Earphones
+                  Speakers
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  to="/speakers"
-                  data-cy="speakers-nav-link"
+                  to="/earphones"
+                  data-cy="earphones-nav-link"
                 >
-                  Speakers
+                  Earphones
                 </Link>
               </li>
             </ul>

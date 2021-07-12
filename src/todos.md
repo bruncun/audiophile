@@ -21,4 +21,5 @@
 -form validation
 -metadata
 -optimize responsive images across all sections
-
+-hover states
+-rename pages to NamePage

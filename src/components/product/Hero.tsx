@@ -16,33 +16,40 @@ function Hero({
   let [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="container-md">
+    <>
       <Link
         to={`/${category}`}
-        className="text-black-50 mb-4 d-block text-decoration-none mt-3 mt-lg-5"
+        data-cy="go-back-link"
+        className="text-black-50 mb-4 d-block text-decoration-none mb-xxl-5 pb-xxl-2"
       >
         Go Back
       </Link>
-      <div className="mb-6 row">
-        <div className="col-12 col-sm-5">
+      <div className="row gx-md-2 gx-xxl-4">
+        <div className="col-md-5 col-xxl-6">
           <ResponsiveImage
             image={image}
-            imgClassName="rounded mb-4 mb-md-0 img-fluid"
+            imgClassName="rounded mb-4 pb-2 pb-md-0 mb-md-0 img-fluid"
             alt={name}
           />
         </div>
-        <div className="text-start col-12 col-sm-6 d-md-flex align-items-center offset-sm-1">
+        <div className="text-start col-md-6 col-xxl-5 d-md-flex align-items-center offset-md-1">
           <div>
             {isNew && (
-              <h6 className="ls-5 text-primary fw-light mb-4">New Product</h6>
+              <small className="ls-5 text-primary fw-light mb-4 text-uppercase d-block">
+                New Product
+              </small>
             )}
-            <h1 className="fw-bold me-lg-6 mb-4">{name}</h1>
-            <p className="text-black-50 mb-4 lh-base me-lg-4">{description}</p>
-            <h6 className="ls-3 mb-5 fw-bold">{formatter.format(price)}</h6>
+            <h3 className="d-xxl-none fw-bold me-xxl-6 mb-4 pb-md-2">{name}</h3>
+            <h1 className="d-none d-xxl-block fw-bold me-xxl-6 mb-4">{name}</h1>
+            <p className="text-black-50 mb-4 me-xxl-2">{description}</p>
+            <h6 className="ls-3 mb-4 pb-2 fw-bold">
+              {formatter.format(price)}
+            </h6>
             <div className="btn-group me-3" role="group" aria-label="Quantity">
               <button
                 type="button"
-                className="btn btn-light px-3"
+                className="btn btn-light px-3 text-black-n0"
+                data-cy="decrement-quantity"
                 onClick={() =>
                   setQuantity(quantity > 1 ? --quantity : quantity)
                 }
@@ -53,11 +60,14 @@ function Hero({
                 className="bg-light d-flex align-items-center justify-content-center"
                 style={{ width: "3rem" }}
               >
-                <span className="fw-bold">{quantity}</span>
+                <span className="fw-bold" data-cy="quantity">
+                  {quantity}
+                </span>
               </div>
               <button
                 type="button"
-                className="btn btn-light px-3"
+                data-cy="increment-quantity"
+                className="btn btn-light px-3 text-black-50"
                 onClick={() => setQuantity(++quantity)}
               >
                 +
@@ -77,7 +87,7 @@ function Hero({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
