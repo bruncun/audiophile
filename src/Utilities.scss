@@ -24,7 +24,8 @@ $utilities: map-merge(
         map-merge(
           $font-sizes,
           (
-            7: $font-size-base * 0.8125,
+            base: $font-size-base,
+            7: $font-size-base * 0.866667,
           )
         ),
     ),

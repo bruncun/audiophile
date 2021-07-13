@@ -13,6 +13,7 @@ function CartProduct({
   product: {
     image: { mobile },
     price,
+    shortName,
     name,
   },
   quantity,
@@ -31,10 +32,10 @@ function CartProduct({
         />
         <div className="d-flex justify-content-between w-100 align-items-center">
           <div>
-            <h6 className="fw-bold">{name}</h6>
-            <h6 className="fw-bold text-black-50 mb-0">
+            <span className="fw-bold d-block">{shortName}</span>
+            <span className="fw-bold text-black-50 mb-0 d-block">
               {formatter.format(price * quantity)}
-            </h6>
+            </span>
           </div>
           <div>
             <div

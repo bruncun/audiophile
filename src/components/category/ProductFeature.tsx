@@ -44,7 +44,7 @@ function ProductFeature({
             </small>
           )}
           <h3 className="fw-bold me-lg-6 mb-4 d-md-none">{name}</h3>
-          <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0">
+          <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0 me-xxl-4">
             {name}
           </h1>
           <p className="text-black-50 mb-5 lh-base me-lg-4">{description}</p>

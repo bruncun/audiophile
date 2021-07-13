@@ -30,14 +30,14 @@ function Cart({ onModalBackdropClick }: CartProps) {
       aria-hidden="true"
       data-cy="cart-modal"
     >
-      <div className="container-lg">
+      <div className="container-md pt-xxl-2">
         {queriesInfo.every(({ isSuccess }) => isSuccess) && (
-          <div className="modal-dialog mt-6 pt-2 mx-4 me-lg-0 modal-sm ms-sm-auto z-9999">
+          <div className="modal-dialog mt-6 pt-4 mx-auto me-md-0 modal-sm ms-md-auto z-9999">
             <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title fw-bold" id="staticBackdropLabel">
+              <div className="modal-header px-md-4 mx-md-2">
+                <h6 className="modal-title fw-bold" id="staticBackdropLabel">
                   Cart ({queriesInfo.length})
-                </h5>
+                </h6>
                 <button
                   className="btn btn-link p-0 ls-0 text-black-50 text-capitalize"
                   onClick={removeAll}
@@ -45,7 +45,7 @@ function Cart({ onModalBackdropClick }: CartProps) {
                   Remove <span className="text-lowercase">all</span>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body pt-0 pb-3 px-md-4 mx-md-2">
                 <ul className="list-unstyled">
                   {queriesInfo.map(({ data }) => {
                     const [product] = data as Product[];
@@ -70,17 +70,17 @@ function Cart({ onModalBackdropClick }: CartProps) {
                     );
                   })}
                 </ul>
-                <div className="d-flex justify-content-between pt-2">
+                <div className="d-flex justify-content-between">
                   <span className="text-black-50 text-uppercase">Total</span>
                   <span className="text-black fw-bold">
                     {formatter.format(total)}
                   </span>
                 </div>
               </div>
-              <div className="modal-footer pt-2">
+              <div className="modal-footer pt-0 px-4 mx-md-2 pb-4 mb-2">
                 <Link
                   to="/checkout"
-                  className="btn btn-primary d-block w-100"
+                  className="btn btn-primary d-block w-100 m-0"
                   data-cy="cart-checkout"
                 >
                   Checkout

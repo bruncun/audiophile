@@ -22,9 +22,10 @@ function CheckoutSummary() {
 
   return (
     <div className="card bg-white">
-      <div className="card-body">
-        <h3 className="fw-bold mb-4">Summary</h3>
-        <ul className="list-unstyled">
+      <div className="card-body p-4 my-2 mx-xxl-2">
+        <h6 className="fw-bold mb-4 pb-2 d-md-none d-xxl-block">Summary</h6>
+        <h3 className="fw-bold mb-4 d-none d-md-block d-xxl-none">Summary</h3>
+        <ul className="list-unstyled mb-0">
           {queriesInfo.map(({ data }) => {
             const [product] = data as Product[];
             const { slug } = product;
@@ -47,7 +48,7 @@ function CheckoutSummary() {
           <span className="text-black-50 text-uppercase">VAT (Included)</span>
           <span className="text-black fw-bold">{formatter.format(vat)}</span>
         </div>
-        <div className="d-flex justify-content-between py-2 mb-3">
+        <div className="d-flex justify-content-between py-2 mb-4">
           <span className="text-black-50 text-uppercase">Grand Total</span>
           <span className="text-primary fw-bold">
             {formatter.format(grandTotal)}

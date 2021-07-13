@@ -12,6 +12,7 @@ export type Order = {
 export type Product = {
   id: number;
   name: string;
+  shortName: string;
   slug: string;
   category: string;
   isNew: boolean;
