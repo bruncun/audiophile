@@ -16,13 +16,14 @@ function CategoryCard({ imgSrc, name }: CategoryCardProps) {
             className="position-absolute top-0 start-50 translate-middle category-card-image"
             src={imgSrc}
             alt={name}
+            width="160"
           />
         </Link>
         <Link className="text-decoration-none text-body" to={`/${name}`}>
-          <span className="mt-5 fw-bold mb-3 pb-1 category-card-header d-md-none d-block text-uppercase ls-1">
+          <span className="mt-5 fw-bold mb-3 pb-1 category-card-header d-xxl-none d-block text-uppercase ls-1">
             {name}
           </span>
-          <h6 className="mt-5 fw-bold mb-3 d-none d-md-block">{name}</h6>
+          <h6 className="mt-5 fw-bold mb-3 d-none d-xxl-block">{name}</h6>
         </Link>
         <Link
           className="text-black-50 text-uppercase text-decoration-none fw-bold"

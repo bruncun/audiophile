@@ -23,3 +23,6 @@
 -optimize responsive images across all sections
 -hover states
 -rename pages to NamePage
+-reuse GoBackButton
+-fix tablet breakpoint
+-fix touch points (like logo tablet)

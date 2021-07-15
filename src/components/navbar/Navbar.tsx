@@ -1,36 +1,67 @@
 import logo from "assets/shared/desktop/logo.svg";
 import cart from "assets/shared/desktop/icon-cart.svg";
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import CategoryList from "components/shared/CategoryList";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import Cart from "./Cart";
 
+interface LocationWithNavState extends Location {
+  state: { showCollapse?: boolean; showCart?: boolean };
+}
+
 function Navbar() {
-  const [showCart, setShowCart] = useState(false);
+  const history = useHistory();
+  const location = useLocation() as LocationWithNavState;
+  console.log(location.state);
+  const { showCollapse, showCart } = location.state || false;
+
+  if (showCart) {
+    addBodyOverflowHidden();
+  } else {
+    removeBodyOverflowHidden();
+  }
+
+  function removeBodyOverflowHidden() {
+    const body = document.querySelector("body");
+    body?.classList.remove("overflow-hidden");
+  }
+
+  function addBodyOverflowHidden() {
+    const body = document.querySelector("body");
+    body?.classList.add("overflow-hidden");
+  }
+
   function onModalBackdropClick(event: React.MouseEvent) {
     const target = event.target as HTMLElement;
-    setShowCart(Boolean(target.closest(".modal-dialog")));
+    const showCart = Boolean(target.closest(".modal-dialog"));
+    if (!showCart)
+      history.replace({
+        ...location,
+        state: { ...location.state, showCart },
+      });
   }
 
   return (
     <>
       {showCart && <Cart onModalBackdropClick={onModalBackdropClick} />}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top z-9999 py-xxl-1 lh-1">
+      <nav className="navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
         <div className="container-md py-4 my-2">
           <div>
-            <button
+            <Link
               className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02"
+              to={{
+                ...location,
+                state: { ...location.state, showCollapse: !showCollapse },
+              }}
+              replace
+              aria-controls="collapse-nav"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </Link>
             <Link to="/" className="d-none d-md-inline-block lh-1">
               <img
-                className="ms-4 ps-3 d-lg-none"
+                className="ms-4 ps-3 d-xxl-none"
                 src={logo}
                 alt="Audiophile"
                 width="143"
@@ -41,20 +72,21 @@ function Navbar() {
           <Link to="/" className="d-md-none lh-1">
             <img src={logo} alt="Audiophile" width="143" height="24" />
           </Link>
-          <button
-            className="btn btn-link p-0 d-lg-none"
-            onClick={() => setShowCart(true)}
+          <Link
+            className="btn btn-link p-0 d-xxl-none"
+            to={{
+              ...location,
+              state: { ...location.state, showCart: !showCart },
+            }}
+            replace
           >
             <img src={cart} alt="Cart" />
-          </button>
-          <div
-            className="collapse navbar-collapse position-relative justify-content-between align-items-center"
-            id="navbarTogglerDemo02"
-          >
+          </Link>
+          <div className="collapse navbar-collapse position-relative justify-content-between">
             <Link to="/" className="lh-1">
               <img src={logo} alt="Audiophile" width="143" height="24" />
             </Link>
-            <ul className="navbar-nav mb-2 mb-lg-0 position-absolute translate-middle start-50 top-50">
+            <ul className="navbar-nav mb-2 mb-xxl-0 position-absolute translate-middle start-50 top-50">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">
                   Home
@@ -88,16 +120,28 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
-            <button
+            <Link
               className="btn btn-link p-0"
-              onClick={() => setShowCart(true)}
-              data-cy="cart-toggler"
+              to={{
+                ...location,
+                state: { ...location.state, showCart: !showCart },
+              }}
+              replace
             >
               <img src={cart} alt="Cart" />
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
+      {showCollapse && (
+        <div className="bg-white rounded-bottom d-xxl-none pt-2 py-md-5 pb-md-6">
+          <div className="container-md pt-5 pt-md-2">
+            <div className="pt-1 pb-6 mb-4 mb-md-2 pb-md-5 pt-md-4 mt-md-1">
+              <CategoryList />
+            </div>
+          </div>
+        </div>
+      )}
       {showCart && <div className="modal-backdrop fade show" />}
     </>
   );
