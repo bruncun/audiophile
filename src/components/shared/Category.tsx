@@ -2,7 +2,7 @@ import CategoryLayout from "components/category/CategoryLayout";
 import Header from "components/category/Header";
 import About from "components/shared/about/About";
 import CategoryList from "components/shared/CategoryList";
-import useProductsByCategory from "hooks/useProductsByCategory";
+import { useProductsByCategory } from "hooks/useApi";
 import ProductList from "components/category/ProductList";
 
 interface CategoryProps {

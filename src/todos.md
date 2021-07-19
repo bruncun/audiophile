@@ -7,9 +7,7 @@
 -set all image size attributes to prevent render jumps
 -implement animations
 -double check and finesse typography and spacing
--add localStorage
 -move cost calculations into hook
--post checkout mutation
 -disable checkout w/ empty cart
 -organize component folder
 -pluralize confirmation
@@ -21,3 +19,7 @@
 -reuse GoBackButton
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
+-prevent checkout if empty cart
+-disable form on submission
+-vertically center confirmation modal
+-refactor confirmation show modal state to behave like navbar

@@ -2,16 +2,18 @@ import { OrdersContext } from "OrdersContext";
 import { useContext } from "react";
 import { formatter } from "utils";
 import { Product } from "types";
-import useProductsBySlugs from "hooks/useProductsBySlugs";
+import { useProductsById } from "hooks/useApi";
 import CheckoutProduct from "./CheckoutProduct";
 
 function CheckoutSummary() {
   const { orders } = useContext(OrdersContext);
-  const queriesInfo = useProductsBySlugs(Object.keys(orders));
+  const queriesInfo = useProductsById(Object.keys(orders));
+
+  if (queriesInfo.every(({ isLoading }) => isLoading)) return <></>;
 
   const total = queriesInfo.reduce((sum, { data }) => {
-    const [{ price, slug }] = data as Product[];
-    return sum + price * orders[slug];
+    const { price, id } = data as Product;
+    return sum + price * orders[id];
   }, 0);
 
   const shipping = 50;
@@ -27,11 +29,9 @@ function CheckoutSummary() {
         <h3 className="fw-bold mb-4 d-none d-md-block d-xxl-none">Summary</h3>
         <ul className="list-unstyled mb-0">
           {queriesInfo.map(({ data }) => {
-            const [product] = data as Product[];
-            const { slug } = product;
-            return (
-              <CheckoutProduct product={product} quantity={orders[slug]} />
-            );
+            const product = data as Product;
+            const { id } = product;
+            return <CheckoutProduct product={product} quantity={orders[id]} />;
           })}
         </ul>
         <div className="d-flex justify-content-between py-2">

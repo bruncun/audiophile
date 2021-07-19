@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CheckoutLayout from "./CheckoutLayout";
 import GoBackButton from "./GoBackButton";
 import CheckoutForm from "./CheckoutForm";
 import CheckoutSummary from "./CheckoutSummary";
 import CheckoutConfirmation from "./CheckoutConfirmation";
+import { OrdersContext } from "OrdersContext";
+import axios from "axios";
 
 function Checkout() {
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const { orders } = useContext(OrdersContext);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -30,18 +34,14 @@ function Checkout() {
 
   function onFormSubmit(event: React.FormEvent) {
     event.preventDefault();
+    localStorage.removeItem("orders");
+    const items = Object.keys(orders).map((id) => ({
+      id,
+      quantity: orders[id],
+    }));
+    const data = { ...form, items };
+    axios.post("http://localhost:3004/orders", data);
     setShowConfirmation(true);
-  }
-
-  function onModalBackdropClick(event: React.MouseEvent) {
-    let isModal = false;
-    let { parentElement } = event.target as Element;
-    while (parentElement) {
-      const classList = parentElement.classList;
-      if (classList.contains("modal-dialog")) isModal = true;
-      parentElement = parentElement.parentElement;
-    }
-    setShowConfirmation(isModal);
   }
 
   return (
@@ -54,11 +54,7 @@ function Checkout() {
             paymentMethod={form.paymentMethod}
           />
         }
-        checkoutConfirmation={
-          showConfirmation && (
-            <CheckoutConfirmation onModalBackdropClick={onModalBackdropClick} />
-          )
-        }
+        checkoutConfirmation={showConfirmation && <CheckoutConfirmation />}
         checkoutSummary={<CheckoutSummary />}
       />
     </form>

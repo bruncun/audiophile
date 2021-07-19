@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { OrdersContext } from "OrdersContext";
 import { useContext } from "react";
-import useProductsBySlugs from "hooks/useProductsBySlugs";
+import { useProductsById } from "hooks/useApi";
 import { Product } from "types";
 import { formatter } from "utils";
 import CartProduct from "./CartProduct";
@@ -13,11 +13,13 @@ interface CartProps {
 
 function Cart({ onModalBackdropClick }: CartProps) {
   const { orders, removeAll, addOne } = useContext(OrdersContext);
-  const queriesInfo = useProductsBySlugs(Object.keys(orders));
+  const queriesInfo = useProductsById(Object.keys(orders));
+
+  if (queriesInfo.every(({ isLoading }) => isLoading)) return <></>;
 
   const total = queriesInfo.reduce((sum, { data }) => {
-    const [{ price, slug }] = data as Product[];
-    return sum + price * orders[slug];
+    const { price, id } = data as Product;
+    return sum + price * orders[id];
   }, 0);
 
   return (
@@ -30,8 +32,8 @@ function Cart({ onModalBackdropClick }: CartProps) {
       aria-hidden="true"
       data-cy="cart-modal"
     >
-      <div className="container-md pt-xxl-2">
-        {queriesInfo.every(({ isSuccess }) => isSuccess) && (
+      {queriesInfo.every(({ isSuccess }) => isSuccess) && (
+        <div className="container-md pt-xxl-2">
           <div className="modal-dialog mt-6 pt-4 mx-auto me-md-0 modal-sm ms-md-auto z-9999">
             <div className="modal-content">
               <div className="modal-header px-md-4 mx-md-2">
@@ -48,22 +50,22 @@ function Cart({ onModalBackdropClick }: CartProps) {
               <div className="modal-body pt-0 pb-3 px-md-4 mx-md-2">
                 <ul className="list-unstyled">
                   {queriesInfo.map(({ data }) => {
-                    const [product] = data as Product[];
-                    const { slug } = product;
+                    const product = data as Product;
+                    const { id } = product;
                     return (
                       <CartProduct
                         product={product}
-                        quantity={orders[slug]}
+                        quantity={orders[id]}
                         onDecrementClick={() =>
                           addOne({
                             quantity: -1,
-                            productSlug: slug,
+                            id,
                           })
                         }
                         onIncrementClick={() =>
                           addOne({
                             quantity: 1,
-                            productSlug: slug,
+                            id,
                           })
                         }
                       />
@@ -88,8 +90,8 @@ function Cart({ onModalBackdropClick }: CartProps) {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -5,8 +5,8 @@ export type Image = {
 };
 
 export type Order = {
+  id: number;
   quantity: number;
-  productSlug: string;
 };
 
 export type Product = {

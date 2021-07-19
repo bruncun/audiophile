@@ -6,7 +6,7 @@ import Suggestions from "./Suggestions";
 import CategoryList from "components/shared/CategoryList";
 import About from "components/shared/about/About";
 import { useParams } from "react-router-dom";
-import useProduct from "hooks/useProduct";
+import { useProductBySlug } from "hooks/useApi";
 import { Product } from "types";
 
 interface ProductPageParams {
@@ -15,7 +15,7 @@ interface ProductPageParams {
 
 function ProductPage() {
   const { slug } = useParams<ProductPageParams>();
-  const { isLoading, data } = useProduct(slug);
+  const { isLoading, data } = useProductBySlug(slug);
 
   if (isLoading) return <></>;
 

@@ -71,7 +71,9 @@ function Navbar() {
             <img src={logo} alt="Audiophile" width="143" height="24" />
           </Link>
           <Link
-            className="btn btn-link p-0 d-xxl-none"
+            className={`btn btn-link p-0 d-xxl-none ${
+              location.pathname === "/checkout" ? "disabled" : ""
+            }`}
             to={{
               ...location,
               state: { showCollapse: false, showCart: !showCart },
@@ -119,7 +121,9 @@ function Navbar() {
               </li>
             </ul>
             <Link
-              className="btn btn-link p-0"
+              className={`btn btn-link p-0 ${
+                location.pathname === "/checkout" ? "disabled" : ""
+              }`}
               to={{
                 ...location,
                 state: { showCollapse: false, showCart: !showCart },

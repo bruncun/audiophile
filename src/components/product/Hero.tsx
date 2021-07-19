@@ -13,7 +13,7 @@ type HeroProps = {
 };
 
 function Hero({
-  product: { isNew, image, name, description, price, category, slug },
+  product: { isNew, image, name, description, price, category, id },
 }: HeroProps) {
   const history = useHistory();
   const location = useLocation() as LocationWithNavState;
@@ -21,7 +21,7 @@ function Hero({
   let [quantity, setQuantity] = useState(1);
 
   function onAddToCartButtonClick() {
-    addOne({ quantity, productSlug: slug });
+    addOne({ quantity, id });
     history.replace({
       ...location,
       state: { ...location.state, showCart: true },
