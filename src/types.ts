@@ -36,3 +36,7 @@ export type Product = {
     third: Image;
   };
 };
+
+export interface LocationWithNavState extends Location {
+  state: { showCollapse?: boolean; showCart?: boolean };
+}

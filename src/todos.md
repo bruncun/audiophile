@@ -1,22 +1,17 @@
 # TODO
 
--implement navbar collapse
 -redirect to root on 404
 -refactor html semantics
--close checkout on page transition
 -implement empty, error, and loading states
 -implement all links
 -set all image size attributes to prevent render jumps
 -implement animations
 -double check and finesse typography and spacing
 -add localStorage
--prevent scroll on modal open
 -move cost calculations into hook
 -post checkout mutation
 -disable checkout w/ empty cart
 -organize component folder
--full screen modals on mobile
--cart images
 -pluralize confirmation
 -form validation
 -metadata

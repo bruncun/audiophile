@@ -1,0 +1,9 @@
+@import "scss/shared";
+
+.collapse-open {
+  overflow: hidden;
+
+  @include media-breakpoint-up(xxl) {
+    overflow: visible;
+  }
+}

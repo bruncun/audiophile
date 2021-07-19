@@ -3,31 +3,29 @@ import cart from "assets/shared/desktop/icon-cart.svg";
 import CategoryList from "components/shared/CategoryList";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import Cart from "./Cart";
-
-interface LocationWithNavState extends Location {
-  state: { showCollapse?: boolean; showCart?: boolean };
-}
+import { LocationWithNavState } from "types";
+import "./Navbar.scss";
 
 function Navbar() {
   const history = useHistory();
   const location = useLocation() as LocationWithNavState;
-  console.log(location.state);
   const { showCollapse, showCart } = location.state || false;
 
-  if (showCart) {
-    addBodyOverflowHidden();
+  if (showCollapse) {
+    modifyBodyClassList("collapse-open", "add");
   } else {
-    removeBodyOverflowHidden();
+    modifyBodyClassList("collapse-open", "remove");
   }
 
-  function removeBodyOverflowHidden() {
-    const body = document.querySelector("body");
-    body?.classList.remove("overflow-hidden");
+  if (showCart) {
+    modifyBodyClassList("overflow-hidden", "add");
+  } else {
+    modifyBodyClassList("overflow-hidden", "remove");
   }
 
-  function addBodyOverflowHidden() {
+  function modifyBodyClassList(className: string, method: "add" | "remove") {
     const body = document.querySelector("body");
-    body?.classList.add("overflow-hidden");
+    body?.classList[method](className);
   }
 
   function onModalBackdropClick(event: React.MouseEvent) {
@@ -36,21 +34,21 @@ function Navbar() {
     if (!showCart)
       history.replace({
         ...location,
-        state: { ...location.state, showCart },
+        state: { showCollapse: false, showCart },
       });
   }
 
   return (
     <>
       {showCart && <Cart onModalBackdropClick={onModalBackdropClick} />}
-      <nav className="navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
+      <nav className="fixed-top navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
         <div className="container-md py-4 my-2">
           <div>
             <Link
               className="navbar-toggler"
               to={{
                 ...location,
-                state: { ...location.state, showCollapse: !showCollapse },
+                state: { showCart: false, showCollapse: !showCollapse },
               }}
               replace
               aria-controls="collapse-nav"
@@ -76,7 +74,7 @@ function Navbar() {
             className="btn btn-link p-0 d-xxl-none"
             to={{
               ...location,
-              state: { ...location.state, showCart: !showCart },
+              state: { showCollapse: false, showCart: !showCart },
             }}
             replace
           >
@@ -124,7 +122,7 @@ function Navbar() {
               className="btn btn-link p-0"
               to={{
                 ...location,
-                state: { ...location.state, showCart: !showCart },
+                state: { showCollapse: false, showCart: !showCart },
               }}
               replace
             >
@@ -134,15 +132,16 @@ function Navbar() {
         </div>
       </nav>
       {showCollapse && (
-        <div className="bg-white rounded-bottom d-xxl-none pt-2 py-md-5 pb-md-6">
+        <div className="fixed-top bg-white rounded-bottom d-xxl-none pt-2 py-md-5 mt-6 overflow-scroll z-9999">
           <div className="container-md pt-5 pt-md-2">
-            <div className="pt-1 pb-6 mb-4 mb-md-2 pb-md-5 pt-md-4 mt-md-1">
+            <div className="pt-1 pb-6 mb-4 mb-md-2 pb-md-2 pt-md-4 mt-md-1">
               <CategoryList />
             </div>
           </div>
         </div>
       )}
       {showCart && <div className="modal-backdrop fade show" />}
+      {showCollapse && <div className="modal-backdrop fade show d-xxl-none" />}
     </>
   );
 }

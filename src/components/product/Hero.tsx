@@ -1,10 +1,12 @@
 // TODO: Refactor context consumer to useContext
+import { useContext } from "react";
 import { Product } from "types";
 import ResponsiveImage from "components/shared/ResponsiveImage";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { OrdersContext } from "OrdersContext";
 import { formatter } from "utils";
+import { LocationWithNavState } from "types";
 
 type HeroProps = {
   product: Product;
@@ -13,7 +15,18 @@ type HeroProps = {
 function Hero({
   product: { isNew, image, name, description, price, category, slug },
 }: HeroProps) {
+  const history = useHistory();
+  const location = useLocation() as LocationWithNavState;
+  const { addOne } = useContext(OrdersContext);
   let [quantity, setQuantity] = useState(1);
+
+  function onAddToCartButtonClick() {
+    addOne({ quantity, productSlug: slug });
+    history.replace({
+      ...location,
+      state: { ...location.state, showCart: true },
+    });
+  }
 
   return (
     <>
@@ -73,17 +86,13 @@ function Hero({
                 +
               </button>
             </div>
-            <OrdersContext.Consumer>
-              {({ addOne }) => (
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={() => addOne({ quantity, productSlug: slug })}
-                >
-                  Add to cart
-                </button>
-              )}
-            </OrdersContext.Consumer>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={onAddToCartButtonClick}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
