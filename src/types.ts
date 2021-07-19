@@ -1,3 +1,16 @@
+export interface ICheckoutFormValues {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  zipCode: number;
+  city: string;
+  country: string;
+  paymentMethod: string;
+  eMoneyNumber: string;
+  eMoneyPin: string;
+}
+
 export type Image = {
   mobile: string;
   tablet: string;

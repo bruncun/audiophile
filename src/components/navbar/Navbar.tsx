@@ -5,6 +5,7 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import Cart from "./Cart";
 import { LocationWithNavState } from "types";
 import "./Navbar.scss";
+import { modifyBodyClassList } from "utils";
 
 function Navbar() {
   const history = useHistory();
@@ -21,11 +22,6 @@ function Navbar() {
     modifyBodyClassList("overflow-hidden", "add");
   } else {
     modifyBodyClassList("overflow-hidden", "remove");
-  }
-
-  function modifyBodyClassList(className: string, method: "add" | "remove") {
-    const body = document.querySelector("body");
-    body?.classList[method](className);
   }
 
   function onModalBackdropClick(event: React.MouseEvent) {

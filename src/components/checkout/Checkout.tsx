@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import CheckoutLayout from "./CheckoutLayout";
 import GoBackButton from "./GoBackButton";
 import CheckoutForm from "./CheckoutForm";
@@ -6,34 +6,28 @@ import CheckoutSummary from "./CheckoutSummary";
 import CheckoutConfirmation from "./CheckoutConfirmation";
 import { OrdersContext } from "OrdersContext";
 import axios from "axios";
+import { modifyBodyClassList } from "utils";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { ICheckoutFormValues } from "types";
 
 function Checkout() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    watch,
+  } = useForm<ICheckoutFormValues>();
+  const paymentMethod = watch("paymentMethod", "");
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { orders } = useContext(OrdersContext);
 
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    tel: "",
-    address: "",
-    zipCode: "",
-    city: "",
-    country: "",
-    paymentMethod: "",
-  });
-
-  function onInputChange(event: React.FormEvent) {
-    const target = event.target as HTMLInputElement;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+  if (showConfirmation) {
+    modifyBodyClassList("overflow-hidden", "add");
+  } else {
+    modifyBodyClassList("overflow-hidden", "remove");
   }
 
-  function onFormSubmit(event: React.FormEvent) {
-    event.preventDefault();
+  const onFormSubmit: SubmitHandler<ICheckoutFormValues> = (form) => {
     localStorage.removeItem("orders");
     const items = Object.keys(orders).map((id) => ({
       id,
@@ -42,16 +36,17 @@ function Checkout() {
     const data = { ...form, items };
     axios.post("http://localhost:3004/orders", data);
     setShowConfirmation(true);
-  }
+  };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
       <CheckoutLayout
         goBackButton={<GoBackButton />}
         checkoutForm={
           <CheckoutForm
-            onInputChange={onInputChange}
-            paymentMethod={form.paymentMethod}
+            register={register}
+            paymentMethod={paymentMethod}
+            errors={errors}
           />
         }
         checkoutConfirmation={showConfirmation && <CheckoutConfirmation />}

@@ -4,3 +4,11 @@ export const formatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
   minimumFractionDigits: 0,
 });
+
+export function modifyBodyClassList(
+  className: string,
+  method: "add" | "remove"
+) {
+  const body = document.querySelector("body");
+  body?.classList[method](className);
+}

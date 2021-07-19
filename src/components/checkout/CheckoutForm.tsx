@@ -1,9 +1,20 @@
+import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { ICheckoutFormValues } from "types";
+import Input from "./Input";
+
 interface CheckoutFormProps {
-  onInputChange: (event: React.FormEvent) => void;
+  register: UseFormRegister<ICheckoutFormValues>;
+  errors: FieldErrors<ICheckoutFormValues>;
   paymentMethod: string;
 }
 
-function CheckoutForm({ onInputChange, paymentMethod }: CheckoutFormProps) {
+const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
+const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+const ZIPCODE_REGEX = /^\d{5}(?:[- ]?\d{4})?$/;
+
+function CheckoutForm({ paymentMethod, register, errors }: CheckoutFormProps) {
   return (
     <div className="card bg-white">
       <div className="card-body py-4 my-md-1 px-md-4 mx-md-2 p-xxl-5 m-xxl-0">
@@ -14,91 +25,76 @@ function CheckoutForm({ onInputChange, paymentMethod }: CheckoutFormProps) {
         <h6 className="text-primary fw-bold mb-3 fs-7">Billing Details</h6>
         <div className="row gx-3">
           <div className="col-md-6 mb-4">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
+            <Input
               name="name"
-              onChange={onInputChange}
+              label="Name"
+              register={register}
+              error={errors.name}
             />
           </div>
           <div className="col-md-6 mb-4">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input
+            <Input
               type="email"
-              className="form-control"
               name="email"
-              onChange={onInputChange}
+              label="Email Address"
+              register={register}
+              error={errors.email}
+              pattern={EMAIL_REGEX}
             />
           </div>
         </div>
         <div className="row mb-4 pb-2">
           <div className="col-md-6 mb-md-4">
-            <label htmlFor="tel" className="form-label">
-              Phone Number
-            </label>
-            <input
+            <Input
               type="tel"
-              className="form-control"
-              name="tel"
-              onChange={onInputChange}
+              name="phoneNumber"
+              label="Phone Number"
+              register={register}
+              error={errors.phoneNumber}
+              pattern={PHONE_REGEX}
             />
           </div>
         </div>
         <h6 className="text-primary fw-bold mb-3 fs-7">Shipping Info</h6>
         <div className="mb-4">
-          <label htmlFor="address" className="form-label">
-            Your Address
-          </label>
-          <input
-            type="text"
-            autoComplete="street-address"
-            className="form-control"
+          <Input
             name="address"
-            onChange={onInputChange}
+            label="Your Address"
+            autocomplete="street-address"
+            register={register}
+            error={errors.address}
           />
         </div>
         <div className="row gx-3">
           <div className="col-md-6 mb-2">
-            <label htmlFor="zipCode" className="form-label">
-              ZIP Code
-            </label>
-            <input
-              type="tel"
-              autoComplete="postal-code"
-              className="form-control"
+            <Input
               name="zipCode"
-              onChange={onInputChange}
+              type="tel"
+              label="ZIP Code"
+              autocomplete="postal-code"
+              register={register}
+              error={errors.zipCode}
+              pattern={ZIPCODE_REGEX}
             />
           </div>
           <div className="col-md-6 mb-4">
-            <label htmlFor="city" className="form-label">
-              City
-            </label>
-            <input
-              type="text"
-              autoComplete="address-level-2"
-              className="form-control"
+            <Input
               name="city"
-              onChange={onInputChange}
+              label="City"
+              autocomplete="address-level-2"
+              register={register}
+              error={errors.city}
             />
           </div>
         </div>
         <div className="row mb-4 pb-2">
           <div className="col-md-6 mb-4">
-            <label htmlFor="country" className="form-label">
-              Country
-            </label>
-            <input
-              type="text"
-              autoComplete="country-id"
-              className="form-control"
+            <Input
               name="country"
-              onChange={onInputChange}
+              label="Country"
+              autocomplete="country-id"
+              register={register}
+              error={errors.country}
             />
           </div>
         </div>
@@ -113,10 +109,9 @@ function CheckoutForm({ onInputChange, paymentMethod }: CheckoutFormProps) {
                 <input
                   className="form-check-input ms-0 me-2"
                   type="radio"
-                  name="paymentMethod"
+                  {...register("paymentMethod", { required: true })}
                   value="e-money"
                   id="e-money"
-                  onChange={onInputChange}
                 />
                 <label className="form-check-label fw-bold" htmlFor="e-money">
                   e-Money
@@ -128,10 +123,9 @@ function CheckoutForm({ onInputChange, paymentMethod }: CheckoutFormProps) {
                 <input
                   className="form-check-input ms-0 me-2"
                   type="radio"
-                  name="paymentMethod"
+                  {...register("paymentMethod", { required: true })}
                   value="cash-on-delivery"
                   id="cash-on-delivery"
-                  onChange={onInputChange}
                 />
                 <label
                   className="form-check-label fw-bold"
@@ -146,26 +140,21 @@ function CheckoutForm({ onInputChange, paymentMethod }: CheckoutFormProps) {
         {paymentMethod === "e-money" && (
           <div className="row gx-3">
             <div className="col-md-6 mb-2">
-              <label htmlFor="e-money-number" className="form-label">
-                e-Money Number
-              </label>
-              <input
+              <Input
                 type="tel"
-                id="e-money-number"
-                className="form-control"
-                name="e-money-number"
-                onChange={onInputChange}
+                name="eMoneyNumber"
+                label="e-Money Number"
+                register={register}
+                error={errors.eMoneyNumber}
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="e-money-pin" className="form-label">
-                e-Money PIN
-              </label>
-              <input
+              <Input
                 type="tel"
-                id="e-money-pin"
-                className="form-control"
-                onChange={onInputChange}
+                name="eMoneyPin"
+                label="e-Money PIN"
+                register={register}
+                error={errors.eMoneyPin}
               />
             </div>
           </div>
