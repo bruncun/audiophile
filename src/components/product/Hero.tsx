@@ -1,4 +1,3 @@
-// TODO: Refactor context consumer to useContext
 import { useContext } from "react";
 import { Product } from "types";
 import ResponsiveImage from "components/shared/ResponsiveImage";
@@ -21,7 +20,7 @@ function Hero({
   let [quantity, setQuantity] = useState(1);
 
   function onAddToCartButtonClick() {
-    addOne({ quantity, id });
+    addOne({ quantity, productId: id });
     history.replace({
       ...location,
       state: { ...location.state, showCart: true },

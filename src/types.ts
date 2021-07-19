@@ -18,7 +18,7 @@ export type Image = {
 };
 
 export type Order = {
-  id: number;
+  productId: number;
   quantity: number;
 };
 

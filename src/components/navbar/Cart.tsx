@@ -59,13 +59,13 @@ function Cart({ onModalBackdropClick }: CartProps) {
                         onDecrementClick={() =>
                           addOne({
                             quantity: -1,
-                            id,
+                            productId: id,
                           })
                         }
                         onIncrementClick={() =>
                           addOne({
                             quantity: 1,
-                            id,
+                            productId: id,
                           })
                         }
                       />
