@@ -1,24 +1,22 @@
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import useCart from "hooks/useCart";
+import CartContext from "CartContext";
 import Navbar from "components/navbar/Navbar";
+import Footer from "components/shared/Footer";
 import Home from "pages/Home";
 import Checkout from "components/checkout/Checkout";
-import Footer from "components/shared/Footer";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Category from "components/shared/Category";
 import ProductPage from "components/product/ProductPage";
-import { OrdersContext } from "OrdersContext";
-import useOrders from "hooks/useOrders";
-import { QueryClientProvider, QueryClient } from "react-query";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const storedOrders = localStorage.getItem("orders");
-  const initialOrders = storedOrders ? JSON.parse(storedOrders) : {};
-  const orders = useOrders(initialOrders);
+  const cart = useCart();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <OrdersContext.Provider value={orders}>
+      <CartContext.Provider value={cart}>
         <Router>
           <Navbar />
           <Switch>
@@ -41,7 +39,7 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-      </OrdersContext.Provider>
+      </CartContext.Provider>
     </QueryClientProvider>
   );
 }

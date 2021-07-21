@@ -1,3 +1,22 @@
+export interface Costs {
+  total: number;
+  shipping: number;
+  vat: number;
+  grandTotal: number;
+}
+
+export interface Cart {
+  [k: string]: number;
+}
+
+export interface CartContextInterface {
+  addOrder: (order: Order) => void;
+  removeAllOrders: () => void;
+  selectedProductIds: string[];
+  getCosts: (selectedProducts: Product[]) => Costs;
+  cart: Cart;
+}
+
 export interface ICheckoutFormValues {
   name: string;
   email: string;

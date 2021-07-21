@@ -16,7 +16,6 @@
 -optimize responsive images across all sections
 -hover states
 -rename pages to NamePage
--reuse GoBackButton
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
 -prevent checkout if empty cart
@@ -27,3 +26,9 @@
 -try making modal background a link? (for vimari / accessibility)
 -focus/active/ states/borders
 -env variable for api baseurl
+-fix scroll restoration and on validation behavior
+-remove favicon
+-look into createContext typing
+-can react-query type data? refactor "as Product"
+-prevent posting to products api
+-refactor hook to reducer?

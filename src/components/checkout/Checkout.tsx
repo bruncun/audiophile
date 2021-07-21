@@ -4,7 +4,7 @@ import GoBackButton from "./GoBackButton";
 import CheckoutForm from "./CheckoutForm";
 import CheckoutSummary from "./CheckoutSummary";
 import CheckoutConfirmation from "./CheckoutConfirmation";
-import { OrdersContext } from "OrdersContext";
+import CartContext from "CartContext";
 import axios from "axios";
 import { modifyBodyClassList } from "utils";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -19,7 +19,7 @@ function Checkout() {
   } = useForm<ICheckoutFormValues>();
   const paymentMethod = watch("paymentMethod", "");
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const { orders } = useContext(OrdersContext);
+  const { cart } = useContext(CartContext);
 
   if (showConfirmation) {
     modifyBodyClassList("overflow-hidden", "add");
@@ -28,10 +28,10 @@ function Checkout() {
   }
 
   const onFormSubmit: SubmitHandler<ICheckoutFormValues> = (form) => {
-    localStorage.removeItem("orders");
-    const items = Object.keys(orders).map((id) => ({
+    localStorage.removeItem("audiophile-cart");
+    const items = Object.keys(cart).map((id) => ({
       id,
-      quantity: orders[id],
+      quantity: cart[id],
     }));
     const data = { ...form, items };
     axios.post("http://localhost:3004/orders", data);

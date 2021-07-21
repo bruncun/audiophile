@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { OrdersContext } from "OrdersContext";
+import CartContext from "CartContext";
 import { useContext } from "react";
 import { useProductsById } from "hooks/useApi";
 import { Product } from "types";
@@ -7,28 +7,28 @@ import { formatter } from "utils";
 
 function CheckoutConfirmation() {
   const history = useHistory();
-  const { orders, removeAll } = useContext(OrdersContext);
-  const queriesInfo = useProductsById(Object.keys(orders));
+  const { getCosts, cart, selectedProductIds, removeAllOrders } = useContext(
+    CartContext
+  );
+  const selectedProductQueries = useProductsById(selectedProductIds);
 
-  if (queriesInfo.every(({ isLoading }) => isLoading)) return <></>;
+  if (selectedProductQueries.some(({ isLoading }) => isLoading)) return <></>;
 
-  if (queriesInfo.every(({ isSuccess }) => isSuccess)) {
-    var {
-      price,
-      image: { mobile },
-      shortName,
-      name,
-      id,
-    } = queriesInfo[0].data as Product;
-  }
-
-  const total = queriesInfo.reduce((sum, { data }) => {
-    const { price, id } = data as Product;
-    return sum + price * orders[id];
-  }, 0);
+  const selectedProducts = selectedProductQueries.map(
+    ({ data }) => data as Product
+  );
+  const firstSelectedProduct = selectedProducts[0];
+  const { total } = getCosts(selectedProducts);
+  const {
+    price,
+    image: { mobile },
+    shortName,
+    name,
+    id,
+  } = firstSelectedProduct;
 
   function onBackToHomeClick() {
-    removeAll();
+    removeAllOrders();
     history.push("/");
   }
 
@@ -81,11 +81,11 @@ function CheckoutConfirmation() {
                                   {shortName}
                                 </span>
                                 <span className="fw-bold text-black-50 mb-0 text-end">
-                                  x{orders[id]}
+                                  x{cart[id]}
                                 </span>
                               </div>
                               <span className="fw-bold text-black-50 mb-0">
-                                {formatter.format(price * orders[id])}
+                                {formatter.format(price * cart[id])}
                               </span>
                             </div>
                           </div>
@@ -93,7 +93,7 @@ function CheckoutConfirmation() {
                       </li>
                     </ul>
                     <span className="text-black-50 fw-bold text-center mb-0 fs-7 mt-1">
-                      and {Object.keys(orders).length - 1} other item(s)
+                      and {selectedProductIds.length - 1} other item(s)
                     </span>
                   </div>
                   <div className="rounded-bottom bg-dark d-flex px-4 py-3 flex-column">
@@ -124,11 +124,11 @@ function CheckoutConfirmation() {
                                   {shortName}
                                 </span>
                                 <span className="fw-bold text-black-50 mb-0 text-end">
-                                  x{orders[id]}
+                                  x{cart[id]}
                                 </span>
                               </div>
                               <span className="fw-bold text-black-50 mb-0">
-                                {formatter.format(price * orders[id])}
+                                {formatter.format(price * cart[id])}
                               </span>
                             </div>
                           </div>
@@ -136,7 +136,7 @@ function CheckoutConfirmation() {
                       </li>
                     </ul>
                     <span className="text-black-50 fw-bold text-center mb-0 fs-7 mt-1">
-                      and {Object.keys(orders).length - 1} other item(s)
+                      and {selectedProductIds.length - 1} other item(s)
                     </span>
                   </div>
                   <div className="rounded-end bg-dark d-flex p-4 flex-column w-75 justify-content-center">

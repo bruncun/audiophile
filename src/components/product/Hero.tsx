@@ -1,31 +1,15 @@
-import { useContext } from "react";
 import { Product } from "types";
-import ResponsiveImage from "components/shared/ResponsiveImage";
-import { Link, useHistory, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { OrdersContext } from "OrdersContext";
+import { Link } from "react-router-dom";
 import { formatter } from "utils";
-import { LocationWithNavState } from "types";
+import OrderControls from "components/product/OrderControls";
+import ResponsiveImage from "components/shared/ResponsiveImage";
 
-type HeroProps = {
+interface HeroProps {
   product: Product;
-};
+}
 
-function Hero({
-  product: { isNew, image, name, description, price, category, id },
-}: HeroProps) {
-  const history = useHistory();
-  const location = useLocation() as LocationWithNavState;
-  const { addOne } = useContext(OrdersContext);
-  let [quantity, setQuantity] = useState(1);
-
-  function onAddToCartButtonClick() {
-    addOne({ quantity, productId: id });
-    history.replace({
-      ...location,
-      state: { ...location.state, showCart: true },
-    });
-  }
+function Hero({ product }: HeroProps) {
+  const { isNew, image, name, description, price, category } = product;
 
   return (
     <>
@@ -57,41 +41,7 @@ function Hero({
             <h6 className="ls-3 mb-4 pb-2 fw-bold">
               {formatter.format(price)}
             </h6>
-            <div className="btn-group me-3" role="group" aria-label="Quantity">
-              <button
-                type="button"
-                className="btn btn-light px-3 text-black-n0"
-                data-cy="decrement-quantity"
-                onClick={() =>
-                  setQuantity(quantity > 1 ? --quantity : quantity)
-                }
-              >
-                -
-              </button>
-              <div
-                className="bg-light d-flex align-items-center justify-content-center"
-                style={{ width: "3rem" }}
-              >
-                <span className="fw-bold" data-cy="quantity">
-                  {quantity}
-                </span>
-              </div>
-              <button
-                type="button"
-                data-cy="increment-quantity"
-                className="btn btn-light px-3 text-black-50"
-                onClick={() => setQuantity(++quantity)}
-              >
-                +
-              </button>
-            </div>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onClick={onAddToCartButtonClick}
-            >
-              Add to cart
-            </button>
+            <OrderControls product={product} />
           </div>
         </div>
       </div>

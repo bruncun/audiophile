@@ -1,4 +1,4 @@
-import { OrdersContext } from "OrdersContext";
+import CartContext from "CartContext";
 import { useContext } from "react";
 import { formatter } from "utils";
 import { Product } from "types";
@@ -6,21 +6,15 @@ import { useProductsById } from "hooks/useApi";
 import CheckoutProduct from "./CheckoutProduct";
 
 function CheckoutSummary() {
-  const { orders } = useContext(OrdersContext);
-  const queriesInfo = useProductsById(Object.keys(orders));
+  const { getCosts, selectedProductIds, cart } = useContext(CartContext);
+  const selectedProductQueries = useProductsById(selectedProductIds);
 
-  if (queriesInfo.every(({ isLoading }) => isLoading)) return <></>;
+  if (selectedProductQueries.some(({ isLoading }) => isLoading)) return <></>;
 
-  const total = queriesInfo.reduce((sum, { data }) => {
-    const { price, id } = data as Product;
-    return sum + price * orders[id];
-  }, 0);
-
-  const shipping = 50;
-
-  const vat = (total + shipping) * 0.2;
-
-  const grandTotal = total + shipping + vat;
+  const selectedProducts = selectedProductQueries.map(
+    ({ data }) => data as Product
+  );
+  const { total, shipping, vat, grandTotal } = getCosts(selectedProducts);
 
   return (
     <div className="card bg-white">
@@ -28,11 +22,13 @@ function CheckoutSummary() {
         <h6 className="fw-bold mb-4 pb-2 d-md-none d-xxl-block">Summary</h6>
         <h3 className="fw-bold mb-4 d-none d-md-block d-xxl-none">Summary</h3>
         <ul className="list-unstyled mb-0">
-          {queriesInfo.map(({ data }) => {
-            const product = data as Product;
-            const { id } = product;
-            return <CheckoutProduct product={product} quantity={orders[id]} />;
-          })}
+          {selectedProducts.map((product, index) => (
+            <CheckoutProduct
+              product={product}
+              quantity={cart[product.id]}
+              key={index}
+            />
+          ))}
         </ul>
         <div className="d-flex justify-content-between py-2">
           <span className="text-black-50 text-uppercase">Total</span>

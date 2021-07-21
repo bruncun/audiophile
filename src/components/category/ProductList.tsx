@@ -9,12 +9,11 @@ function ProductList({ products = [] }: ProductListProps) {
   return (
     <>
       {products.map((product, idx) => (
-        <div className={idx !== products.length - 1 ? "mb-6 pb-4" : ""}>
-          <ProductFeature
-            product={product}
-            key={idx}
-            swapColOrder={idx % 2 !== 0}
-          />
+        <div
+          className={idx !== products.length - 1 ? "mb-6 pb-4" : ""}
+          key={idx}
+        >
+          <ProductFeature product={product} swapColOrder={idx % 2 !== 0} />
         </div>
       ))}
     </>
