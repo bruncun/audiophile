@@ -1,6 +1,5 @@
 # TODO
 
--redirect to root on 404
 -refactor html semantics
 -implement empty, error, and loading states
 -implement all links

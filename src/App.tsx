@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   useHistory,
   useLocation,
+  Redirect,
 } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
 import useCart from "hooks/useCart";
@@ -55,8 +56,11 @@ function App() {
             <Route path="/checkout">
               <CheckoutPage />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <HomePage />
+            </Route>
+            <Route path="*">
+              <Redirect to="/" />
             </Route>
           </Switch>
           <Footer />
