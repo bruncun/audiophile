@@ -3,20 +3,22 @@ import axios from "axios";
 
 const getProductsByCategory = async (category: string): Promise<Product[]> => {
   const { data } = await axios.get(
-    `http://localhost:3004/products?category=${category}&_sort=id&_order=desc`
+    `${process.env.REACT_APP_API_URL}/products?category=${category}&_sort=id&_order=desc`
   );
   return data;
 };
 
 const getProductBySlug = async (slug: string): Promise<Product[]> => {
   const { data } = await axios.get(
-    `http://localhost:3004/products?slug=${slug}`
+    `${process.env.REACT_APP_API_URL}/products?slug=${slug}`
   );
   return data;
 };
 
 const getProductById = async (id: string): Promise<Product> => {
-  const { data } = await axios.get(`http://localhost:3004/products/${id}`);
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_API_URL}/products/${id}`
+  );
   return data;
 };
 

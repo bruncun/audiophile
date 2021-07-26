@@ -1,6 +1,6 @@
 describe("xx99-mark-two-headphones", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000/products/xx99-mark-two-headphones");
+    cy.visit("/products/xx99-mark-two-headphones");
   });
 
   it("loads", function () {

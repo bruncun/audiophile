@@ -34,7 +34,7 @@ function Checkout() {
       quantity: cart[id],
     }));
     const data = { ...form, items };
-    axios.post("http://localhost:3004/orders", data);
+    axios.post(`${process.env.REACT_APP_API_URL}/orders`, data);
     setShowConfirmation(true);
   };
 

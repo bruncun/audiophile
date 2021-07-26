@@ -12,7 +12,6 @@
 -metadata
 -optimize responsive images across all sections
 -hover states
--rename pages to NamePage
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
 -prevent checkout if empty cart
@@ -22,7 +21,6 @@
 -change cart order item naming to items to sync w/ api (an order has items)
 -try making modal background a link? (for vimari / accessibility)
 -focus/active/ states/borders
--env variable for api baseurl
 -fix scroll restoration and on validation behavior
 -remove favicon
 -look into createContext typing
