@@ -1,10 +1,11 @@
 import CartContext from "CartContext";
 import { useContext } from "react";
 import { formatter } from "utils";
-import { useProductsById } from "hooks/useApi";
+import { useProductsById, useSavePurchase } from "hooks/useApi";
 import CheckoutProduct from "./CheckoutProduct";
 
 function CheckoutSummary() {
+  const { isLoading } = useSavePurchase();
   const { getCosts, selectedProductIds, cart } = useContext(CartContext);
   const selectedProductQueries = useProductsById(selectedProductIds);
 
@@ -52,6 +53,7 @@ function CheckoutSummary() {
         <button
           type="submit"
           className="btn btn-primary d-block w-100"
+          disabled={isLoading}
           data-cy="checkout-pay"
         >
           Continue & Pay

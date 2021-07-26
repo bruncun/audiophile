@@ -2,29 +2,23 @@
 
 -refactor html semantics
 -implement empty, error, and loading states
--implement all links
 -implement animations
 -double check and finesse typography and spacing
 -disable checkout w/ empty cart
 -organize component folder
--pluralize confirmation
 -metadata
 -optimize responsive images across all sections
--hover states
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
 -prevent checkout if empty cart
--disable form on submission
 -vertically center confirmation modal
 -refactor confirmation show modal state to behave like navbar
 -change cart order item naming to items to sync w/ api (an order has items)
 -try making modal background a link? (for vimari / accessibility)
--focus/active/ states/borders
--fix scroll restoration and on validation behavior
--look into createContext typing
--can react-query type data? refactor "as Product"
+-focus/active/states/borders
 -prevent posting to products api
--refactor order post into mutation
 -make aria-current-page in nav dynamic
--make name autofocus in checkout
 -prefetch data
+-optimize renders
+-perfect radio input states and number input hover
+-handle errors

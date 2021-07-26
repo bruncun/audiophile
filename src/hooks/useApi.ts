@@ -1,24 +1,22 @@
-import { useQuery, useQueries } from "react-query";
+import { useQuery, useQueries, useMutation } from "react-query";
 import axios from "axios";
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const getProductsByCategory = async (category: string): Promise<Product[]> => {
   const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/products?category=${category}&_sort=id&_order=desc`
+    `/products?category=${category}&_sort=id&_order=desc`
   );
   return data;
 };
 
 const getProductBySlug = async (slug: string): Promise<Product[]> => {
-  const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/products?slug=${slug}`
-  );
+  const { data } = await axios.get(`/products?slug=${slug}`);
   return data;
 };
 
-const getProductById = async (id: string): Promise<Product> => {
-  const { data } = await axios.get(
-    `${process.env.REACT_APP_API_URL}/products/${id}`
-  );
+const getProductById = async (id: number): Promise<Product> => {
+  const { data } = await axios.get(`/products/${id}`);
   return data;
 };
 
@@ -28,7 +26,7 @@ export function useProductsByCategory(category: string) {
   );
 }
 
-export function useProductById(id: string) {
+export function useProductById(id: number) {
   return useQuery<Product, Error>(["product", id], () => getProductById(id));
 }
 
@@ -38,11 +36,17 @@ export function useProductBySlug(slug: string) {
   );
 }
 
-export function useProductsById(ids: string[]) {
+export function useProductsById(ids: number[]) {
   return useQueries(
     ids.map((id) => ({
       queryKey: ["product", id],
       queryFn: () => getProductById(id),
     }))
+  );
+}
+
+export function useSavePurchase() {
+  return useMutation((newPurchase: Purchase) =>
+    axios.post("/purchases", newPurchase)
   );
 }

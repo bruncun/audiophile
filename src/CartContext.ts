@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 interface CartContextInterface {
   dispatch: (action: CartAction) => void;
-  selectedProductIds: string[];
+  selectedProductIds: number[];
   getCosts: (selectedProducts: Product[]) => Costs;
   cart: Cart;
 }

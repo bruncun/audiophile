@@ -5,10 +5,10 @@ import CheckoutForm from "components/checkout/CheckoutForm";
 import CheckoutSummary from "components/checkout/CheckoutSummary";
 import ConfirmationModal from "components/checkout/ConfirmationModal";
 import CartContext from "CartContext";
-import axios from "axios";
 import { modifyBodyClassList } from "utils";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CheckoutFormContext from "CheckoutFormContext";
+import { useSavePurchase } from "hooks/useApi";
 
 function Checkout() {
   const {
@@ -18,24 +18,27 @@ function Checkout() {
     watch,
   } = useForm<ICheckoutFormValues>();
   const paymentMethod = watch("paymentMethod", "");
-  const [showConfirmation, setShowConfirmation] = useState(false);
   const { cart } = useContext(CartContext);
+  const { mutate, isSuccess } = useSavePurchase();
 
-  if (showConfirmation) {
+  if (isSuccess) {
     modifyBodyClassList("overflow-hidden", "add");
+    localStorage.removeItem("audiophile-cart");
   } else {
     modifyBodyClassList("overflow-hidden", "remove");
   }
 
   const onFormSubmit: SubmitHandler<ICheckoutFormValues> = (form) => {
-    localStorage.removeItem("audiophile-cart");
-    const items = Object.keys(cart).map((id) => ({
-      id,
-      quantity: cart[id],
-    }));
-    const data = { ...form, items };
-    axios.post(`${process.env.REACT_APP_API_URL}/orders`, data);
-    setShowConfirmation(true);
+    const orders = Object.keys(cart).map((id) => {
+      const productId = parseInt(id);
+
+      return {
+        productId,
+        quantity: cart[productId],
+      };
+    });
+    const data = { ...form, orders };
+    mutate(data);
   };
 
   return (
@@ -50,7 +53,7 @@ function Checkout() {
               errors={errors}
             />
           }
-          checkoutConfirmation={showConfirmation && <ConfirmationModal />}
+          checkoutConfirmation={isSuccess && <ConfirmationModal />}
           checkoutSummary={<CheckoutSummary />}
         />
       </form>

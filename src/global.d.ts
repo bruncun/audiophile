@@ -15,7 +15,7 @@ declare interface Costs {
 }
 
 declare interface Cart {
-  [k: string]: number;
+  [k: number]: number;
 }
 
 declare interface ICheckoutFormValues {
@@ -29,6 +29,10 @@ declare interface ICheckoutFormValues {
   paymentMethod: string;
   eMoneyNumber: string;
   eMoneyPin: string;
+}
+
+declare interface Purchase extends ICheckoutFormValues {
+  orders: Order[];
 }
 
 declare type Image = {

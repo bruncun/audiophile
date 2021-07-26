@@ -24,7 +24,7 @@ function useCart() {
 
   const selectedProductIds = useMemo(
     function () {
-      return Object.keys(cart);
+      return Object.keys(cart).map((key) => parseInt(key));
     },
     [cart]
   );
