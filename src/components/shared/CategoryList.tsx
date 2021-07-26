@@ -2,6 +2,7 @@ import CategoryCard from "./CategoryCard";
 import headphones from "assets/shared/desktop/image-headphones.png";
 import speakers from "assets/shared/desktop/image-speakers.png";
 import earphones from "assets/shared/desktop/image-earphones.png";
+import "./CategoryList.scss";
 
 function CategoryList() {
   return (

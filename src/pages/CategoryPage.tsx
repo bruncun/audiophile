@@ -1,5 +1,5 @@
 import CategoryLayout from "components/category/CategoryLayout";
-import Header from "components/category/Header";
+import CategoryHeader from "components/category/CategoryHeader";
 import About from "components/shared/about/About";
 import CategoryList from "components/shared/CategoryList";
 import { useProductsByCategory } from "hooks/useApi";
@@ -17,7 +17,7 @@ function Category({ category }: CategoryProps) {
   return (
     <CategoryLayout
       category={category}
-      header={<Header category={category} />}
+      categoryHeader={<CategoryHeader category={category} />}
       categoryProductList={<CategoryProductList products={products} />}
       categoryList={<CategoryList />}
       about={<About />}

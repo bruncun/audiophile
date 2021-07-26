@@ -22,3 +22,7 @@
 -optimize renders
 -perfect radio input states and number input hover
 -handle errors
+-refactor sass
+-rename hooks folder to utils?
+-consider moving sass to /sass
+-consider adding tests

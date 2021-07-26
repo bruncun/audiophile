@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import CheckoutLayout from "components/checkout/CheckoutLayout";
 import GoBackButton from "components/checkout/GoBackButton";
 import CheckoutForm from "components/checkout/CheckoutForm";

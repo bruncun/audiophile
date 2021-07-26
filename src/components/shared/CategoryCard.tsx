@@ -1,5 +1,4 @@
 import arrowRight from "assets/shared/desktop/icon-arrow-right.svg";
-import "./CategoryCardList.scss";
 import { Link } from "react-router-dom";
 
 interface CategoryCardProps {

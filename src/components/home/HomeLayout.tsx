@@ -1,7 +1,7 @@
 import "./HomeLayout.scss";
 
 interface HomeLayoutProps {
-  header: React.ReactNode;
+  homeHeader: React.ReactNode;
   categoryList: React.ReactNode;
   zx9SpeakerCard: React.ReactNode;
   zx7SpeakerCard: React.ReactNode;
@@ -11,7 +11,7 @@ interface HomeLayoutProps {
 }
 
 function HomeLayout({
-  header,
+  homeHeader,
   categoryList,
   zx9SpeakerCard,
   zx7SpeakerCard,
@@ -21,7 +21,7 @@ function HomeLayout({
 }: HomeLayoutProps) {
   return (
     <div data-cy="home">
-      <div className="header-wrapper header">{header}</div>
+      <div className="home-header-wrapper home-header">{homeHeader}</div>
       <div className="container-md mt-5 pt-1 mt-md-6 pt-md-2 pt-xxl-4">
         <div className="mt-3 mb-6 pb-4 pt-md-1 pb-md-0 mt-xxl-4 pb-xxl-4">
           {categoryList}

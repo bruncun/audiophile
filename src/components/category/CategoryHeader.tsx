@@ -1,8 +1,8 @@
-interface HeaderProps {
+interface CategoryHeaderProps {
   category: string;
 }
 
-function Header({ category }: HeaderProps) {
+function CategoryHeader({ category }: CategoryHeaderProps) {
   return (
     <>
       <h1 className="fw-bold text-white mb-0 d-md-none h3 text-center">
@@ -15,4 +15,4 @@ function Header({ category }: HeaderProps) {
   );
 }
 
-export default Header;
+export default CategoryHeader;

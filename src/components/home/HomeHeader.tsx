@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "./HomeHeader.scss";
+import "./Header.scss";
 
-function HomeHeader() {
+function Header() {
   return (
     <div className="container h-100 d-flex align-items-center">
       <div className="row text-center text-xxl-start w-100">
@@ -37,4 +37,4 @@ function HomeHeader() {
   );
 }
 
-export default HomeHeader;
+export default Header;
