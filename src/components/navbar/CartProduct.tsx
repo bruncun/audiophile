@@ -1,12 +1,10 @@
-// TODO: Add cart image to product data
-import { Product } from "types";
+import CartContext from "CartContext";
+import { useContext } from "react";
 import { formatter } from "utils";
 
 interface CartProductProps {
   product: Product;
   quantity: number;
-  onDecrementClick: () => void;
-  onIncrementClick: () => void;
 }
 
 function CartProduct({
@@ -14,12 +12,33 @@ function CartProduct({
     image: { mobile },
     price,
     shortName,
+    id,
     name,
   },
   quantity,
-  onDecrementClick,
-  onIncrementClick,
 }: CartProductProps) {
+  const { dispatch } = useContext(CartContext);
+
+  function onDecrementClick() {
+    dispatch({
+      type: "ADD_ORDER",
+      payload: {
+        quantity: -1,
+        productId: id,
+      },
+    });
+  }
+
+  function onIncrementClick() {
+    dispatch({
+      type: "ADD_ORDER",
+      payload: {
+        quantity: 1,
+        productId: id,
+      },
+    });
+  }
+
   return (
     <li className="mb-4">
       <div className="d-flex align-items-center">

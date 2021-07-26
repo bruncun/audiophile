@@ -1,9 +1,7 @@
-import { UseFormRegister, FieldError } from "react-hook-form";
-import { ICheckoutFormValues } from "types";
+import CheckoutFormContext from "CheckoutFormContext";
+import { useContext } from "react";
 
 interface InputProps {
-  register: UseFormRegister<ICheckoutFormValues>;
-  error?: FieldError;
   name: keyof ICheckoutFormValues;
   type?: HTMLInputElement["type"];
   autocomplete?: HTMLInputElement["autocomplete"];
@@ -12,14 +10,16 @@ interface InputProps {
 }
 
 function Input({
-  register,
-  error,
   name,
   label,
   type = "text",
   pattern = undefined,
   autocomplete,
 }: InputProps) {
+  const checkoutFormContext = useContext(CheckoutFormContext)!;
+  const { register, errors } = checkoutFormContext!;
+  const error = errors[name];
+
   return (
     <>
       <div className="d-flex justify-content-between lh-0">

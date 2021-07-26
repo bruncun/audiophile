@@ -1,4 +1,3 @@
-import { Product } from "types";
 import { formatter } from "utils";
 
 interface CheckoutProductProps {

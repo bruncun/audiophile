@@ -1,15 +1,36 @@
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
 import useCart from "hooks/useCart";
 import CartContext from "CartContext";
 import Navbar from "components/navbar/Navbar";
 import Footer from "components/shared/Footer";
-import Home from "pages/Home";
-import Checkout from "components/checkout/Checkout";
-import Category from "components/shared/Category";
-import ProductPage from "components/product/ProductPage";
+import HomePage from "pages/HomePage";
+import CheckoutPage from "pages/CheckoutPage";
+import CategoryPage from "pages/CategoryPage";
+import ProductPage from "pages/ProductPage";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
+
+export function ScrollRestoration(): null {
+  const history = useHistory();
+  const location = useLocation();
+  useEffect(
+    () =>
+      history.listen(({ pathname }, action) => {
+        if (action === "PUSH" && pathname !== location.pathname)
+          window.scrollTo(0, 0);
+      }),
+    [location.pathname, history]
+  );
+  return null;
+}
 
 function App() {
   const cart = useCart();
@@ -18,23 +39,24 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <CartContext.Provider value={cart}>
         <Router>
+          <ScrollRestoration />
           <Navbar />
           <Switch>
             <Route path="/headphones">
-              <Category category="headphones" />
+              <CategoryPage category="headphones" />
             </Route>
             <Route path="/earphones">
-              <Category category="earphones" />
+              <CategoryPage category="earphones" />
             </Route>
             <Route path="/speakers">
-              <Category category="speakers" />
+              <CategoryPage category="speakers" />
             </Route>
             <Route path="/products/:slug" children={<ProductPage />} />
             <Route path="/checkout">
-              <Checkout />
+              <CheckoutPage />
             </Route>
             <Route path="/">
-              <Home />
+              <HomePage />
             </Route>
           </Switch>
           <Footer />

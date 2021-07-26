@@ -1,7 +1,7 @@
 interface CategoryLayoutProps {
   category: string;
   header: React.ReactNode;
-  productList: React.ReactNode;
+  categoryProductList: React.ReactNode;
   categoryList: React.ReactNode;
   about: React.ReactNode;
 }
@@ -9,7 +9,7 @@ interface CategoryLayoutProps {
 function CategoryLayout({
   category,
   header,
-  productList,
+  categoryProductList,
   categoryList,
   about,
 }: CategoryLayoutProps) {
@@ -19,7 +19,9 @@ function CategoryLayout({
         <div className="my-2 my-xxl-0">{header}</div>
       </div>
       <div className="container-md">
-        <div className="py-5 mt-3 mb-4 pt-md-6 mt-md-4">{productList}</div>
+        <div className="py-5 mt-3 mb-4 pt-md-6 mt-md-4">
+          {categoryProductList}
+        </div>
         <div className="py-5">
           <div className="mt-4 mb-4 mt-md-4 pt-1">{categoryList}</div>
         </div>

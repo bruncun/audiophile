@@ -1,7 +1,6 @@
 import CartContext from "CartContext";
 import { useContext } from "react";
 import { formatter } from "utils";
-import { Product } from "types";
 import { useProductsById } from "hooks/useApi";
 import CheckoutProduct from "./CheckoutProduct";
 

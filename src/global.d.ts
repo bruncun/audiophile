@@ -1,23 +1,24 @@
-export interface Costs {
+type CartAction =
+  | { type: "ADD_ORDER"; payload: Order }
+  | { type: "REMOVE_ALL_ORDERS" };
+
+declare interface Order {
+  productId: number;
+  quantity: number;
+}
+
+declare interface Costs {
   total: number;
   shipping: number;
   vat: number;
   grandTotal: number;
 }
 
-export interface Cart {
+declare interface Cart {
   [k: string]: number;
 }
 
-export interface CartContextInterface {
-  addOrder: (order: Order) => void;
-  removeAllOrders: () => void;
-  selectedProductIds: string[];
-  getCosts: (selectedProducts: Product[]) => Costs;
-  cart: Cart;
-}
-
-export interface ICheckoutFormValues {
+declare interface ICheckoutFormValues {
   name: string;
   email: string;
   phoneNumber: string;
@@ -30,18 +31,13 @@ export interface ICheckoutFormValues {
   eMoneyPin: string;
 }
 
-export type Image = {
+declare type Image = {
   mobile: string;
   tablet: string;
   desktop: string;
 };
 
-export type Order = {
-  productId: number;
-  quantity: number;
-};
-
-export type Product = {
+declare type Product = {
   id: number;
   name: string;
   shortName: string;
@@ -69,6 +65,6 @@ export type Product = {
   };
 };
 
-export interface LocationWithNavState extends Location {
+declare interface LocationWithNavState extends Location {
   state: { showCollapse?: boolean; showCart?: boolean };
 }

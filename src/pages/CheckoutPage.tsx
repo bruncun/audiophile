@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
-import CheckoutLayout from "./CheckoutLayout";
-import GoBackButton from "./GoBackButton";
-import CheckoutForm from "./CheckoutForm";
-import CheckoutSummary from "./CheckoutSummary";
-import CheckoutConfirmation from "./CheckoutConfirmation";
+import CheckoutLayout from "components/checkout/CheckoutLayout";
+import GoBackButton from "components/checkout/GoBackButton";
+import CheckoutForm from "components/checkout/CheckoutForm";
+import CheckoutSummary from "components/checkout/CheckoutSummary";
+import ConfirmationModal from "components/checkout/ConfirmationModal";
 import CartContext from "CartContext";
 import axios from "axios";
 import { modifyBodyClassList } from "utils";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { ICheckoutFormValues } from "types";
+import CheckoutFormContext from "CheckoutFormContext";
 
 function Checkout() {
   const {
@@ -39,20 +39,22 @@ function Checkout() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
-      <CheckoutLayout
-        goBackButton={<GoBackButton />}
-        checkoutForm={
-          <CheckoutForm
-            register={register}
-            paymentMethod={paymentMethod}
-            errors={errors}
-          />
-        }
-        checkoutConfirmation={showConfirmation && <CheckoutConfirmation />}
-        checkoutSummary={<CheckoutSummary />}
-      />
-    </form>
+    <CheckoutFormContext.Provider value={{ register, errors, paymentMethod }}>
+      <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
+        <CheckoutLayout
+          goBackButton={<GoBackButton />}
+          checkoutForm={
+            <CheckoutForm
+              register={register}
+              paymentMethod={paymentMethod}
+              errors={errors}
+            />
+          }
+          checkoutConfirmation={showConfirmation && <ConfirmationModal />}
+          checkoutSummary={<CheckoutSummary />}
+        />
+      </form>
+    </CheckoutFormContext.Provider>
   );
 }
 

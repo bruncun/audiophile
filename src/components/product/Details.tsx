@@ -1,5 +1,3 @@
-import { Product } from "types";
-
 type DetailsProps = {
   product: Product;
 };

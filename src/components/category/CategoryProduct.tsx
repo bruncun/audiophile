@@ -1,4 +1,3 @@
-import { Product } from "types";
 import { Link } from "react-router-dom";
 import ResponsiveImage from "components/shared/ResponsiveImage";
 

@@ -1,6 +1,5 @@
 import { useQuery, useQueries } from "react-query";
 import axios from "axios";
-import { Product } from "types";
 
 const getProductsByCategory = async (category: string): Promise<Product[]> => {
   const { data } = await axios.get(
@@ -16,7 +15,7 @@ const getProductBySlug = async (slug: string): Promise<Product[]> => {
   return data;
 };
 
-const getProductById = async (id: string): Promise<[Product]> => {
+const getProductById = async (id: string): Promise<Product> => {
   const { data } = await axios.get(`http://localhost:3004/products/${id}`);
   return data;
 };
@@ -28,7 +27,7 @@ export function useProductsByCategory(category: string) {
 }
 
 export function useProductById(id: string) {
-  return useQuery<[Product], Error>(["product", id], () => getProductById(id));
+  return useQuery<Product, Error>(["product", id], () => getProductById(id));
 }
 
 export function useProductBySlug(slug: string) {

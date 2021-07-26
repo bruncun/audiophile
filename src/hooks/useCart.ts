@@ -1,37 +1,37 @@
-import { Order, Product, Cart } from "types";
-import { useState, useEffect } from "react";
+import { useReducer, useEffect, useMemo } from "react";
 
 const storedCartState = localStorage.getItem("audiophile-cart");
 const initialCartState = storedCartState ? JSON.parse(storedCartState) : {};
 
+function cartReducer(state: Cart, action: CartAction) {
+  switch (action.type) {
+    case "REMOVE_ALL_ORDERS":
+      return {};
+    case "ADD_ORDER":
+      const { productId, quantity } = action.payload;
+      const newState = { ...state };
+
+      if (!(productId in newState)) newState[productId] = 0;
+      const newQuantity = newState[productId] + quantity;
+      newState[productId] = newQuantity > 1 ? newQuantity : 1;
+
+      return newState;
+  }
+}
+
 function useCart() {
-  const [cart, setCart] = useState<Cart>(initialCartState);
+  const [cart, dispatch] = useReducer(cartReducer, initialCartState);
 
-  const selectedProductIds = Object.keys(cart);
-
-  useEffect(
+  const selectedProductIds = useMemo(
     function () {
-      localStorage.setItem("audiophile-cart", JSON.stringify(cart));
+      return Object.keys(cart);
     },
     [cart]
   );
 
-  function addOrder({ productId, quantity }: Order) {
-    const newCart = { ...cart };
-
-    if (!(productId in newCart)) newCart[productId] = 0;
-    const newQuantity = newCart[productId] + quantity;
-    newCart[productId] = newQuantity > 1 ? newQuantity : 1;
-    setCart(newCart);
-  }
-
-  function removeAllOrders() {
-    setCart({});
-  }
-
   function getCosts(selectedProducts: Product[]) {
     const total = selectedProducts.reduce(
-      (sum, { price, id }) => sum + price * cart[id],
+      (total, { price, id }) => total + price * cart[id],
       0
     );
     const shipping = 50;
@@ -46,7 +46,19 @@ function useCart() {
     };
   }
 
-  return { cart, getCosts, selectedProductIds, addOrder, removeAllOrders };
+  useEffect(
+    function () {
+      localStorage.setItem("audiophile-cart", JSON.stringify(cart));
+    },
+    [cart]
+  );
+
+  return {
+    cart,
+    dispatch,
+    getCosts,
+    selectedProductIds,
+  };
 }
 
 export default useCart;

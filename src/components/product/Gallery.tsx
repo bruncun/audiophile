@@ -1,4 +1,3 @@
-import { Product } from "types";
 import ResponsiveImage from "components/shared/ResponsiveImage";
 
 type HeroProps = {

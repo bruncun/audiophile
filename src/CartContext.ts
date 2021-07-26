@@ -1,10 +1,15 @@
 import { createContext } from "react";
-import { CartContextInterface } from "types";
+
+interface CartContextInterface {
+  dispatch: (action: CartAction) => void;
+  selectedProductIds: string[];
+  getCosts: (selectedProducts: Product[]) => Costs;
+  cart: Cart;
+}
 
 const CartContext = createContext<CartContextInterface>({
+  dispatch: () => {},
   cart: {},
-  addOrder: () => {},
-  removeAllOrders: () => {},
   getCosts: () => ({ shipping: 0, vat: 0, grandTotal: 0, total: 0 }),
   selectedProductIds: [],
 });

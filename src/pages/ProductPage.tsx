@@ -1,13 +1,12 @@
-import ProductLayout from "./ProductLayout";
-import Hero from "./Hero";
-import Details from "./Details";
-import Gallery from "./Gallery";
-import Suggestions from "./Suggestions";
+import ProductLayout from "components/product/ProductLayout";
+import Hero from "components/product/Hero";
+import Details from "components/product/Details";
+import Gallery from "components/product/Gallery";
+import Suggestions from "components/product/Suggestions";
 import CategoryList from "components/shared/CategoryList";
 import About from "components/shared/about/About";
 import { useParams } from "react-router-dom";
 import { useProductBySlug } from "hooks/useApi";
-import { Product } from "types";
 
 interface ProductPageParams {
   slug: string;

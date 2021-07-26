@@ -1,9 +1,7 @@
 import { useContext } from "react";
-import { Product } from "types";
 import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import CartContext from "CartContext";
-import { LocationWithNavState } from "types";
 
 type OrderControlsProps = {
   product: Product;
@@ -12,11 +10,11 @@ type OrderControlsProps = {
 function OrderControls({ product: { id } }: OrderControlsProps) {
   const history = useHistory();
   const location = useLocation() as LocationWithNavState;
-  const { addOrder } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
   let [quantity, setQuantity] = useState(1);
 
   function onAddToCartButtonClick() {
-    addOrder({ quantity, productId: id });
+    dispatch({ type: "ADD_ORDER", payload: { quantity, productId: id } });
     history.replace({
       ...location,
       state: { ...location.state, showCart: true },

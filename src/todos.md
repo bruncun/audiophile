@@ -7,11 +7,9 @@
 -set all image size attributes to prevent render jumps
 -implement animations
 -double check and finesse typography and spacing
--move cost calculations into hook
 -disable checkout w/ empty cart
 -organize component folder
 -pluralize confirmation
--form validation
 -metadata
 -optimize responsive images across all sections
 -hover states
@@ -31,4 +29,8 @@
 -look into createContext typing
 -can react-query type data? refactor "as Product"
 -prevent posting to products api
--refactor hook to reducer?
+-implement confirmation collapse
+-refactor order post into mutation
+-make aria-current-page in nav dynamic
+-make name autofocus in checkout
+-prefetch data

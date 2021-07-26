@@ -3,7 +3,7 @@ import Header from "components/category/Header";
 import About from "components/shared/about/About";
 import CategoryList from "components/shared/CategoryList";
 import { useProductsByCategory } from "hooks/useApi";
-import ProductList from "components/category/ProductList";
+import CategoryProductList from "components/category/CategoryProductList";
 
 interface CategoryProps {
   category: string;
@@ -18,7 +18,7 @@ function Category({ category }: CategoryProps) {
     <CategoryLayout
       category={category}
       header={<Header category={category} />}
-      productList={<ProductList products={products} />}
+      categoryProductList={<CategoryProductList products={products} />}
       categoryList={<CategoryList />}
       about={<About />}
     />
