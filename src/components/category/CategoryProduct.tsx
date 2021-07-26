@@ -42,10 +42,15 @@ function ProductFeature({
               New Product
             </small>
           )}
-          <h3 className="fw-bold me-lg-6 mb-4 d-md-none">{name}</h3>
-          <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0 me-xxl-4">
-            {name}
-          </h1>
+          <Link
+            to={`/products/${slug}`}
+            className="text-decoration-none text-body"
+          >
+            <h3 className="fw-bold me-lg-6 mb-4 d-md-none">{name}</h3>
+            <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0 me-xxl-4">
+              {name}
+            </h1>
+          </Link>
           <p className="text-black-50 mb-5 lh-base me-lg-4">{description}</p>
           <Link className="btn btn-primary" to={`/products/${slug}`}>
             See Product

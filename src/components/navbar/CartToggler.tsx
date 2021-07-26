@@ -16,7 +16,7 @@ function Navbar() {
       }}
       replace
     >
-      <img src={cart} alt="Cart" />
+      <img src={cart} alt="Cart" width="23" height="20" />
     </Link>
   );
 }

@@ -4,7 +4,12 @@ function CheckoutForm() {
   return (
     <div className="d-flex align-items-center">
       <div className="flex-shrink-0">
-        <img src={cashOnDelivery} alt="Cash on Delivery" />
+        <img
+          src={cashOnDelivery}
+          alt="Cash on Delivery"
+          width="48"
+          height="48"
+        />
       </div>
       <div className="flex-grow-1 ms-4">
         <p className="text-black-50 mb-0">

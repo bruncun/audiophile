@@ -10,7 +10,7 @@ function BillingDetails() {
       <h6 className="text-primary fw-bold mb-3 fs-7">Billing Details</h6>
       <div className="row gx-3">
         <div className="col-md-6 mb-4">
-          <Input name="name" label="Name" />
+          <Input name="name" label="Name" autofocus />
         </div>
         <div className="col-md-6 mb-4">
           <Input

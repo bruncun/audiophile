@@ -13,12 +13,16 @@ function Footer() {
           className="align-top"
           src={orangeRectangle}
           alt="Orange rectangle"
+          width="101"
+          height="4"
         />
       </div>
       <div className="container">
         <div className="d-lg-flex justify-content-between">
           <div className="text-center text-md-start mb-5">
-            <img src={logo} alt="Audiophile" />
+            <Link to="/">
+              <img src={logo} alt="Audiophile" width="143" height="25" />
+            </Link>
           </div>
           <div>
             <Link
@@ -64,17 +68,17 @@ function Footer() {
           <ul className="list-inline d-md-inline-block mb-0">
             <li className="list-inline-item">
               <a href="https://facebook.com/audiophile">
-                <img src={facebook} alt="Facebook" />
+                <img src={facebook} alt="Facebook" width="24" height="24" />
               </a>
             </li>
             <li className="list-inline-item">
               <a href="https://twitter.com/audiophile">
-                <img src={twitter} alt="Twitter" />
+                <img src={twitter} alt="Twitter" width="24" height="20" />
               </a>
             </li>
             <li className="list-inline-item">
               <a href="https://instagram.com/audiophile">
-                <img src={instagram} alt="Instagram" />
+                <img src={instagram} alt="Instagram" width="24" height="24" />
               </a>
             </li>
           </ul>

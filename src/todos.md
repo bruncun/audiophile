@@ -3,7 +3,6 @@
 -refactor html semantics
 -implement empty, error, and loading states
 -implement all links
--set all image size attributes to prevent render jumps
 -implement animations
 -double check and finesse typography and spacing
 -disable checkout w/ empty cart
@@ -22,11 +21,9 @@
 -try making modal background a link? (for vimari / accessibility)
 -focus/active/ states/borders
 -fix scroll restoration and on validation behavior
--remove favicon
 -look into createContext typing
 -can react-query type data? refactor "as Product"
 -prevent posting to products api
--implement confirmation collapse
 -refactor order post into mutation
 -make aria-current-page in nav dynamic
 -make name autofocus in checkout

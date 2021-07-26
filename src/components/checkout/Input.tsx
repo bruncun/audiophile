@@ -5,6 +5,7 @@ interface InputProps {
   name: keyof ICheckoutFormValues;
   type?: HTMLInputElement["type"];
   autocomplete?: HTMLInputElement["autocomplete"];
+  autofocus?: boolean;
   pattern?: RegExp;
   label: string;
 }
@@ -15,6 +16,7 @@ function Input({
   type = "text",
   pattern = undefined,
   autocomplete,
+  autofocus,
 }: InputProps) {
   const checkoutFormContext = useContext(CheckoutFormContext)!;
   const { register, errors } = checkoutFormContext!;
@@ -37,6 +39,7 @@ function Input({
       <input
         type={type}
         autoComplete={autocomplete}
+        autoFocus={autofocus}
         pattern={typeof pattern === "object" ? pattern.toString() : undefined}
         className={`form-control ${error ? "border-danger border-2" : ""}`}
         {...register(name, { required: true, pattern })}
