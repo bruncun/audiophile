@@ -11,7 +11,7 @@ function GoBackButton() {
       onClick={onGoBackClick}
       type="button"
       data-cy="go-back-button"
-      className="text-black-50 d-block text-decoration-none p-0 btn btn-link text-capitalize fs-base ls-0"
+      className="text-black-50 d-inline-block text-decoration-none p-0 btn btn-link text-capitalize fs-base ls-0 text-primary-hover"
     >
       Go Back
     </button>

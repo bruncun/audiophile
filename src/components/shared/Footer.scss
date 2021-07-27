@@ -1,0 +1,9 @@
+@import "scss/shared";
+
+.footer-icon {
+  fill: $white;
+
+  &:hover {
+    fill: $primary;
+  }
+}

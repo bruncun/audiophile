@@ -73,7 +73,7 @@ function CartProduct({
             >
               <button
                 type="button"
-                className="btn btn-light"
+                className="btn btn-light text-black-50 text-primary-hover"
                 onClick={onDecrementClick}
               >
                 -
@@ -83,7 +83,7 @@ function CartProduct({
               </button>
               <button
                 type="button"
-                className="btn btn-light"
+                className="btn btn-light text-black-50 text-primary-hover"
                 onClick={onIncrementClick}
               >
                 +

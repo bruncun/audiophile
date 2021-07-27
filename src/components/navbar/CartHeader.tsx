@@ -14,7 +14,7 @@ function CartHeader() {
         Cart ({selectedProductIds.length})
       </h6>
       <button
-        className="btn btn-link p-0 ls-0 text-black-50 text-capitalize"
+        className="btn btn-link p-0 ls-0 text-black-50 text-capitalize text-primary-hover"
         onClick={onRemoveAllClick}
       >
         Remove <span className="text-lowercase">all</span>

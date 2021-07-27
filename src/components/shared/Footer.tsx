@@ -2,8 +2,11 @@ import orangeRectangle from "assets/shared/desktop/image-orange-rectangle.svg";
 import logo from "assets/shared/desktop/logo.svg";
 import instagram from "assets/shared/desktop/icon-instagram.svg";
 import twitter from "assets/shared/desktop/icon-twitter.svg";
-import facebook from "assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as IconFacebook } from "assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as IconTwitter } from "assets/shared/desktop/icon-twitter.svg";
+import { ReactComponent as IconInstagram } from "assets/shared/desktop/icon-instagram.svg";
 import { Link } from "react-router-dom";
+import "./Footer.scss";
 
 function Footer() {
   return (
@@ -27,25 +30,25 @@ function Footer() {
           <div>
             <Link
               to="/"
-              className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Home
             </Link>
             <Link
               to="/headphones"
-              className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Headphones
             </Link>
             <Link
               to="/headphones"
-              className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
             >
               Speakers
             </Link>
             <Link
               to="/earphones"
-              className="text-white text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-5 d-block d-md-inline-block"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-5 d-block d-md-inline-block"
             >
               Earphones
             </Link>
@@ -68,17 +71,17 @@ function Footer() {
           <ul className="list-inline d-md-inline-block mb-0">
             <li className="list-inline-item">
               <a href="https://facebook.com/audiophile">
-                <img src={facebook} alt="Facebook" width="24" height="24" />
+                <IconFacebook className="footer-icon" />
               </a>
             </li>
             <li className="list-inline-item">
               <a href="https://twitter.com/audiophile">
-                <img src={twitter} alt="Twitter" width="24" height="20" />
+                <IconTwitter className="footer-icon" />
               </a>
             </li>
             <li className="list-inline-item">
               <a href="https://instagram.com/audiophile">
-                <img src={instagram} alt="Instagram" width="24" height="24" />
+                <IconInstagram className="footer-icon" />
               </a>
             </li>
           </ul>

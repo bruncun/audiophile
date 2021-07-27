@@ -15,7 +15,7 @@ function Hero({ product }: HeroProps) {
       <Link
         to={`/${category}`}
         data-cy="go-back-link"
-        className="text-black-50 mb-4 d-block text-decoration-none mb-xxl-5 pb-xxl-2"
+        className="text-black-50 mb-4 d-inline-block text-decoration-none mb-xxl-5 pb-xxl-2 text-primary-hover"
       >
         Go Back
       </Link>

@@ -14,7 +14,10 @@ function PaymentDetails() {
         </div>
         <div className="col-md-6">
           <div className="mb-3">
-            <div className="form-check py-3 rounded border">
+            <label
+              className="fw-bold d-block py-3 rounded border form-check border-primary-hover"
+              htmlFor="e-money"
+            >
               <input
                 className="form-check-input ms-0 me-2"
                 type="radio"
@@ -22,13 +25,14 @@ function PaymentDetails() {
                 value="e-money"
                 id="e-money"
               />
-              <label className="form-check-label fw-bold" htmlFor="e-money">
-                e-Money
-              </label>
-            </div>
+              <span className="fw-bold">e-Money</span>
+            </label>
           </div>
           <div className="mb-4 pb-2 pb-xxl-0">
-            <div className="form-check py-3 rounded border">
+            <label
+              className="fw-bold d-block py-3 rounded border form-check border-primary-hover"
+              htmlFor="cash-on-delivery"
+            >
               <input
                 className="form-check-input ms-0 me-2"
                 type="radio"
@@ -36,13 +40,8 @@ function PaymentDetails() {
                 value="cash-on-delivery"
                 id="cash-on-delivery"
               />
-              <label
-                className="form-check-label fw-bold"
-                htmlFor="cash-on-delivery"
-              >
-                Cash on Delivery
-              </label>
-            </div>
+              <span className="fw-bold">Cash on Delivery</span>
+            </label>
           </div>
         </div>
       </div>

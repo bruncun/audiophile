@@ -26,7 +26,7 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
       <div className="btn-group me-3" role="group" aria-label="Quantity">
         <button
           type="button"
-          className="btn btn-light px-3 text-black-n0"
+          className="btn btn-light px-3 text-black-50 text-primary-hover"
           data-cy="decrement-quantity"
           onClick={() => setQuantity(quantity > 1 ? --quantity : quantity)}
         >
@@ -43,7 +43,7 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
         <button
           type="button"
           data-cy="increment-quantity"
-          className="btn btn-light px-3 text-black-50"
+          className="btn btn-light px-3 text-black-50 text-primary-hover"
           onClick={() => setQuantity(++quantity)}
         >
           +

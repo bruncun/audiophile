@@ -5,7 +5,6 @@
 -implement animations
 -double check and finesse typography and spacing
 -disable checkout w/ empty cart
--organize component folder
 -metadata
 -optimize responsive images across all sections
 -fix tablet breakpoint
@@ -20,7 +19,6 @@
 -make aria-current-page in nav dynamic
 -prefetch data
 -optimize renders
--perfect radio input states and number input hover
 -handle errors
 -refactor sass
 -rename hooks folder to utils?

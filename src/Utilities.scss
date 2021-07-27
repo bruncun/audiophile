@@ -29,5 +29,21 @@ $utilities: map-merge(
           )
         ),
     ),
+    "text": (
+      property: color,
+      class: text,
+      state: hover,
+      values: (
+        primary: $primary,
+      ),
+    ),
+    "border-hover": (
+      property: border-color,
+      class: border,
+      state: hover,
+      values: (
+        primary: $primary,
+      ),
+    ),
   )
 );
