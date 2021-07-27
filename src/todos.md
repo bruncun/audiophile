@@ -1,15 +1,13 @@
 # TODO
 
 -refactor html semantics
--implement empty, error, and loading states
+-implement error, and loading states
 -implement animations
 -double check and finesse typography and spacing
--disable checkout w/ empty cart
 -metadata
 -optimize responsive images across all sections
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
--prevent checkout if empty cart
 -vertically center confirmation modal
 -refactor confirmation show modal state to behave like navbar
 -change cart order item naming to items to sync w/ api (an order has items)

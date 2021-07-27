@@ -9,6 +9,7 @@ import { modifyBodyClassList } from "utils";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CheckoutFormContext from "CheckoutFormContext";
 import { useSavePurchase } from "hooks/useApi";
+import { Redirect } from "react-router-dom";
 
 function Checkout() {
   const {
@@ -18,7 +19,7 @@ function Checkout() {
     watch,
   } = useForm<ICheckoutFormValues>();
   const paymentMethod = watch("paymentMethod", "");
-  const { cart } = useContext(CartContext);
+  const { cart, selectedProductIds } = useContext(CartContext);
   const { mutate, isSuccess } = useSavePurchase();
 
   if (isSuccess) {
@@ -41,24 +42,28 @@ function Checkout() {
     mutate(data);
   };
 
-  return (
-    <CheckoutFormContext.Provider value={{ register, errors, paymentMethod }}>
-      <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
-        <CheckoutLayout
-          goBackButton={<GoBackButton />}
-          checkoutForm={
-            <CheckoutForm
-              register={register}
-              paymentMethod={paymentMethod}
-              errors={errors}
-            />
-          }
-          checkoutConfirmation={isSuccess && <ConfirmationModal />}
-          checkoutSummary={<CheckoutSummary />}
-        />
-      </form>
-    </CheckoutFormContext.Provider>
-  );
+  if (selectedProductIds.length === 0) {
+    return <Redirect to="/" />;
+  } else {
+    return (
+      <CheckoutFormContext.Provider value={{ register, errors, paymentMethod }}>
+        <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
+          <CheckoutLayout
+            goBackButton={<GoBackButton />}
+            checkoutForm={
+              <CheckoutForm
+                register={register}
+                paymentMethod={paymentMethod}
+                errors={errors}
+              />
+            }
+            checkoutConfirmation={isSuccess && <ConfirmationModal />}
+            checkoutSummary={<CheckoutSummary />}
+          />
+        </form>
+      </CheckoutFormContext.Provider>
+    );
+  }
 }
 
 export default Checkout;
