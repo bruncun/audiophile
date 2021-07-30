@@ -62,6 +62,7 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
       <button
         type="submit"
         className="btn btn-primary"
+        data-cy="add-to-cart"
         onClick={onAddToCartButtonClick}
       >
         Add to cart

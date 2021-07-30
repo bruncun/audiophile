@@ -13,7 +13,7 @@ describe("home", function () {
   });
 
   it("visits headphones", function () {
-    cy.get('[data-cy="headphones-link"]').click({ force: true });
+    cy.get('[data-cy="headphones-link"]').first().click({ force: true });
     cy.get('[data-cy="headphones"]').should("exist");
   });
 

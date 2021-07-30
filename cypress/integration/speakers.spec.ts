@@ -1,6 +1,6 @@
 describe("speakers", function () {
   beforeEach(function () {
-    cy.visit("/");
+    cy.visit("/speakers");
   });
 
   it("loads", function () {
