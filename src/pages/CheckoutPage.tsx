@@ -8,8 +8,9 @@ import CartContext from "CartContext";
 import { modifyBodyClassList } from "utils";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CheckoutFormContext from "CheckoutFormContext";
-import { useSavePurchase } from "hooks/useApi";
+import { useSavePurchase, useProductsById } from "hooks/useApi";
 import { Redirect } from "react-router-dom";
+import Spinner from "components/shared/Spinner";
 
 function Checkout() {
   const {
@@ -20,7 +21,11 @@ function Checkout() {
   } = useForm<ICheckoutFormValues>();
   const paymentMethod = watch("paymentMethod", "");
   const { cart, selectedProductIds } = useContext(CartContext);
+  const selectedProductQueries = useProductsById(selectedProductIds);
   const { mutate, isSuccess } = useSavePurchase();
+
+  if (selectedProductQueries.some(({ isLoading }) => isLoading))
+    return <Spinner />;
 
   if (isSuccess) {
     modifyBodyClassList("overflow-hidden", "add");

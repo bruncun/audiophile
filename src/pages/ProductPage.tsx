@@ -7,6 +7,7 @@ import CategoryList from "components/shared/CategoryList";
 import About from "components/shared/about/About";
 import { useParams, Redirect } from "react-router-dom";
 import { useProductBySlug } from "hooks/useApi";
+import Spinner from "components/shared/Spinner";
 
 interface ProductPageParams {
   slug: string;
@@ -16,7 +17,7 @@ function ProductPage() {
   const { slug } = useParams<ProductPageParams>();
   const { isLoading, data } = useProductBySlug(slug);
 
-  if (isLoading) return <></>;
+  if (isLoading) return <Spinner />;
 
   const [product] = data as [Product];
 

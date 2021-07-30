@@ -14,7 +14,7 @@ function CategoryLayout({
   about,
 }: CategoryLayoutProps) {
   return (
-    <div data-cy={category}>
+    <div data-cy={category} className="pt-6">
       <div className="bg-dark py-4 py-md-6">
         <header className="my-2 my-xxl-0">{categoryHeader}</header>
       </div>

@@ -20,7 +20,7 @@ function HomeLayout({
   about,
 }: HomeLayoutProps) {
   return (
-    <div data-cy="home">
+    <div data-cy="home" className="pt-6">
       <header className="home-header-wrapper home-header">{homeHeader}</header>
       <main className="container-md mt-5 pt-1 mt-md-6 pt-md-2 pt-xxl-4">
         <nav className="mt-3 mb-6 pb-4 pt-md-1 pb-md-0 mt-xxl-4 pb-xxl-4">

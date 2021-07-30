@@ -1,5 +1,6 @@
 import cart from "assets/shared/desktop/icon-cart.svg";
 import CartContext from "CartContext";
+import { useProductsById } from "hooks/useApi";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -9,10 +10,16 @@ interface CartTogglerProps {
 
 function CartToggler({ onCartTogglerClick }: CartTogglerProps) {
   const { selectedProductIds } = useContext(CartContext);
+  const productQueries = useProductsById(selectedProductIds);
   const location = useLocation() as LocationWithNavState;
+  let isLoading = false;
+
+  if (productQueries.some(({ isLoading }) => isLoading)) isLoading = true;
 
   const linkClass =
-    location.pathname === "/checkout" || selectedProductIds.length === 0
+    location.pathname === "/checkout" ||
+    selectedProductIds.length === 0 ||
+    isLoading
       ? "disabled"
       : "";
 

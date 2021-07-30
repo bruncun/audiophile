@@ -7,9 +7,6 @@ import { useProductsById } from "hooks/useApi";
 function CartBody() {
   const { cart, getCosts, selectedProductIds } = useContext(CartContext);
   const productQueries = useProductsById(selectedProductIds);
-
-  if (productQueries.some(({ isLoading }) => isLoading)) return <></>;
-
   const products = productQueries.map(({ data }) => data as Product);
   const { total } = getCosts(products);
   const formattedTotal = formatter.format(total);

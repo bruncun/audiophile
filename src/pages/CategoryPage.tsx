@@ -4,6 +4,7 @@ import About from "components/shared/about/About";
 import CategoryList from "components/shared/CategoryList";
 import { useProductsByCategory } from "hooks/useApi";
 import CategoryProductList from "components/category/CategoryProductList";
+import Spinner from "components/shared/Spinner";
 
 interface CategoryProps {
   category: string;
@@ -12,7 +13,7 @@ interface CategoryProps {
 function Category({ category }: CategoryProps) {
   const { isLoading, data: products } = useProductsByCategory(category);
 
-  if (isLoading) return <></>;
+  if (isLoading) return <Spinner />;
 
   return (
     <CategoryLayout

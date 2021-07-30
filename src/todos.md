@@ -1,16 +1,9 @@
 # TODO
 
--refactor html semantics
--implement error, and loading states
 -implement animations
--double check and finesse typography and spacing
 -metadata
--optimize responsive images across all sections
 -fix tablet breakpoint
--fix touch points (like logo tablet)
 -vertically center confirmation modal
--try making modal background a link? (for vimari / accessibility)
--focus/active/states/borders
 -prevent posting to products api
 -make aria-current-page in nav dynamic
 -prefetch data
@@ -21,3 +14,7 @@
 -consider moving sass to /sass
 -consider adding tests
 -add page titles
+-make background-images on home regular images
+-extract useFocusHook
+-update readme
+

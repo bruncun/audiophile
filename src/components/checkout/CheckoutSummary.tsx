@@ -9,8 +9,6 @@ function CheckoutSummary() {
   const { getCosts, selectedProductIds, cart } = useContext(CartContext);
   const selectedProductQueries = useProductsById(selectedProductIds);
 
-  if (selectedProductQueries.some(({ isLoading }) => isLoading)) return <></>;
-
   const selectedProducts = selectedProductQueries.map(
     ({ data }) => data as Product
   );
