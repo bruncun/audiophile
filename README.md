@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ### `yarn api`
 
-Runs the JSON server [http://localhost:3004](http://localhost:3004).
+Runs the JSON server at [http://localhost:3004](http://localhost:3004).
 
 ### `yarn test`
 
