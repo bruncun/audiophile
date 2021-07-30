@@ -27,6 +27,7 @@ function CartToggler({ onCartTogglerClick }: CartTogglerProps) {
     <button
       className={`btn btn-link p-0 ${linkClass}`}
       onClick={onCartTogglerClick}
+      data-cy="cart-toggler"
     >
       <img src={cart} alt="Cart" width="23" height="20" />
     </button>

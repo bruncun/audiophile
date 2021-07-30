@@ -19,12 +19,14 @@ describe("navbar", function () {
   });
 
   it("opens cart", function () {
-    cy.get('[data-cy="cart-toggler"]').click();
+    cy.get('[data-cy="cart-toggler"]').first().click();
     cy.get('[data-cy="cart-modal"]').should("exist");
   });
 
   it.only("goes to checkout", function () {
-    cy.get('[data-cy="cart-toggler"]').click();
+    cy.visit("/products/xx99-mark-two-headphones");
+    cy.get('[data-cy="add-to-cart"]').click({ force: true });
+    cy.get('[data-cy="cart-toggler"]').first().click();
     cy.get('[data-cy="cart-checkout"]').click();
     cy.get('[data-cy="checkout"]').should("exist");
   });
