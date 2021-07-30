@@ -66,7 +66,9 @@ function TabletPurchaseSummary({
       </div>
       <div className="rounded-end bg-dark d-flex p-4 flex-column w-75 justify-content-center">
         <span className="text-white-50 text-uppercase mb-2">Grand Total</span>
-        <h6 className="text-white fw-bold mb-0">{formatter.format(total)}</h6>
+        <span className="text-white fw-bold mb-0 h6 d-block">
+          {formatter.format(total)}
+        </span>
       </div>
     </>
   );

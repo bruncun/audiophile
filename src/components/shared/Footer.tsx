@@ -26,40 +26,32 @@ function Footer() {
               <img src={logo} alt="Audiophile" width="143" height="25" />
             </Link>
           </div>
-          <ul className="list-inline">
-            <li className="list-inline-item">
-              <Link
-                to="/"
-                className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-2"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="list-inline-item">
-              <Link
-                to="/headphones"
-                className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-2"
-              >
-                Headphones
-              </Link>
-            </li>
-            <li className="list-inline-item">
-              <Link
-                to="/headphones"
-                className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-2"
-              >
-                Speakers
-              </Link>
-            </li>
-            <li className="list-inline-item">
-              <Link
-                to="/earphones"
-                className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-5 d-block d-md-inline-block"
-              >
-                Earphones
-              </Link>
-            </li>
-          </ul>
+          <div>
+            <Link
+              to="/"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+            >
+              Home
+            </Link>
+            <Link
+              to="/headphones"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+            >
+              Headphones
+            </Link>
+            <Link
+              to="/headphones"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-3 d-block d-md-inline-block me-md-4"
+            >
+              Speakers
+            </Link>
+            <Link
+              to="/earphones"
+              className="text-white text-primary-hover text-decoration-none fs-7 fw-bold ls-3 text-uppercase mb-5 d-block d-md-inline-block"
+            >
+              Earphones
+            </Link>
+          </div>
         </nav>
         <div className="row">
           <div className="col-lg-5">

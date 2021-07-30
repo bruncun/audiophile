@@ -10,7 +10,7 @@ function OffcanvasNav() {
   });
 
   return (
-    <section
+    <div
       ref={offcanvasNavEl}
       role="dialog"
       tabIndex={-1}
@@ -19,14 +19,11 @@ function OffcanvasNav() {
       className="fixed-top bg-white rounded-bottom d-xxl-none pt-2 py-md-5 mt-6 overflow-scroll z-9999"
     >
       <div className="container-md pt-5 pt-md-2">
-        <h2 id="OffcanvasHeader" className="visually-hidden">
-          Categories
-        </h2>
         <div className="pt-1 pb-6 mb-4 mb-md-2 pb-md-2 pt-md-4 mt-md-1">
           <CategoryList />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

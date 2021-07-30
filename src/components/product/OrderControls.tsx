@@ -21,6 +21,14 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
     });
   }
 
+  function onDecrementClick() {
+    setQuantity(quantity > 1 ? --quantity : quantity);
+  }
+
+  function onIncrementClick() {
+    setQuantity(++quantity);
+  }
+
   return (
     <>
       <div className="btn-group me-3" role="group" aria-label="Quantity">
@@ -28,7 +36,8 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
           type="button"
           className="btn btn-light px-3 text-black-50 text-primary-hover"
           data-cy="decrement-quantity"
-          onClick={() => setQuantity(quantity > 1 ? --quantity : quantity)}
+          aria-label="Decrease quantity"
+          onClick={onDecrementClick}
         >
           -
         </button>
@@ -44,7 +53,8 @@ function OrderControls({ product: { id } }: OrderControlsProps) {
           type="button"
           data-cy="increment-quantity"
           className="btn btn-light px-3 text-black-50 text-primary-hover"
-          onClick={() => setQuantity(++quantity)}
+          aria-label="Increase quantity"
+          onClick={onIncrementClick}
         >
           +
         </button>

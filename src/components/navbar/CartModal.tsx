@@ -22,7 +22,7 @@ function CartModal({ toggleCart }: CartModalProps) {
   });
 
   return (
-    <section
+    <div
       className="modal fade show d-block"
       ref={modalEl}
       onClick={onModalBackdropClick}
@@ -46,7 +46,7 @@ function CartModal({ toggleCart }: CartModalProps) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

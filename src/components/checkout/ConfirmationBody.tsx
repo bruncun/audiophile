@@ -15,13 +15,16 @@ function ConfirmationBody() {
         src="assets/checkout/icon-check.svg"
         className="mb-4 pb-md-2"
         alt="Checkmark"
+        aria-hidden="true"
         width="64"
         height="64"
       />
-      <h2 className="fw-bold me-md-6 pe-5 d-none d-md-block mb-4">
+      <span className="fw-bold me-md-6 pe-5 d-none d-md-block mb-4 h2">
         Thank you for your order
-      </h2>
-      <h4 className="fw-bold mb-3 pe-5 d-md-none">Thank you for your order</h4>
+      </span>
+      <span className="fw-bold mb-3 pe-5 d-md-none h4">
+        Thank you for your order
+      </span>
       <p className="text-black-50 mb-4 pb-md-2">
         You will receive an email confirmation shortly.
       </p>

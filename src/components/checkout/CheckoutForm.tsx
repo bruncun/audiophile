@@ -25,10 +25,20 @@ function CheckoutForm({ paymentMethod }: CheckoutFormProps) {
         {paymentMethod === "e-money" && (
           <div className="row gx-3">
             <div className="col-md-6 mb-2">
-              <Input type="tel" name="eMoneyNumber" label="e-Money Number" />
+              <Input
+                id="e-money-number"
+                type="tel"
+                name="eMoneyNumber"
+                label="e-Money Number"
+              />
             </div>
             <div className="col-md-6">
-              <Input type="tel" name="eMoneyPin" label="e-Money PIN" />
+              <Input
+                id="e-money-pin"
+                type="tel"
+                name="eMoneyPin"
+                label="e-Money PIN"
+              />
             </div>
           </div>
         )}

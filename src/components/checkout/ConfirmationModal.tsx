@@ -1,15 +1,22 @@
 import ConfirmationFooter from "components/checkout/ConfirmationFooter";
 import ConfirmationBody from "components/checkout/ConfirmationBody";
+import { useEffect, useRef } from "react";
 
 function ConfirmationModal() {
+  const modalEl = useRef<HTMLDivElement>(null);
+
+  useEffect(function () {
+    if (!modalEl.current) throw Error("modalEl is not assigned");
+    modalEl.current.focus();
+  });
+
   return (
     <>
       <div
         className="modal fade show d-block"
-        id="staticBackdrop"
+        ref={modalEl}
         tabIndex={-1}
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
+        role="dialog"
         data-cy="confirmation-modal"
       >
         <div className="container-md">

@@ -66,7 +66,9 @@ function MobilePurchaseSummary({
       </div>
       <div className="rounded-bottom bg-dark d-flex px-4 py-3 flex-column">
         <span className="text-white-50 text-uppercase mb-2">Grand Total</span>
-        <h6 className="text-white fw-bold mb-0">{formatter.format(total)}</h6>
+        <span className="text-white fw-bold mb-0 h6 d-block">
+          {formatter.format(total)}
+        </span>
       </div>
     </>
   );

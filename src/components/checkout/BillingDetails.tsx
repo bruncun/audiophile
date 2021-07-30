@@ -10,11 +10,12 @@ function BillingDetails() {
       <h6 className="text-primary fw-bold mb-3 fs-7">Billing Details</h6>
       <div className="row gx-3">
         <div className="col-md-6 mb-4">
-          <Input name="name" label="Name" autofocus />
+          <Input id="name" name="name" label="Name" autofocus />
         </div>
         <div className="col-md-6 mb-4">
           <Input
             type="email"
+            id="email-address"
             name="email"
             label="Email Address"
             pattern={EMAIL_REGEX}
@@ -25,6 +26,7 @@ function BillingDetails() {
         <div className="col-md-6 mb-md-4">
           <Input
             type="tel"
+            id="phone-number"
             name="phoneNumber"
             label="Phone Number"
             pattern={PHONE_REGEX}

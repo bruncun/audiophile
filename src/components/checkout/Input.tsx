@@ -7,11 +7,13 @@ interface InputProps {
   autocomplete?: HTMLInputElement["autocomplete"];
   autofocus?: boolean;
   pattern?: RegExp;
+  id: string;
   label: string;
 }
 
 function Input({
   name,
+  id,
   label,
   type = "text",
   pattern = undefined,
@@ -26,7 +28,7 @@ function Input({
     <>
       <div className="d-flex justify-content-between lh-0">
         <label
-          htmlFor={name}
+          htmlFor={id}
           className={`form-label ${error ? "text-danger" : ""}`}
         >
           {label}
@@ -37,6 +39,7 @@ function Input({
         </span>
       </div>
       <input
+        id={id}
         type={type}
         autoComplete={autocomplete}
         autoFocus={autofocus}
