@@ -31,7 +31,7 @@ function Nav({ onCartTogglerClick, onNavbarTogglerClick }: NavProps) {
       <div className="d-xxl-none">
         <CartToggler onCartTogglerClick={onCartTogglerClick} />
       </div>
-      <div className="collapse navbar-collapse position-relative justify-content-between">
+      <div className="collapse navbar-collapse position-relative justify-content-between d-none d-xxl-flex">
         <Link to="/" className="lh-1">
           <img src={logo} alt="Audiophile" width="143" height="24" />
         </Link>
