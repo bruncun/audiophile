@@ -1,30 +1,34 @@
-import { useHistory, useLocation } from "react-router-dom";
 import CartBody from "components/navbar/CartBody";
 import CartFooter from "components/navbar/CartFooter";
 import CartHeader from "components/navbar/CartHeader";
+import { useEffect, useRef } from "react";
 
-function CartModal() {
-  const location = useLocation();
-  const history = useHistory();
+interface CartModalProps {
+  toggleCart: () => void;
+}
+
+function CartModal({ toggleCart }: CartModalProps) {
+  const modalEl = useRef<HTMLDivElement>(null);
 
   function onModalBackdropClick(event: React.MouseEvent) {
     const target = event.target as HTMLElement;
     const showCart = Boolean(target.closest(".modal-dialog"));
-    if (!showCart)
-      history.replace({
-        ...location,
-        state: { showCollapse: false, showCart },
-      });
+    if (!showCart) toggleCart();
   }
 
+  useEffect(function () {
+    if (!modalEl.current) throw Error("modalEl is not assigned");
+    modalEl.current.focus();
+  });
+
   return (
-    <div
+    <section
       className="modal fade show d-block"
+      ref={modalEl}
       onClick={onModalBackdropClick}
-      id="staticBackdrop"
       tabIndex={-1}
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
+      role="dialog"
+      aria-describedby="CartHeader"
       data-cy="cart-modal"
     >
       <div className="container-md pt-xxl-2">
@@ -42,7 +46,7 @@ function CartModal() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

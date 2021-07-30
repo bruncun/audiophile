@@ -1,15 +1,18 @@
 import Nav from "components/navbar/Nav";
-import CategoryList from "components/shared/CategoryList";
-import { useLocation } from "react-router-dom";
+import OffcanvasNav from "components/navbar/OffcanvasNav";
+import { useHistory, useLocation } from "react-router-dom";
 import CartModal from "./CartModal";
 import "./Navbar.scss";
 import { modifyBodyClassList } from "utils";
+import { useEffect, useState } from "react";
 
 function Navbar() {
-  const location = useLocation() as LocationWithNavState;
-  const { showCollapse, showCart } = location.state || false;
+  const location = useLocation();
+  const history = useHistory();
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
-  if (showCollapse) {
+  if (showNavbar) {
     modifyBodyClassList("collapse-open", "add");
   } else {
     modifyBodyClassList("collapse-open", "remove");
@@ -21,25 +24,59 @@ function Navbar() {
     modifyBodyClassList("overflow-hidden", "remove");
   }
 
+  function toggleNavbar() {
+    if (showCart && !showNavbar) setShowCart(false);
+    setShowNavbar(!showNavbar);
+  }
+
+  function toggleCart() {
+    if (showNavbar && !showCart) setShowNavbar(false);
+    setShowCart(!showCart);
+  }
+
+  useEffect(function () {
+    function onKeyDown({ code }: KeyboardEvent) {
+      if (code === "Escape" && showCart) setShowCart(!showCart);
+      if (code === "Escape" && showNavbar) setShowNavbar(!showNavbar);
+    }
+    document.addEventListener("keydown", onKeyDown);
+
+    return function () {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  });
+
+  useEffect(
+    function () {
+      history.listen(function () {
+        setShowCart(false);
+        setShowNavbar(false);
+      });
+    },
+    [location, history]
+  );
+
   return (
     <>
-      {showCart && <CartModal />}
+      {showCart && <CartModal toggleCart={toggleCart} />}
+      {showNavbar && <OffcanvasNav />}
       <nav className="fixed-top navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
         <div className="container-md py-4 my-2">
-          <Nav />
+          <Nav
+            onCartTogglerClick={toggleCart}
+            onNavbarTogglerClick={toggleNavbar}
+          />
         </div>
       </nav>
-      {showCollapse && (
-        <div className="fixed-top bg-white rounded-bottom d-xxl-none pt-2 py-md-5 mt-6 overflow-scroll z-9999">
-          <div className="container-md pt-5 pt-md-2">
-            <div className="pt-1 pb-6 mb-4 mb-md-2 pb-md-2 pt-md-4 mt-md-1">
-              <CategoryList />
-            </div>
-          </div>
-        </div>
+      {showCart && (
+        <div className="modal-backdrop fade show" onClick={toggleCart} />
       )}
-      {showCart && <div className="modal-backdrop fade show" />}
-      {showCollapse && <div className="modal-backdrop fade show d-xxl-none" />}
+      {showNavbar && (
+        <div
+          className="modal-backdrop fade show d-xxl-none"
+          onClick={toggleNavbar}
+        />
+      )}
     </>
   );
 }

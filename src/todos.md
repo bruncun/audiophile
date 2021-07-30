@@ -9,8 +9,6 @@
 -fix tablet breakpoint
 -fix touch points (like logo tablet)
 -vertically center confirmation modal
--refactor confirmation show modal state to behave like navbar
--change cart order item naming to items to sync w/ api (an order has items)
 -try making modal background a link? (for vimari / accessibility)
 -focus/active/states/borders
 -prevent posting to products api
@@ -22,3 +20,4 @@
 -rename hooks folder to utils?
 -consider moving sass to /sass
 -consider adding tests
+-add page titles

@@ -10,9 +10,10 @@ function CartHeader() {
 
   return (
     <>
-      <h6 className="modal-title fw-bold" id="staticBackdropLabel">
+      <h2 className="modal-title fw-bold h6" id="CartHeader">
         Cart ({selectedProductIds.length})
-      </h6>
+        <span className="visually-hidden">Press escape to close cart.</span>
+      </h2>
       <button
         className="btn btn-link p-0 ls-0 text-black-50 text-capitalize text-primary-hover"
         onClick={onRemoveAllClick}

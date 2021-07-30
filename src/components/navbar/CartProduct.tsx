@@ -74,16 +74,16 @@ function CartProduct({
               <button
                 type="button"
                 className="btn btn-light text-black-50 text-primary-hover"
+                aria-label="Decrease quantity"
                 onClick={onDecrementClick}
               >
                 -
               </button>
-              <button type="button" className="btn btn-light px-2">
-                {quantity}
-              </button>
+              <span className="btn btn-light px-2">{quantity}</span>
               <button
                 type="button"
                 className="btn btn-light text-black-50 text-primary-hover"
+                aria-label="Increase quantity"
                 onClick={onIncrementClick}
               >
                 +

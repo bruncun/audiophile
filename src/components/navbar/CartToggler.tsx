@@ -1,12 +1,15 @@
 import cart from "assets/shared/desktop/icon-cart.svg";
 import CartContext from "CartContext";
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-function Navbar() {
+interface CartTogglerProps {
+  onCartTogglerClick: () => void;
+}
+
+function CartToggler({ onCartTogglerClick }: CartTogglerProps) {
   const { selectedProductIds } = useContext(CartContext);
   const location = useLocation() as LocationWithNavState;
-  const { showCart } = location.state || false;
 
   const linkClass =
     location.pathname === "/checkout" || selectedProductIds.length === 0
@@ -14,17 +17,13 @@ function Navbar() {
       : "";
 
   return (
-    <Link
+    <button
       className={`btn btn-link p-0 ${linkClass}`}
-      to={{
-        ...location,
-        state: { showCollapse: false, showCart: !showCart },
-      }}
-      replace
+      onClick={onCartTogglerClick}
     >
       <img src={cart} alt="Cart" width="23" height="20" />
-    </Link>
+    </button>
   );
 }
 
-export default Navbar;
+export default CartToggler;

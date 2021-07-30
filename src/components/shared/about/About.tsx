@@ -1,16 +1,16 @@
-import BestGearCard from "./BestGearCard";
+import BestGearImage from "./BestGearImage";
 import AboutContent from "./AboutContent";
 
 function About() {
   return (
-    <div className="row">
+    <aside className="row">
       <div className="col-xxl-6 order-xxl-2 pb-3 mb-4 pb-xxl-0 mb-xxl-0">
-        <BestGearCard />
+        <BestGearImage />
       </div>
       <div className="col-xxl-6 align-items-center d-flex">
         <AboutContent />
       </div>
-    </div>
+    </aside>
   );
 }
 

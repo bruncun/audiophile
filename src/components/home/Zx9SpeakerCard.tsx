@@ -12,42 +12,36 @@ function Zx9SpeakerFeatureCard() {
   return (
     <div className="card bg-primary text-white text-center text-xxl-start overflow-hidden">
       <div className="card-body position-relative pb-5 pt-xxl-5">
-        <ResponsiveImage
-          imgClassName="position-absolute translate-middle ovals"
-          image={{
-            mobile: ovalsMobile,
-            tablet: ovalsTablet,
-            desktop: ovalsDesktop,
-          }}
-          alt="Ovals"
-        />
+        <div aria-hidden="true">
+          <ResponsiveImage
+            imgClassName="position-absolute translate-middle ovals"
+            image={{
+              mobile: ovalsMobile,
+              tablet: ovalsTablet,
+              desktop: ovalsDesktop,
+            }}
+            alt="Ovals"
+          />
+        </div>
         <div className="row gx-xxl-5">
           <div className="col-xxl-6 offset-xl-1 text-xxl-center z-1">
-            <Link to="/products/zx9-speaker">
-              <ResponsiveImage
-                imgClassName="zx9-speaker my-4 mb-md-4 ms-xxl-4 my-xxl-0 position-relative"
-                image={{
-                  mobile: zx9SpeakerMobile,
-                  tablet: zx9SpeakerTablet,
-                  desktop: zx9SpeakerDesktop,
-                }}
-                alt="Zx9 Speaker"
-              />
-            </Link>
+            <ResponsiveImage
+              imgClassName="zx9-speaker my-4 mb-md-4 ms-xxl-4 my-xxl-0 position-relative"
+              image={{
+                mobile: zx9SpeakerMobile,
+                tablet: zx9SpeakerTablet,
+                desktop: zx9SpeakerDesktop,
+              }}
+              alt="Zx9 Speaker"
+            />
           </div>
           <div className="col-xxl-4 z-1 mt-xxl-5">
-            <Link
-              to="/products/zx9-speaker"
-              className="h1 fw-bold display-4 d-none d-md-block pe-5 mb-4 pt-3 text-white text-decoration-none"
-            >
+            <h2 className="h1 fw-bold display-4 d-none d-md-block pe-5 mb-4 pt-3 text-white">
               Zx9 Speaker
-            </Link>
-            <Link
-              to="/products/zx9-speaker"
-              className="h2 fw-bold d-md-none mb-4 mt-2 mx-4 mx-md-6 px-md-5 text-white text-decoration-none d-block"
-            >
+            </h2>
+            <h2 className="h2 fw-bold d-md-none mb-4 mt-2 mx-4 mx-md-6 px-md-5 text-white d-block">
               Zx9 Speaker
-            </Link>
+            </h2>
             <p className="mb-4 text-white-75 mx-sm-6 px-md-5 mx-xxl-0 ps-xxl-0">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
