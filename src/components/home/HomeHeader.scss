@@ -1,13 +1,13 @@
 @import "scss/shared";
 
 .home-header {
-  margin-top: -5.5625rem;
+  margin-top: -6rem;
   background-image: url(/assets/home/mobile/image-header.jpg);
-  background-size: cover;
-  background-position: center -1.5vh;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background-size: contain;
     background-position: center;
     background-image: url(/assets/home/tablet/image-header.jpg);
