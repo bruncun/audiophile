@@ -47,7 +47,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - [ ] implement animations
 - [ ] metadata
-- [ ] fix tablet breakpoint
 - [ ] vertically center confirmation modal
 - [ ] prevent posting to products api
 - [ ] make aria-current-page in nav dynamic
