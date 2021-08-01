@@ -61,3 +61,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - [ ] make background-images on home regular images
 - [ ] extract useFocusHook
 - [ ] clean up navbar
+- [ ] remove unnecessary assets
