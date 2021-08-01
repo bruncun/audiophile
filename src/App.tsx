@@ -12,6 +12,7 @@ import HomePage from "pages/HomePage";
 import CheckoutPage from "pages/CheckoutPage";
 import CategoryPage from "pages/CategoryPage";
 import ProductPage from "pages/ProductPage";
+import "./App.scss";
 
 const queryClient = new QueryClient();
 
