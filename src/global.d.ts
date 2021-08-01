@@ -73,7 +73,4 @@ declare interface LocationWithNavState extends Location {
   state: { showCollapse?: boolean; showCart?: boolean };
 }
 
-declare module "*.scss" {
-  const content: { [className: string]: string };
-  export = content;
-}
+declare module "*.scss";
