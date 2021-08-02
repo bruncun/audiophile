@@ -1,11 +1,9 @@
-import cashOnDelivery from "assets/checkout/icon-cash-on-delivery.svg";
-
 function CheckoutForm() {
   return (
     <div className="d-flex align-items-center">
       <div className="flex-shrink-0">
         <img
-          src={cashOnDelivery}
+          src="/assets/checkout/icon-cash-on-delivery.svg"
           alt="Cash on Delivery"
           width="48"
           height="48"

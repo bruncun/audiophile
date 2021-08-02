@@ -1,4 +1,3 @@
-import cart from "assets/shared/desktop/icon-cart.svg";
 import CartContext from "CartContext";
 import { useProductsById } from "hooks/useApi";
 import { useContext } from "react";
@@ -29,7 +28,12 @@ function CartToggler({ onCartTogglerClick }: CartTogglerProps) {
       onClick={onCartTogglerClick}
       data-cy="cart-toggler"
     >
-      <img src={cart} alt="Cart" width="23" height="20" />
+      <img
+        src="/assets/shared/desktop/icon-cart.svg"
+        alt="Cart"
+        width="23"
+        height="20"
+      />
     </button>
   );
 }

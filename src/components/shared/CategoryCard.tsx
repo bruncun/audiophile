@@ -1,4 +1,3 @@
-import arrowRight from "assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
 interface CategoryCardProps {
@@ -37,7 +36,7 @@ function CategoryCard({ imgSrc, name }: CategoryCardProps) {
             <div className="d-flex align-items-center justify-content-center">
               <span className="fs-7 pe-2 me-1 ls-1">Shop</span>
               <img
-                src={arrowRight}
+                src="/assets/shared/desktop/icon-arrow-right.svg"
                 alt="Arrow pointing right"
                 width="7"
                 height="14"
