@@ -1,5 +1,4 @@
 import CartToggler from "components/navbar/CartToggler";
-import logo from "assets/shared/desktop/logo.svg";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
@@ -18,7 +17,7 @@ function Nav({ onCartTogglerClick, onNavbarTogglerClick }: NavProps) {
         <Link to="/" className="d-none d-md-inline-block lh-1">
           <img
             className="ms-4 ps-3 d-xxl-none"
-            src={logo}
+            src="/assets/shared/desktop/logo.svg"
             alt="Audiophile"
             width="143"
             height="24"
@@ -26,14 +25,24 @@ function Nav({ onCartTogglerClick, onNavbarTogglerClick }: NavProps) {
         </Link>
       </div>
       <Link to="/" className="d-md-none lh-1">
-        <img src={logo} alt="Audiophile" width="143" height="24" />
+        <img
+          src="/assets/shared/desktop/logo.svg"
+          alt="Audiophile"
+          width="143"
+          height="24"
+        />
       </Link>
       <div className="d-xxl-none">
         <CartToggler onCartTogglerClick={onCartTogglerClick} />
       </div>
       <div className="collapse navbar-collapse position-relative justify-content-between d-none d-xxl-flex">
         <Link to="/" className="lh-1">
-          <img src={logo} alt="Audiophile" width="143" height="24" />
+          <img
+            src="/assets/shared/desktop/logo.svg"
+            alt="Audiophile"
+            width="143"
+            height="24"
+          />
         </Link>
         <ul className="navbar-nav mb-2 mb-xxl-0 position-absolute translate-middle start-50 top-50">
           <li className="nav-item">

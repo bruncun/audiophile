@@ -14,7 +14,7 @@
   }
 
   @include media-breakpoint-up(xxl) {
-    background-image: url(/assets/home/desktop/image-hero.jpg);
+    background-image: url(./assets/home/desktop/image-hero.jpg);
     background-position: right center;
   }
 }

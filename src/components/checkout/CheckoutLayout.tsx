@@ -12,7 +12,7 @@ function CheckoutLayout({
   goBackButton,
 }: CheckoutLayoutProps) {
   return (
-    <div data-cy="checkout" className="pt-6">
+    <div data-cy="checkout">
       {checkoutConfirmation}
       <div className="container-md pt-xxl-2">
         <main>

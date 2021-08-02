@@ -1,10 +1,4 @@
 import { Link } from "react-router-dom";
-import zx9SpeakerMobile from "assets/home/mobile/image-speaker-zx9.png";
-import zx9SpeakerTablet from "assets/home/tablet/image-speaker-zx9.png";
-import zx9SpeakerDesktop from "assets/home/desktop/image-speaker-zx9.png";
-import ovalsMobile from "assets/home/mobile/image-ovals.svg";
-import ovalsTablet from "assets/home/tablet/image-ovals.svg";
-import ovalsDesktop from "assets/home/desktop/image-ovals.svg";
 import ResponsiveImage from "components/shared/ResponsiveImage";
 import "./Zx9SpeakerCard.scss";
 
@@ -16,9 +10,9 @@ function Zx9SpeakerFeatureCard() {
           <ResponsiveImage
             imgClassName="position-absolute translate-middle ovals"
             image={{
-              mobile: ovalsMobile,
-              tablet: ovalsTablet,
-              desktop: ovalsDesktop,
+              mobile: "/assets/home/mobile/image-ovals.svg",
+              tablet: "/assets/home/tablet/image-ovals.svg",
+              desktop: "/assets/home/desktop/image-ovals.svg",
             }}
             alt="Ovals"
           />
@@ -29,9 +23,9 @@ function Zx9SpeakerFeatureCard() {
               <ResponsiveImage
                 imgClassName="zx9-speaker my-4 mb-md-4 ms-xxl-4 my-xxl-0 position-relative"
                 image={{
-                  mobile: zx9SpeakerMobile,
-                  tablet: zx9SpeakerTablet,
-                  desktop: zx9SpeakerDesktop,
+                  mobile: "/assets/home/mobile/image-speaker-zx9.png",
+                  tablet: "/assets/home/tablet/image-speaker-zx9.png",
+                  desktop: "/assets/home/desktop/image-speaker-zx9.png",
                 }}
                 alt="Zx9 Speaker"
               />

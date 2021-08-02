@@ -60,7 +60,7 @@ function Navbar() {
     <>
       {showCart && <CartModal toggleCart={toggleCart} />}
       {showNavbar && <OffcanvasNav />}
-      <nav className="fixed-top navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
+      <nav className="navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
         <div className="container-md py-4 my-2">
           <Nav
             onCartTogglerClick={toggleCart}

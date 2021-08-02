@@ -12,7 +12,7 @@ function ConfirmationBody() {
   return (
     <>
       <img
-        src="assets/checkout/icon-check.svg"
+        src="/assets/checkout/icon-check.svg"
         className="mb-4 pb-md-2"
         alt="Checkmark"
         aria-hidden="true"
