@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./Zx7SpeakerCard.scss";
 
 function Zx7SpeakerCard() {
   return (

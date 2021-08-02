@@ -2,7 +2,6 @@ import Nav from "components/navbar/Nav";
 import OffcanvasNav from "components/navbar/OffcanvasNav";
 import { useHistory, useLocation } from "react-router-dom";
 import CartModal from "./CartModal";
-import "./Navbar.scss";
 import { modifyBodyClassList } from "utils";
 import { useEffect, useState } from "react";
 

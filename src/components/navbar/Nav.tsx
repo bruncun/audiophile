@@ -1,6 +1,5 @@
 import CartToggler from "components/navbar/CartToggler";
 import { Link } from "react-router-dom";
-import "./Navbar.scss";
 
 interface NavProps {
   onCartTogglerClick: () => void;

@@ -1,6 +1,6 @@
 import CategoryLayout from "components/category/CategoryLayout";
 import CategoryHeader from "components/category/CategoryHeader";
-import About from "components/shared/about/About";
+import About from "components/shared/About";
 import CategoryList from "components/shared/CategoryList";
 import { useProductsByCategory } from "hooks/useApi";
 import CategoryProductList from "components/category/CategoryProductList";

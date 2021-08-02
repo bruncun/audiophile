@@ -62,3 +62,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - [ ] extract useFocusHook
 - [ ] clean up navbar
 - [ ] remove unnecessary assets
+- [ ] fix on add to cart show cart

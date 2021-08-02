@@ -1,0 +1,85 @@
+.home-header {
+  margin-top: -6rem;
+  background-image: url(/assets/home/mobile/image-header.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-up(md) {
+    background-size: contain;
+    background-position: center;
+    background-image: url(/assets/home/tablet/image-header.jpg);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    background-image: url(/assets/home/desktop/image-hero.jpg);
+    background-position: right center;
+  }
+}
+
+.home-header-wrapper {
+  height: 600px;
+  background-color: #191919;
+
+  @include media-breakpoint-up(md) {
+    height: 730px;
+  }
+}
+
+.yx1-cta-card {
+  @include media-breakpoint-up(md) {
+    height: 20rem;
+  }
+}
+
+.earphones-yx1 {
+  object-fit: cover;
+  height: 12.5rem;
+
+  @include media-breakpoint-up(md) {
+    height: 20rem;
+  }
+}
+
+.bg-speaker-zx-7 {
+  background-image: url(/assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: cover;
+
+  @include media-breakpoint-up(md) {
+    background-image: url(/assets/home/tablet/image-speaker-zx7.jpg);
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url(/assets/home/desktop/image-speaker-zx7.jpg);
+  }
+}
+
+.zx9-speaker {
+  width: 172px;
+
+  @include media-breakpoint-up(md) {
+    width: 197px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    bottom: -13%;
+    left: -10%;
+    width: 380px;
+  }
+}
+
+.ovals {
+  left: 50%;
+  top: 33%;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    top: 45%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    left: 36%;
+    top: 50%;
+    width: 73%;
+  }
+}
