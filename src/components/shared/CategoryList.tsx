@@ -1,5 +1,4 @@
 import CategoryCard from "./CategoryCard";
-import "./CategoryList.scss";
 
 function CategoryList() {
   return (

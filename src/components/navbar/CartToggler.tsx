@@ -24,7 +24,7 @@ function CartToggler({ onCartTogglerClick }: CartTogglerProps) {
 
   return (
     <button
-      className={`btn btn-link p-0 ${linkClass}`}
+      className={`btn btn-link p-0 ${linkClass} lh-1`}
       onClick={onCartTogglerClick}
       data-cy="cart-toggler"
     >

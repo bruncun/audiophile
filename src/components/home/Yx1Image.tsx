@@ -1,6 +1,5 @@
 import ResponsiveImage from "components/shared/ResponsiveImage";
 import { Link } from "react-router-dom";
-import "./Yx1Image.scss";
 
 function Yx1Image() {
   return (

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ResponsiveImage from "components/shared/ResponsiveImage";
-import "./Zx9SpeakerCard.scss";
 
 function Zx9SpeakerFeatureCard() {
   return (

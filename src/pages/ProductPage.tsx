@@ -4,7 +4,7 @@ import Details from "components/product/Details";
 import Gallery from "components/product/Gallery";
 import Suggestions from "components/product/Suggestions";
 import CategoryList from "components/shared/CategoryList";
-import About from "components/shared/about/About";
+import About from "components/shared/About";
 import { useParams, Redirect } from "react-router-dom";
 import { useProductBySlug } from "hooks/useApi";
 import Spinner from "components/shared/Spinner";

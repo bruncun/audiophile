@@ -1,5 +1,3 @@
-import "./HomeLayout.scss";
-
 interface HomeLayoutProps {
   homeHeader: React.ReactNode;
   categoryList: React.ReactNode;

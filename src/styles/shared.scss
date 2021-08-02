@@ -1,3 +1,36 @@
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
+.footer-icon {
+  fill: $white;
+
+  &:hover {
+    fill: $primary;
+  }
+}
+
+.collapse-open {
+  overflow: hidden;
+
+  @include media-breakpoint-up(xxl) {
+    overflow: visible;
+  }
+}
+
+.offcanvas-nav {
+  outline: none;
+}
+
+.category-card-header {
+  font-size: 0.9375rem;
+}
+
+.category-card-image {
+  width: 10rem;
+}
+
+.best-gear-image {
+  object-fit: cover;
+  height: 18.75rem;
+
+  @include media-breakpoint-up(xxl) {
+    height: 36.75rem;
+  }
+}
