@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="container h-100 d-flex align-items-center">
-      <div className="row text-center text-xxl-start w-100">
+      <div className="row text-center text-xxl-start">
         <div className="col-md-8 offset-md-2 col-xxl-7 offset-xxl-0">
           <small className="mt-6 mb-3 text-white-50 text-uppercase ls-5 d-block">
             New Product
