@@ -2,10 +2,11 @@ import CartContext from "contexts/CartContext";
 import { useContext } from "react";
 
 function CartHeader() {
-  const { selectedProductIds, dispatch } = useContext(CartContext);
+  const { selectedProductIds, dispatch, setShowCart } = useContext(CartContext);
 
   function onRemoveAllClick() {
     dispatch({ type: "REMOVE_ALL_ORDERS" });
+    setShowCart(false);
   }
 
   return (

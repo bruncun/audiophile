@@ -18,10 +18,12 @@ function Navbar() {
   }
 
   function toggleNavbar() {
+    if (showCart && !showNavbar) setShowCart(false);
     setShowNavbar(!showNavbar);
   }
 
   function toggleCart() {
+    if (showNavbar && !showCart) setShowNavbar(false);
     setShowCart(!showCart);
   }
 
