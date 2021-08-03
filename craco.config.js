@@ -1,3 +1,5 @@
+const { loaderByName, addAfterLoader, removeLoaders } = require("@craco/craco");
+
 module.exports = {
   reactScriptsVersion: "react-scripts",
   style: {
@@ -8,10 +10,26 @@ module.exports = {
     },
   },
   webpack: {
-    configure: {
-      output: {
-        publicPath: "/",
-      },
+    configure: (webpackConfig, { env, paths }) => {
+      const isEnvDevelopment = env === "development";
+      const isEnvProduction = env === "production";
+      const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
+      removeLoaders(webpackConfig, loaderByName("resolve-url-loader"));
+
+      const resolveUrlLoader = {
+        loader: require.resolve("resolve-url-loader"),
+        options: {
+          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+        },
+      };
+
+      addAfterLoader(
+        webpackConfig,
+        loaderByName("postcss-loader"),
+        resolveUrlLoader
+      );
+
+      return webpackConfig;
     },
   },
 };
