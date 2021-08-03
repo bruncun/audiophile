@@ -1,15 +1,15 @@
 import Nav from "components/navbar/Nav";
 import OffcanvasNav from "components/navbar/OffcanvasNav";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CartModal from "./CartModal";
 import { modifyBodyClassList } from "utils";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import CartContext from "contexts/CartContext";
 
 function Navbar() {
-  const location = useLocation();
+  const { showCart, setShowCart } = useContext(CartContext);
   const history = useHistory();
   const [showNavbar, setShowNavbar] = useState(false);
-  const [showCart, setShowCart] = useState(false);
 
   if (showCart) {
     modifyBodyClassList("overflow-hidden", "add");
@@ -28,7 +28,6 @@ function Navbar() {
   useEffect(function () {
     function onKeyDown({ code }: KeyboardEvent) {
       if (code === "Escape" && showCart) setShowCart(!showCart);
-      if (code === "Escape" && showNavbar) setShowNavbar(!showNavbar);
     }
     document.addEventListener("keydown", onKeyDown);
 
@@ -37,15 +36,12 @@ function Navbar() {
     };
   });
 
-  useEffect(
-    function () {
-      history.listen(function () {
-        setShowCart(false);
-        setShowNavbar(false);
-      });
-    },
-    [location, history]
-  );
+  useEffect(function () {
+    history.listen(function () {
+      setShowCart(false);
+      setShowNavbar(false);
+    });
+  });
 
   return (
     <>

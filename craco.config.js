@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   webpack: {
-    configure: (webpackConfig, { env, paths }) => {
+    configure: (webpackConfig, { env }) => {
       const isEnvDevelopment = env === "development";
       const isEnvProduction = env === "production";
       const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
