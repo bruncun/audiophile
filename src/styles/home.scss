@@ -1,6 +1,7 @@
 .home-header {
   margin-top: -6rem;
-  background-image: url(/assets/home/mobile/image-header.jpg);
+  /* webpackIgnore: true */
+  background-image: url("/assets/home/mobile/image-header.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
