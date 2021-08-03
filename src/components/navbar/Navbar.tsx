@@ -11,12 +11,6 @@ function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
-  if (showNavbar) {
-    modifyBodyClassList("collapse-open", "add");
-  } else {
-    modifyBodyClassList("collapse-open", "remove");
-  }
-
   if (showCart) {
     modifyBodyClassList("overflow-hidden", "add");
   } else {
@@ -24,12 +18,10 @@ function Navbar() {
   }
 
   function toggleNavbar() {
-    if (showCart && !showNavbar) setShowCart(false);
     setShowNavbar(!showNavbar);
   }
 
   function toggleCart() {
-    if (showNavbar && !showCart) setShowNavbar(false);
     setShowCart(!showCart);
   }
 
@@ -58,7 +50,6 @@ function Navbar() {
   return (
     <>
       {showCart && <CartModal toggleCart={toggleCart} />}
-      {showNavbar && <OffcanvasNav />}
       <nav className="navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
         <div className="container-md py-4 my-2">
           <Nav
@@ -67,14 +58,9 @@ function Navbar() {
           />
         </div>
       </nav>
+      {showNavbar && <OffcanvasNav />}
       {showCart && (
         <div className="modal-backdrop fade show" onClick={toggleCart} />
-      )}
-      {showNavbar && (
-        <div
-          className="modal-backdrop fade show d-xxl-none"
-          onClick={toggleNavbar}
-        />
       )}
     </>
   );
