@@ -1,4 +1,4 @@
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import { useProductsById } from "hooks/useApi";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";

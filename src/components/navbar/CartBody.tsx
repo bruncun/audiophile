@@ -1,4 +1,4 @@
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import CartProduct from "./CartProduct";
 import { formatter } from "utils";
 import { useContext } from "react";

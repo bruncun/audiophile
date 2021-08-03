@@ -18,7 +18,7 @@ function ProductLayout({
   about,
 }: ProductLayoutProps) {
   return (
-    <div data-cy={slug} className="pt-6">
+    <div data-cy={slug}>
       <div className="container-md mt-3 mt-md-4 pt-md-2 mt-xxl-5 pt-xxl-4 pb-xxl-3">
         <main>
           <div className="pb-5 mb-md-3 pb-xxl-6 mb-xxl-2">{hero}</div>

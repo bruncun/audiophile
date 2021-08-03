@@ -1,5 +1,5 @@
 import ConfirmationProduct from "components/checkout/ConfirmationProduct";
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import { useContext } from "react";
 import { useProductsById } from "hooks/useApi";
 import { formatter } from "utils";

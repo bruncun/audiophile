@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
 import useCart from "hooks/useCart";
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import AppLayout from "components/AppLayout";
 import "./App.scss";
 import { lazy, Suspense } from "react";

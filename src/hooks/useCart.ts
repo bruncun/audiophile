@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useMemo } from "react";
+import { useReducer, useEffect, useMemo, useState } from "react";
 
 const storedCartState = localStorage.getItem("audiophile-cart");
 const initialCartState = storedCartState ? JSON.parse(storedCartState) : {};
@@ -21,6 +21,7 @@ function cartReducer(state: Cart, action: CartAction) {
 
 function useCart() {
   const [cart, dispatch] = useReducer(cartReducer, initialCartState);
+  const [showCart, setShowCart] = useState(false);
 
   const selectedProductIds = useMemo(
     function () {
@@ -57,6 +58,8 @@ function useCart() {
     cart,
     dispatch,
     getCosts,
+    showCart,
+    setShowCart,
     selectedProductIds,
   };
 }

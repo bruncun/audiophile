@@ -1,24 +1,19 @@
 import { useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 
 type OrderControlsProps = {
   product: Product;
 };
 
 function OrderControls({ product: { id } }: OrderControlsProps) {
-  const history = useHistory();
-  const location = useLocation() as LocationWithNavState;
-  const { dispatch } = useContext(CartContext);
+  const { dispatch, setShowCart } = useContext(CartContext);
   let [quantity, setQuantity] = useState(1);
 
   function onAddToCartButtonClick() {
     dispatch({ type: "ADD_ORDER", payload: { quantity, productId: id } });
-    history.replace({
-      ...location,
-      state: { ...location.state, showCart: true },
-    });
+    setShowCart(true);
+    window.scrollTo(0, 0);
   }
 
   function onDecrementClick() {

@@ -1,4 +1,4 @@
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import { useContext } from "react";
 import { formatter } from "utils";
 import { Link } from "react-router-dom";

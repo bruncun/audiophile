@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import CartContext from "CartContext";
+import CartContext from "contexts/CartContext";
 import { useContext } from "react";
 
 function ConfirmationFooter() {
