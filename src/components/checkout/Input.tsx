@@ -25,7 +25,7 @@ function Input({
   const error = errors[name];
 
   return (
-    <>
+    <div data-cy="input">
       <div className="d-flex justify-content-between lh-0">
         <label
           htmlFor={id}
@@ -43,11 +43,12 @@ function Input({
         type={type}
         autoComplete={autocomplete}
         autoFocus={autofocus}
+        data-cy={name}
         pattern={typeof pattern === "object" ? pattern.toString() : undefined}
         className={`form-control ${error ? "border-danger border-2" : ""}`}
         {...register(name, { required: true, pattern })}
       />
-    </>
+    </div>
   );
 }
 

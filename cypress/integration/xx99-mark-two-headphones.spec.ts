@@ -8,6 +8,8 @@ describe("xx99-mark-two-headphones", function () {
   });
 
   it("goes back", function () {
+    cy.visit("/headphones");
+    cy.visit("/products/xx99-mark-two-headphones");
     cy.get('[data-cy="go-back-link"]').click({ force: true });
     cy.get('[data-cy="headphones"]').should("exist");
   });
@@ -32,5 +34,11 @@ describe("xx99-mark-two-headphones", function () {
   it("visits xx99 mark one headphones", function () {
     cy.get('[data-cy="xx99-mark-one-headphones-link"]').click({ force: true });
     cy.get('[data-cy="xx99-mark-one-headphones"]').should("exist");
+  });
+
+  it("adds product to cart", function () {
+    cy.get('[data-cy="add-to-cart"]').click();
+    cy.get('[data-cy="cart-modal"').should("exist");
+    cy.get('[data-cy="cart-header"]').contains("Cart (1)");
   });
 });
