@@ -15,7 +15,7 @@ function Footer() {
         />
       </div>
       <div className="container">
-        <nav className="d-lg-flex justify-content-between">
+        <nav className="d-xxl-flex justify-content-between">
           <div className="text-center text-md-start mb-5">
             <Link to="/">
               <img
@@ -54,8 +54,8 @@ function Footer() {
           </div>
         </nav>
         <div className="row">
-          <div className="col-lg-5">
-            <p className="text-white-50 mb-5 mb-md-6 mb-lg-5">
+          <div className="col-xxl-5">
+            <p className="text-white-50 mb-5 mb-md-6 mb-xxl-5">
               Audiophile is an all in one stop to fulfill your audio needs.
               We're a small team of music lovers and sound specialists who are
               devoted to helping you get the most out of personal audio. Come

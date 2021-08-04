@@ -33,7 +33,7 @@
   }
 }
 
-.earphones-yx1 {
+.earphones-yx1-image {
   object-fit: cover;
   height: 12.5rem;
 
@@ -50,22 +50,25 @@
     background-image: url(/assets/home/tablet/image-speaker-zx7.jpg);
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xxl) {
     background-image: url(/assets/home/desktop/image-speaker-zx7.jpg);
   }
 }
 
 .zx9-speaker {
   width: 172px;
+  height: 207px;
 
   @include media-breakpoint-up(md) {
     width: 197px;
+    height: 239px;
   }
 
   @include media-breakpoint-up(xxl) {
     bottom: -13%;
     left: -10%;
     width: 380px;
+    height: 461px;
   }
 }
 

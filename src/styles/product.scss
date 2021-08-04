@@ -1,0 +1,12 @@
+.hero-product-wrapper {
+  height: 0;
+  padding-top: 100%;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 960px / 562px * 100%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding-top: 795px / 766px * 100%;
+  }
+}

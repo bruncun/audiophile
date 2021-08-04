@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Yx1CtaCard() {
   return (
     <div className="card bg-light yx1-cta-card">
-      <div className="card-body py-4 my-3 mx-3 px-lg-6 d-flex align-items-center">
+      <div className="card-body py-4 my-3 mx-3 px-xxl-6 d-flex align-items-center">
         <div>
           <Link
             to="/products/yx1-earphones"

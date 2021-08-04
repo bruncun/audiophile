@@ -15,12 +15,12 @@ function About() {
         />
       </div>
       <div className="col-xxl-6 align-items-center d-flex">
-        <div className="text-center text-lg-start">
+        <div className="text-center text-xxl-start">
           <h3 className="fw-bold mb-4 pb-2 d-md-none">
             Bringing you the <span className="text-primary">best</span> audio
             gear
           </h3>
-          <h1 className="fw-bold px-4 px-md-5 mb-4 d-none d-md-block ps-xl-0 pe-xl-6 me-lg-5">
+          <h1 className="fw-bold px-4 px-md-5 mb-4 d-none d-md-block ps-xl-0 pe-xl-6 me-xxl-5">
             Bringing you the <span className="text-primary">best</span> audio
             gear
           </h1>
