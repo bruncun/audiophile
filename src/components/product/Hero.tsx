@@ -21,11 +21,15 @@ function Hero({ product }: HeroProps) {
       </Link>
       <div className="row gx-md-2 gx-xxl-4">
         <div className="col-md-5 col-xxl-6">
-          <ResponsiveImage
-            image={image}
-            imgClassName="rounded mb-4 pb-2 pb-md-0 mb-md-0 img-fluid"
-            alt={name}
-          />
+          <div className="mb-4 pb-2 pb-md-0 mb-md-0">
+            <div className="position-relative overflow-hidden hero-product-wrapper">
+              <ResponsiveImage
+                image={image}
+                imgClassName="rounded position-absolute w-100 h-100 top-0 start-0"
+                alt={name}
+              />
+            </div>
+          </div>
         </div>
         <div className="text-start col-md-6 col-xxl-5 d-md-flex align-items-center offset-md-1">
           <div>

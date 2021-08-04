@@ -14,7 +14,7 @@ function Gallery({
     <div className="row g-md-3 g-xxl-4">
       <div className="col-md-5 d-md-flex">
         <div className="d-flex align-items-start flex-column w-100">
-          <div className="w-100 mb-lg-auto">
+          <div className="w-100 mb-xxl-auto">
             <ResponsiveImage
               image={first}
               imgClassName="rounded img-fluid w-100 mb-3 pb-1 mb-xxl-auto"

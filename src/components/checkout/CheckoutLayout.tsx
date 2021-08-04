@@ -20,10 +20,10 @@ function CheckoutLayout({
             {goBackButton}
           </div>
           <div className="row">
-            <div className="col-lg-8 mb-xxl-6 pb-xxl-5">
+            <div className="col-xxl-8 mb-xxl-6 pb-xxl-5">
               <div className="pb-xxl-3">{checkoutForm}</div>
             </div>
-            <aside className="col-lg-4 mb-6 pb-md-4">{checkoutSummary}</aside>
+            <aside className="col-xxl-4 mb-6 pb-md-4">{checkoutSummary}</aside>
           </div>
         </main>
       </div>

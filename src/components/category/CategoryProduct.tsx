@@ -19,21 +19,25 @@ function ProductFeature({
   return (
     <div className="row" data-cy="product">
       <div
-        className={`col-12 col-lg-6 ${
-          swapColOrder ? "order-lg-2 offset-lg-1" : ""
+        className={`col-12 col-xxl-6 ${
+          swapColOrder ? "order-xxl-2 offset-xxl-1" : ""
         }`}
       >
-        <Link to={`/products/${slug}`} data-cy={`${slug}-link`}>
-          <ResponsiveImage
-            imgClassName="rounded img-fluid mb-4 mb-lg-0 w-100 pb-2 pb-md-0"
-            image={{ mobile, tablet, desktop }}
-            alt={name}
-          />
-        </Link>
+        <div className="mb-4 mb-xxl-0 pb-2 pb-md-0">
+          <div className="position-relative overflow-hidden category-product-wrapper">
+            <Link to={`/products/${slug}`} data-cy={`${slug}-link`}>
+              <ResponsiveImage
+                imgClassName="rounded w-100 h-100 position-absolute w-100 start-0 top-0"
+                image={{ mobile, tablet, desktop }}
+                alt={name}
+              />
+            </Link>
+          </div>
+        </div>
       </div>
       <div
-        className={`text-center col-12 col-lg-5 d-lg-flex align-items-center text-xxl-start ${
-          swapColOrder ? "" : "offset-lg-1"
+        className={`text-center col-12 col-xxl-5 d-xxl-flex align-items-center text-xxl-start ${
+          swapColOrder ? "" : "offset-xxl-1"
         }`}
       >
         <div className="mx-md-5">
@@ -46,12 +50,12 @@ function ProductFeature({
             to={`/products/${slug}`}
             className="text-decoration-none text-body"
           >
-            <h3 className="fw-bold me-lg-6 mb-4 d-md-none">{name}</h3>
-            <h1 className="fw-bold me-lg-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0 me-xxl-4">
+            <h3 className="fw-bold me-xxl-6 mb-4 d-md-none">{name}</h3>
+            <h1 className="fw-bold me-xxl-6 mb-4 d-none d-md-block mx-md-5 ms-xxl-0 me-xxl-4">
               {name}
             </h1>
           </Link>
-          <p className="text-black-50 mb-5 lh-base me-lg-4">{description}</p>
+          <p className="text-black-50 mb-5 lh-base me-xxl-4">{description}</p>
           <Link className="btn btn-primary" to={`/products/${slug}`}>
             See Product
           </Link>
