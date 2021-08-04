@@ -10,7 +10,11 @@ function Nav({ onCartTogglerClick, onNavbarTogglerClick }: NavProps) {
   return (
     <>
       <div>
-        <button className="navbar-toggler" onClick={onNavbarTogglerClick}>
+        <button
+          className="navbar-toggler"
+          onClick={onNavbarTogglerClick}
+          aria-label="toggle-navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <Link to="/" className="d-none d-md-inline-block lh-1">
