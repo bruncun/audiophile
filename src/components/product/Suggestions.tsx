@@ -20,13 +20,17 @@ function Suggestions({ product: { others } }: SuggestionsProps) {
             className="text-center mb-5 mb-xxl-0 col-md-4 pb-2 pb-md-1"
             key={idx}
           >
-            <Link to={`/products/${slug}`} data-cy={`${slug}-link`}>
-              <ResponsiveImage
-                image={image}
-                imgClassName="rounded img-fluid mb-4 pb-2 pb-md-3 w-100"
-                alt={name}
-              />
-            </Link>
+            <div className="mb-4 pb-2 pb-md-3">
+              <div className="suggestion-wrapper position-relative overflow-hidden">
+                <Link to={`/products/${slug}`} data-cy={`${slug}-link`}>
+                  <ResponsiveImage
+                    image={image}
+                    imgClassName="rounded position-absolute w-100 h-100 top-0 start-0"
+                    alt={name}
+                  />
+                </Link>
+              </div>
+            </div>
             <Link
               className="text-decoration-none text-body"
               to={`/products/${slug}`}
