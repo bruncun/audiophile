@@ -6,6 +6,7 @@ function GoBackButton() {
   function onGoBackClick() {
     history.goBack();
   }
+
   return (
     <button
       onClick={onGoBackClick}

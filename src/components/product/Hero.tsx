@@ -1,24 +1,29 @@
-import { Link } from "react-router-dom";
 import { formatter } from "utils";
 import OrderControls from "components/product/OrderControls";
 import ResponsiveImage from "components/shared/ResponsiveImage";
+import { useHistory } from "react-router-dom";
 
 interface HeroProps {
   product: Product;
 }
 
 function Hero({ product }: HeroProps) {
-  const { isNew, image, name, description, price, category } = product;
+  const { isNew, image, name, description, price } = product;
+  const history = useHistory();
+
+  function onGoBackClick() {
+    history.goBack();
+  }
 
   return (
     <>
-      <Link
-        to={`/${category}`}
+      <button
+        onClick={onGoBackClick}
         data-cy="go-back-link"
-        className="text-black-50 mb-4 d-inline-block text-decoration-none mb-xxl-5 pb-xxl-2 text-primary-hover"
+        className="text-black-50 mb-4 d-inline-block text-decoration-none mb-xxl-5 p-0 pb-xxl-2 text-primary-hover ls-0 btn btn-link text-primary-hover text-capitalize"
       >
         Go Back
-      </Link>
+      </button>
       <div className="row gx-md-2 gx-xxl-4">
         <div className="col-md-5 col-xxl-6">
           <div className="mb-4 pb-2 pb-md-0 mb-md-0">
