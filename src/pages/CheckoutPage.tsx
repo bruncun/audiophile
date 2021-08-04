@@ -12,7 +12,7 @@ import { useSavePurchase, useProductsById } from "hooks/useApi";
 import { Redirect } from "react-router-dom";
 import Spinner from "components/shared/Spinner";
 
-function Checkout() {
+function CheckoutPage() {
   const {
     handleSubmit,
     register,
@@ -71,4 +71,4 @@ function Checkout() {
   }
 }
 
-export default Checkout;
+export default CheckoutPage;
