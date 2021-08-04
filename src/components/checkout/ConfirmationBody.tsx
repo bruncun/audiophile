@@ -22,7 +22,7 @@ function ConfirmationBody() {
       <span className="fw-bold me-md-6 pe-5 d-none d-md-block mb-4 h2">
         Thank you for your order
       </span>
-      <span className="fw-bold mb-3 pe-5 d-md-none h4">
+      <span className="fw-bold mb-3 pe-5 d-md-none h4 d-block">
         Thank you for your order
       </span>
       <p className="text-black-50 mb-4 pb-md-2">
