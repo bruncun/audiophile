@@ -42,7 +42,7 @@ function CartProduct({
   }
 
   return (
-    <li className="mb-4">
+    <li className="mb-4" data-cy="cart-product">
       <div className="d-flex align-items-center">
         <Link to={`/products/${slug}`}>
           <img

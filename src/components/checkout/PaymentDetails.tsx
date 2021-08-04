@@ -24,6 +24,7 @@ function PaymentDetails() {
                 {...register("paymentMethod", { required: true })}
                 value="e-money"
                 id="e-money"
+                data-cy="e-money"
               />
               <span className="fw-bold">e-Money</span>
             </label>
@@ -39,6 +40,7 @@ function PaymentDetails() {
                 {...register("paymentMethod", { required: true })}
                 value="cash-on-delivery"
                 id="cash-on-delivery"
+                data-cy="cash-on-delivery"
               />
               <span className="fw-bold">Cash on Delivery</span>
             </label>

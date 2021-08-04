@@ -44,7 +44,7 @@ function CheckoutSummary() {
         </div>
         <div className="d-flex justify-content-between py-2 mb-4">
           <span className="text-black-50 text-uppercase">Grand Total</span>
-          <span className="text-primary fw-bold">
+          <span className="text-primary fw-bold" data-cy="grand-total">
             {formatter.format(grandTotal)}
           </span>
         </div>

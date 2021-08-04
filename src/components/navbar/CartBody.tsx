@@ -24,7 +24,9 @@ function CartBody() {
       </ul>
       <div className="d-flex justify-content-between">
         <span className="text-black-50 text-uppercase">Total</span>
-        <span className="text-black fw-bold">{formattedTotal}</span>
+        <span className="text-black fw-bold" data-cy="cart-total">
+          {formattedTotal}
+        </span>
       </div>
     </>
   );
