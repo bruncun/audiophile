@@ -1,5 +1,5 @@
 import { useHistory, useLocation } from "react-router-dom";
-import Navbar from "components/navbar/Navbar";
+import Navbar from "components/shared/navbar/Navbar";
 import Footer from "components/shared/Footer";
 import { useEffect } from "react";
 

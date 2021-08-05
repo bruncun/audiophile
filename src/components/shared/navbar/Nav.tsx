@@ -1,4 +1,4 @@
-import CartToggler from "components/navbar/CartToggler";
+import CartToggler from "components/shared/navbar/CartToggler";
 import { Link } from "react-router-dom";
 
 interface NavProps {

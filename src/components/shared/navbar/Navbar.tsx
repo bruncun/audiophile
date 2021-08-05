@@ -1,5 +1,5 @@
-import Nav from "components/navbar/Nav";
-import OffcanvasNav from "components/navbar/OffcanvasNav";
+import Nav from "components/shared/navbar/Nav";
+import OffcanvasNav from "components/shared/navbar/OffcanvasNav";
 import { useHistory } from "react-router-dom";
 import CartModal from "./CartModal";
 import { modifyBodyClassList } from "utils";

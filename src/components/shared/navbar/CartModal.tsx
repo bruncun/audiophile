@@ -1,6 +1,6 @@
-import CartBody from "components/navbar/CartBody";
-import CartFooter from "components/navbar/CartFooter";
-import CartHeader from "components/navbar/CartHeader";
+import CartBody from "components/shared/navbar/CartBody";
+import CartFooter from "components/shared/navbar/CartFooter";
+import CartHeader from "components/shared/navbar/CartHeader";
 import { useProductsById } from "hooks/useApi";
 import CartContext from "contexts/CartContext";
 import { useContext } from "react";

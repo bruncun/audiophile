@@ -8,9 +8,10 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import useCart from "hooks/useCart";
 import CartContext from "contexts/CartContext";
 import AppLayout from "components/AppLayout";
-import "./App.scss";
 import { lazy, Suspense } from "react";
 import Spinner from "components/shared/Spinner";
+import "styles/app.scss";
+
 const HomePage = lazy(() => import("pages/HomePage"));
 const CheckoutPage = lazy(() => import("pages/CheckoutPage"));
 const CategoryPage = lazy(() => import("pages/CategoryPage"));
