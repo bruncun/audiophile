@@ -26,7 +26,6 @@ describe("navbar", function () {
   it.only("goes to checkout", function () {
     cy.visit("/products/xx99-mark-two-headphones");
     cy.get('[data-cy="add-to-cart"]').click({ force: true });
-    cy.get('[data-cy="cart-toggler"]').first().click();
     cy.get('[data-cy="cart-checkout"]').click();
     cy.get('[data-cy="checkout"]').should("exist");
   });
