@@ -1,9 +1,9 @@
-import CheckoutFormContext from "contexts/CheckoutFormContext";
+import PurchaseFormContext from "contexts/PurchaseFormContext";
 import { useContext } from "react";
 
 function PaymentDetails() {
-  const checkoutFormContext = useContext(CheckoutFormContext)!;
-  const { register } = checkoutFormContext!;
+  const purchaseFormContext = useContext(PurchaseFormContext)!;
+  const { register } = purchaseFormContext!;
 
   return (
     <>

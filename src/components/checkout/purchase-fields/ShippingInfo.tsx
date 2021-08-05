@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from "components/checkout/Input";
 
 const ZIPCODE_REGEX = /^\d{5}(?:[- ]?\d{4})?$/;
 

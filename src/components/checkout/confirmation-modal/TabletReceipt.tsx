@@ -1,18 +1,18 @@
-import ConfirmationProduct from "components/checkout/ConfirmationProduct";
+import ConfirmationProduct from "components/checkout/confirmation-modal/ConfirmationProduct";
 import CartContext from "contexts/CartContext";
 import { useContext } from "react";
 import { useProductsById } from "hooks/useApi";
 import { formatter } from "utils";
 
-interface MobilePurchaseSummaryProps {
+interface TabletPurchaseSummaryProps {
   showAllProducts: boolean;
   onToggleShowAllProductsClick: () => void;
 }
 
-function MobilePurchaseSummary({
+function TabletPurchaseSummary({
   showAllProducts,
   onToggleShowAllProductsClick,
-}: MobilePurchaseSummaryProps) {
+}: TabletPurchaseSummaryProps) {
   const { getCosts, cart, selectedProductIds } = useContext(CartContext);
   const selectedProductQueries = useProductsById(selectedProductIds);
 
@@ -26,8 +26,8 @@ function MobilePurchaseSummary({
 
   return (
     <>
-      <div className="rounded-top bg-light d-flex p-4 flex-column">
-        <ul className="list-unstyled mb-2">
+      <div className="rounded-start bg-light d-flex p-4 flex-column w-100">
+        <ul className="list-unstyled">
           {showAllProducts ? (
             selectedProducts.map((product, index) => (
               <ConfirmationProduct
@@ -64,7 +64,7 @@ function MobilePurchaseSummary({
           </span>
         </button>
       </div>
-      <div className="rounded-bottom bg-dark d-flex px-4 py-3 flex-column">
+      <div className="rounded-end bg-dark d-flex p-4 flex-column w-75 justify-content-center">
         <span className="text-white-50 text-uppercase mb-2">Grand Total</span>
         <span className="text-white fw-bold mb-0 h6 d-block">
           {formatter.format(total)}
@@ -74,4 +74,4 @@ function MobilePurchaseSummary({
   );
 }
 
-export default MobilePurchaseSummary;
+export default TabletPurchaseSummary;

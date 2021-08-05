@@ -1,5 +1,5 @@
-import MobilePurchaseSummary from "components/checkout/MobilePurchaseSummary";
-import TabletPurchaseSummary from "components/checkout/TabletPurchaseSummary";
+import MobileReceipt from "components/checkout/confirmation-modal/MobileReceipt";
+import TabletReceipt from "components/checkout/confirmation-modal/TabletReceipt";
 import { useState } from "react";
 
 function ConfirmationBody() {
@@ -29,13 +29,13 @@ function ConfirmationBody() {
         You will receive an email confirmation shortly.
       </p>
       <div className="d-md-none">
-        <MobilePurchaseSummary
+        <MobileReceipt
           onToggleShowAllProductsClick={onToggleShowAllProductsClick}
           showAllProducts={showAllProducts}
         />
       </div>
       <div className="d-none d-md-flex w-100">
-        <TabletPurchaseSummary
+        <TabletReceipt
           onToggleShowAllProductsClick={onToggleShowAllProductsClick}
           showAllProducts={showAllProducts}
         />
