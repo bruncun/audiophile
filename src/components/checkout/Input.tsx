@@ -1,8 +1,8 @@
-import CheckoutFormContext from "contexts/CheckoutFormContext";
+import PurchaseFormContext from "contexts/PurchaseFormContext";
 import { useContext } from "react";
 
 interface InputProps {
-  name: keyof ICheckoutFormValues;
+  name: keyof IPurchaseFieldsValues;
   type?: HTMLInputElement["type"];
   autocomplete?: HTMLInputElement["autocomplete"];
   autofocus?: boolean;
@@ -20,8 +20,8 @@ function Input({
   autocomplete,
   autofocus,
 }: InputProps) {
-  const checkoutFormContext = useContext(CheckoutFormContext)!;
-  const { register, errors } = checkoutFormContext!;
+  const purchaseFormContext = useContext(PurchaseFormContext)!;
+  const { register, errors } = purchaseFormContext;
   const error = errors[name];
 
   return (

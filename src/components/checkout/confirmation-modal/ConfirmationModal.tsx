@@ -1,9 +1,19 @@
-import ConfirmationFooter from "components/checkout/ConfirmationFooter";
-import ConfirmationBody from "components/checkout/ConfirmationBody";
+import ConfirmationFooter from "components/checkout/confirmation-modal/ConfirmationFooter";
+import ConfirmationBody from "components/checkout/confirmation-modal/ConfirmationBody";
 import { useEffect, useRef } from "react";
+import { modifyBodyClassList } from "utils";
+import { useSavePurchase } from "hooks/useApi";
 
 function ConfirmationModal() {
   const modalEl = useRef<HTMLDivElement>(null);
+  const { isSuccess } = useSavePurchase();
+
+  if (isSuccess) {
+    modifyBodyClassList("overflow-hidden", "add");
+    localStorage.removeItem("audiophile-cart");
+  } else {
+    modifyBodyClassList("overflow-hidden", "remove");
+  }
 
   useEffect(function () {
     if (!modalEl.current) throw Error("modalEl is not assigned");

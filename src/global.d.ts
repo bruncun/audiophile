@@ -18,7 +18,7 @@ declare interface Cart {
   [k: number]: number;
 }
 
-declare interface ICheckoutFormValues {
+declare interface IPurchaseFieldsValues {
   name: string;
   email: string;
   phoneNumber: string;
@@ -31,7 +31,7 @@ declare interface ICheckoutFormValues {
   eMoneyPin: string;
 }
 
-declare interface Purchase extends ICheckoutFormValues {
+declare interface Purchase extends IPurchaseFieldsValues {
   orders: Order[];
 }
 

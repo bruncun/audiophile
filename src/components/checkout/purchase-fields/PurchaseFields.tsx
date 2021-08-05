@@ -1,17 +1,14 @@
-import BillingDetails from "components/checkout/BillingDetails";
-import PaymentDetails from "components/checkout/PaymentDetails";
-import ShippingInfo from "components/checkout/ShippingInfo";
-import CashOnDelivery from "components/checkout/CashOnDelivery";
-import { UseFormRegister, FieldErrors } from "react-hook-form";
-import Input from "./Input";
+import BillingDetails from "components/checkout/purchase-fields/BillingDetails";
+import PaymentDetails from "components/checkout/purchase-fields/PaymentDetails";
+import ShippingInfo from "components/checkout/purchase-fields/ShippingInfo";
+import CashOnDelivery from "components/checkout/purchase-fields/CashOnDelivery";
+import Input from "components/checkout/Input";
 
-interface CheckoutFormProps {
-  register: UseFormRegister<ICheckoutFormValues>;
-  errors: FieldErrors<ICheckoutFormValues>;
+interface PurchaseFieldsProps {
   paymentMethod: string;
 }
 
-function CheckoutForm({ paymentMethod }: CheckoutFormProps) {
+function PurchaseFields({ paymentMethod }: PurchaseFieldsProps) {
   return (
     <div className="card bg-white">
       <div className="card-body py-4 my-md-1 px-md-4 mx-md-2 p-xxl-5 m-xxl-0">
@@ -48,4 +45,4 @@ function CheckoutForm({ paymentMethod }: CheckoutFormProps) {
   );
 }
 
-export default CheckoutForm;
+export default PurchaseFields;

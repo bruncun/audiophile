@@ -1,4 +1,4 @@
-function CheckoutForm() {
+function CashOnDelivery() {
   return (
     <div className="d-flex align-items-center">
       <div className="flex-shrink-0">
@@ -20,4 +20,4 @@ function CheckoutForm() {
   );
 }
 
-export default CheckoutForm;
+export default CashOnDelivery;

@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from "components/checkout/Input";
 
 const EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
 
