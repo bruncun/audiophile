@@ -26,7 +26,8 @@
     "server": "node server.js",
     "build": "craco build",
     "test": "npx cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall" : "yarn build"
   },
   "eslintConfig": {
     "extends": [
