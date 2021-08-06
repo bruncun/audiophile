@@ -7,7 +7,7 @@ import {
 import { QueryClientProvider, QueryClient } from "react-query";
 import useCart from "hooks/useCart";
 import CartContext from "contexts/CartContext";
-import AppLayout from "components/AppLayout";
+import AppLayout from "components/shared/AppLayout";
 import { lazy, Suspense } from "react";
 import Spinner from "components/shared/Spinner";
 import "styles/app.scss";
