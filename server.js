@@ -7,9 +7,7 @@ const middlewares = jsonServer.defaults({ static: "./build" });
 server.use(middlewares);
 server.use("/api", router);
 server.use(function ({ path }, res) {
-  const hashPath = `/#${path}`;
-  console.log(hashPath);
-  res.redirect(hashPath);
+  res.redirect(`/#${path}`);
 });
 
 const port = process.env.PORT || 3004;
