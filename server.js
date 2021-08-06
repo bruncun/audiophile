@@ -2,12 +2,15 @@ const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 
-const middlewaresOptions =
-  process.env.NODE_ENV === "production" ? { static: "./build" } : null;
-const middlewares = jsonServer.defaults(middlewaresOptions);
+const middlewares = jsonServer.defaults({ static: "./build" });
 
 server.use(middlewares);
-server.use(router);
+server.use("/api", router);
+server.use(function ({ path }, res) {
+  const hashPath = `/#${path}`;
+  console.log(hashPath);
+  res.redirect(hashPath);
+});
 
 const port = process.env.PORT || 3004;
 
