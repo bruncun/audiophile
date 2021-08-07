@@ -25,6 +25,19 @@ interface AppLayoutProps {
 }
 
 function AppLayout({ children }: AppLayoutProps) {
+  useEffect(function () {
+    function onResize() {
+      document
+        .querySelectorAll("source")
+        .forEach((s) => s.setAttribute("media", s.getAttribute("media") || ""));
+    }
+    window.addEventListener("resize", onResize);
+
+    return function () {
+      window.removeEventListener("resize", onResize);
+    };
+  });
+
   return (
     <>
       <ScrollRestoration />
