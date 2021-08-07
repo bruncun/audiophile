@@ -46,3 +46,8 @@
     height: auto;
   }
 }
+
+.spinner-wrapper {
+  height: calc(100vh - 6rem);
+  width: calc(100vw - 6rem);
+}

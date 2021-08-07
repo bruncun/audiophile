@@ -1,6 +1,6 @@
 function Spinner() {
   return (
-    <div className="min-vw-100 min-vh-100 d-flex justify-content-center align-items-center">
+    <div className="d-flex justify-content-center align-items-center spinner-wrapper">
       <div className="spinner-border text-primary" role="status">
         <span className="visually-hidden">Loading...</span>
       </div>
