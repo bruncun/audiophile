@@ -39,7 +39,7 @@ function CartModal({ toggleCart }: CartModalProps) {
       data-cy="cart-modal"
     >
       <div className="container-md pt-xxl-2">
-        <div className="modal-dialog mt-6 pt-4 mx-auto me-md-0 modal-sm ms-md-auto z-9999">
+        <div className="modal-dialog mt-6 pt-4 mx-auto me-md-0 modal-sm ms-md-auto">
           <div className="modal-content">
             {isLoading ? (
               <div className="modal-body justify-content-center d-flex">

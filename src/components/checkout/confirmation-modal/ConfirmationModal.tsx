@@ -25,14 +25,14 @@ function ConfirmationModal({ isSuccess }: ConfirmationModalProps) {
   return (
     <>
       <div
-        className="modal fade show d-block"
+        className="modal fade show d-flex align-items-center"
         ref={modalEl}
         tabIndex={-1}
         role="dialog"
         data-cy="confirmation-modal"
       >
         <div className="container-md">
-          <div className="modal-dialog mt-6 pt-2 mx-auto z-9999">
+          <div className="modal-dialog mx-auto modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-body p-4 p-md-5 pb-0">
                 <ConfirmationBody />
