@@ -1,12 +1,14 @@
+@use "sass:math";
+
 .category-product-wrapper {
   height: 0;
-  padding-top: 704px / 654px * 100%;
+  padding-top: math.div(704px, 654px) * 100%;
 
   @include media-breakpoint-up(md) {
-    padding-top: 704px / 1378px * 100%;
+    padding-top: math.div(704px, 1378px) * 100%;
   }
 
   @include media-breakpoint-up(xxl) {
-    padding-top: 795px / 766px * 100%;
+    padding-top: math.div(795px, 766px) * 100%;
   }
 }
