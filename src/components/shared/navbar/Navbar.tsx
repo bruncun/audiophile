@@ -12,9 +12,15 @@ function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
 
   if (showCart) {
-    modifyBodyClassList("prevent-modal-scroll", "add");
+    modifyBodyClassList("overflow-hidden", "add");
   } else {
-    modifyBodyClassList("prevent-modal-scroll", "remove");
+    modifyBodyClassList("overflow-hidden", "remove");
+  }
+
+  if (showNavbar) {
+    modifyBodyClassList("prevent-navbar-scroll", "add");
+  } else {
+    modifyBodyClassList("prevent-navbar-scroll", "remove");
   }
 
   function toggleNavbar() {
@@ -48,7 +54,7 @@ function Navbar() {
   return (
     <>
       {showCart && <CartModal toggleCart={toggleCart} />}
-      <nav className="navbar navbar-expand-xxl navbar-dark bg-dark z-9999 py-1 lh-1">
+      <nav className="navbar navbar-expand-xxl navbar-dark bg-dark py-1 lh-1 z-9999">
         <div className="container-md py-4 my-2">
           <Nav
             onCartTogglerClick={toggleCart}
@@ -57,6 +63,12 @@ function Navbar() {
         </div>
       </nav>
       {showNavbar && <OffcanvasNav />}
+      {showNavbar && (
+        <div
+          className="modal-backdrop fade show d-xxl-none"
+          onClick={toggleNavbar}
+        />
+      )}
       {showCart && (
         <div className="modal-backdrop fade show" onClick={toggleCart} />
       )}
