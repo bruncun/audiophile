@@ -36,7 +36,9 @@ function CheckoutPage() {
           <CheckoutLayout
             goBackButton={<GoBackButton />}
             purchaseForm={<PurchaseFields paymentMethod={paymentMethod} />}
-            confirmation={isSuccess && <ConfirmationModal />}
+            confirmation={
+              isSuccess && <ConfirmationModal isSuccess={isSuccess} />
+            }
             summary={<Summary />}
           />
         </PurchaseForm>
