@@ -1,51 +1,53 @@
+@use "sass:math";
+
 .hero-product-wrapper {
   height: 0;
   padding-top: 100%;
 
   @include media-breakpoint-up(md) {
-    padding-top: 960px / 562px * 100%;
+    padding-top: math.div(960px, 562px) * 100%;
   }
 
   @include media-breakpoint-up(xxl) {
-    padding-top: 795px / 766px * 100%;
+    padding-top: math.div(795px, 766px) * 100%;
   }
 }
 
 .small-gallery-image-wrapper {
   height: 0;
-  padding-top: 348px / 654px * 100%;
+  padding-top: math.div(348px, 654px) * 100%;
 
   @include media-breakpoint-up(md) {
-    padding-top: 348px / 554px * 100%;
+    padding-top: math.div(348px, 554px) * 100%;
   }
 
   @include media-breakpoint-up(xxl) {
-    padding-top: 280px / 445px * 100%;
+    padding-top: math.div(280px, 445px) * 100%;
   }
 }
 
 .large-gallery-image-wrapper {
   height: 0;
-  padding-top: 736px / 654px * 100%;
+  padding-top: math.div(736px, 654px) * 100%;
 
   @include media-breakpoint-up(md) {
-    padding-top: 736px / 790px * 100%;
+    padding-top: math.div(736px, 790px) * 100%;
   }
 
   @include media-breakpoint-up(xxl) {
-    padding-top: 592px / 635px * 100%;
+    padding-top: math.div(592px, 635px) * 100%;
   }
 }
 
 .suggestion-wrapper {
   height: 0;
-  padding-top: 240px / 654px * 100%;
+  padding-top: math.div(240px, 654px) * 100%;
 
   @include media-breakpoint-up(md) {
-    padding-top: 636px / 446px * 100%;
+    padding-top: math.div(636px, 446px) * 100%;
   }
 
   @include media-breakpoint-up(xxl) {
-    padding-top: 636px / 700px * 100%;
+    padding-top: math.div(636px, 700px) * 100%;
   }
 }
