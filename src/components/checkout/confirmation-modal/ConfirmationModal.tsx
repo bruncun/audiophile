@@ -2,13 +2,16 @@ import ConfirmationFooter from "components/checkout/confirmation-modal/Confirmat
 import ConfirmationBody from "components/checkout/confirmation-modal/ConfirmationBody";
 import { useEffect, useRef } from "react";
 import { modifyBodyClassList } from "utils";
-import { useSavePurchase } from "hooks/useApi";
 
-function ConfirmationModal() {
+interface ConfirmationModalProps {
+  isSuccess: boolean;
+}
+
+function ConfirmationModal({ isSuccess }: ConfirmationModalProps) {
   const modalEl = useRef<HTMLDivElement>(null);
-  const { isSuccess } = useSavePurchase();
 
   if (isSuccess) {
+    window.scrollTo(0, 0);
     modifyBodyClassList("overflow-hidden", "add");
     localStorage.removeItem("audiophile-cart");
   } else {
