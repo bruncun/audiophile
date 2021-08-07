@@ -12,9 +12,9 @@ function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
 
   if (showCart) {
-    modifyBodyClassList("overflow-hidden", "add");
+    modifyBodyClassList("prevent-modal-scroll", "add");
   } else {
-    modifyBodyClassList("overflow-hidden", "remove");
+    modifyBodyClassList("prevent-modal-scroll", "remove");
   }
 
   function toggleNavbar() {
