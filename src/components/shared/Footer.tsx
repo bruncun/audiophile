@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SocialIcons from "components/shared/SocialIcons";
+import SocialLinks from "components/shared/SocialLinks";
 
 function Footer() {
   return (
@@ -67,7 +67,7 @@ function Footer() {
           <p className="text-white-50 mb-5 fw-bold d-md-inline-block mb-md-0">
             Copyright 2021. All Rights Reserved
           </p>
-          <SocialIcons />
+          <SocialLinks />
         </div>
       </div>
     </footer>
