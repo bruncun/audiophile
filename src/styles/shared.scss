@@ -31,7 +31,18 @@
   }
 }
 
-.prevent-modal-scroll {
+.prevent-navbar-scroll {
   overflow: hidden;
-  touch-action: none;
+
+  @include media-breakpoint-up(xxl) {
+    overflow: auto;
+  }
+}
+
+.offcanvas-nav {
+  height: calc(100% - 7.5rem);
+
+  @include media-breakpoint-up(md) {
+    height: auto;
+  }
 }
