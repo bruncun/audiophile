@@ -30,3 +30,8 @@
     height: 36.75rem;
   }
 }
+
+.prevent-modal-scroll {
+  overflow: hidden;
+  touch-action: none;
+}

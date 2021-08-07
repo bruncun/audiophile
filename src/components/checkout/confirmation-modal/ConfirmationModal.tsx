@@ -11,11 +11,10 @@ function ConfirmationModal({ isSuccess }: ConfirmationModalProps) {
   const modalEl = useRef<HTMLDivElement>(null);
 
   if (isSuccess) {
-    window.scrollTo(0, 0);
-    modifyBodyClassList("overflow-hidden", "add");
+    modifyBodyClassList("prevent-modal-scroll", "add");
     localStorage.removeItem("audiophile-cart");
   } else {
-    modifyBodyClassList("overflow-hidden", "remove");
+    modifyBodyClassList("prevent-modal-scroll", "remove");
   }
 
   useEffect(function () {
