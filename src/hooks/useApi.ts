@@ -3,19 +3,21 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
-const getProductsByCategory = async (category: string): Promise<Product[]> => {
+export const getProductsByCategory = async (
+  category: string
+): Promise<Product[]> => {
   const { data } = await axios.get(
     `/products?category=${category}&_sort=id&_order=desc`
   );
   return data;
 };
 
-const getProductBySlug = async (slug: string): Promise<Product[]> => {
+export const getProductBySlug = async (slug: string): Promise<Product[]> => {
   const { data } = await axios.get(`/products?slug=${slug}`);
   return data;
 };
 
-const getProductById = async (id: number): Promise<Product> => {
+export const getProductById = async (id: number): Promise<Product> => {
   const { data } = await axios.get(`/products/${id}`);
   return data;
 };
@@ -50,3 +52,5 @@ export function useSavePurchase() {
     axios.post("/purchases", newPurchase)
   );
 }
+
+export function prefetchCategories() {}

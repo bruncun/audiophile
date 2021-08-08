@@ -4,7 +4,7 @@ interface ProductLayoutProps {
   details: React.ReactNode;
   categoryList: React.ReactNode;
   gallery: React.ReactNode;
-  suggestions: React.ReactNode;
+  suggestionList: React.ReactNode;
   about: React.ReactNode;
 }
 
@@ -13,7 +13,7 @@ function ProductLayout({
   hero,
   details,
   gallery,
-  suggestions,
+  suggestionList,
   categoryList,
   about,
 }: ProductLayoutProps) {
@@ -25,7 +25,7 @@ function ProductLayout({
           <div className="py-5 mt-md-2">{details}</div>
           <div className="py-5 mt-4 mt-md-3 mt-xxl-3 pt-xxl-6">{gallery}</div>
           <div className="py-5">
-            <div className="mt-4 pt-2 mt-md-2 mt-xxl-4">{suggestions}</div>
+            <div className="mt-4 pt-2 mt-md-2 mt-xxl-4">{suggestionList}</div>
           </div>
           <div className="py-5 mt-xxl-3">
             <nav className="mt-1 mb-4 mt-md-0 my-xxl-5 pt-xxl-4 pb-xxl-3">

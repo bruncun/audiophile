@@ -27,7 +27,7 @@ function Hero({ product }: HeroProps) {
       <div className="row gx-md-2 gx-xxl-4">
         <div className="col-md-5 col-xxl-6">
           <div className="mb-4 pb-2 pb-md-0 mb-md-0">
-            <div className="position-relative overflow-hidden hero-product-wrapper">
+            <div className="position-relative overflow-hidden hero-product-wrapper bg-light">
               <ResponsiveImage
                 image={image}
                 imgClassName="rounded position-absolute w-100 h-100 top-0 start-0"

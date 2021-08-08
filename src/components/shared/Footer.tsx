@@ -1,9 +1,29 @@
 import { Link } from "react-router-dom";
 import SocialLinks from "components/shared/SocialLinks";
+import { useQueryClient } from "react-query";
+import { getProductsByCategory } from "hooks/useApi";
+import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 function Footer() {
+  const [isSeen, setIsSeen] = useState(false);
+  const queryClient = useQueryClient();
+  const { ref, inView } = useInView();
+
+  if (!isSeen && inView) {
+    ["headphones", "speakers", "earphones"].map(async function (category) {
+      await queryClient.prefetchQuery(["products", category], () =>
+        getProductsByCategory(category)
+      );
+    });
+    setIsSeen(true);
+  }
+
   return (
-    <footer className="bg-dark py-5 text-center text-md-start position-relative">
+    <footer
+      className="bg-dark py-5 text-center text-md-start position-relative"
+      ref={ref}
+    >
       <div className="container-md position-absolute top-0 start-50 translate-middle-x orange-rectangle">
         <img
           className="align-top"

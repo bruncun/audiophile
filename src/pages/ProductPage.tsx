@@ -2,7 +2,7 @@ import ProductLayout from "components/product/ProductLayout";
 import Hero from "components/product/Hero";
 import Details from "components/product/Details";
 import Gallery from "components/product/Gallery";
-import Suggestions from "components/product/Suggestions";
+import SuggestionList from "components/product/SuggestionList";
 import CategoryList from "components/shared/CategoryList";
 import About from "components/shared/About";
 import { useParams, Redirect } from "react-router-dom";
@@ -30,7 +30,7 @@ function ProductPage() {
         hero={<Hero product={product} />}
         details={<Details product={product} />}
         gallery={<Gallery product={product} />}
-        suggestions={<Suggestions product={product} />}
+        suggestionList={<SuggestionList product={product} />}
         categoryList={<CategoryList />}
         about={<About />}
       />

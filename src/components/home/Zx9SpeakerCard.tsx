@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import ResponsiveImage from "components/shared/ResponsiveImage";
+import usePrefetchProductBySlugOnInView from "hooks/usePrefetchProductBySlugOnInView";
 
 function Zx9SpeakerFeatureCard() {
+  const ref = usePrefetchProductBySlugOnInView("zx9-speaker");
+
   return (
-    <div className="card bg-primary text-white text-center text-xxl-start overflow-hidden">
+    <div
+      className="card bg-primary text-white text-center text-xxl-start overflow-hidden"
+      ref={ref}
+    >
       <div className="card-body position-relative pb-5 pt-xxl-5">
         <div aria-hidden="true">
           <ResponsiveImage

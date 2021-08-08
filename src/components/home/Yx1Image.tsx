@@ -1,9 +1,12 @@
 import ResponsiveImage from "components/shared/ResponsiveImage";
 import { Link } from "react-router-dom";
+import usePrefetchProductBySlugOnInView from "hooks/usePrefetchProductBySlugOnInView";
 
 function Yx1Image() {
+  const ref = usePrefetchProductBySlugOnInView("yx1-earphones");
+
   return (
-    <Link to="/products/yx1-earphones">
+    <Link to="/products/yx1-earphones" ref={ref}>
       <ResponsiveImage
         image={{
           mobile: "/assets/home/mobile/image-earphones-yx1.jpg",

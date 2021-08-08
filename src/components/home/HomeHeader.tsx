@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import usePrefetchProductBySlugOnInView from "hooks/usePrefetchProductBySlugOnInView";
 
 function Header() {
+  const ref = usePrefetchProductBySlugOnInView("xx99-mark-two-headphones");
+
   return (
-    <div className="container h-100">
+    <div className="container h-100" ref={ref}>
       <div className="row text-center text-xxl-start h-100 align-items-center">
         <div className="col-md-8 offset-md-2 col-xxl-7 offset-xxl-0">
           <small className="mt-6 mb-3 text-white-50 text-uppercase ls-5 d-block">

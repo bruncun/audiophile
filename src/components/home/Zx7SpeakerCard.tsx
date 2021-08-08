@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import usePrefetchProductBySlugOnInView from "hooks/usePrefetchProductBySlugOnInView";
 
 function Zx7SpeakerCard() {
+  const ref = usePrefetchProductBySlugOnInView("zx7-speaker");
+
   return (
-    <div className="card bg-speaker-zx-7">
+    <div className="card bg-speaker-zx-7" ref={ref}>
       <div className="card-body py-6 px-md-5 px-xxl-6 my-2 mx-md-3">
         <Link
           to="/products/zx7-speaker"

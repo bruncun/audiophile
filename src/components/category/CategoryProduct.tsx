@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ResponsiveImage from "components/shared/ResponsiveImage";
+import usePrefetchProductBySlugOnInView from "hooks/usePrefetchProductBySlugOnInView";
 
 type ProductProps = {
   product: Product;
@@ -16,15 +17,17 @@ function ProductFeature({
   },
   swapColOrder,
 }: ProductProps) {
+  const ref = usePrefetchProductBySlugOnInView(slug);
+
   return (
-    <div className="row" data-cy="product">
+    <div className="row" data-cy="product" ref={ref}>
       <div
         className={`col-12 col-xxl-6 ${
           swapColOrder ? "order-xxl-2 offset-xxl-1" : ""
         }`}
       >
         <div className="mb-4 mb-xxl-0 pb-2 pb-md-0">
-          <div className="position-relative overflow-hidden category-product-wrapper">
+          <div className="position-relative overflow-hidden category-product-wrapper bg-light">
             <Link to={`/products/${slug}`} data-cy={`${slug}-link`}>
               <ResponsiveImage
                 imgClassName="rounded w-100 h-100 position-absolute w-100 start-0 top-0"
