@@ -1,11 +1,10 @@
-- name: Repo Visualizer
-  # You may pin to the exact commit or the version.
-  # uses: githubocto/repo-visualizer@d89437ae41087c95815abff164cc3d64b37f323a
-  uses: githubocto/repo-visualizer@0.3.0
-  with:
-    # A path (relative to the root of your repo) to where you would like the diagram to live. For example: images/diagram.svg. Default: diagram.svg
-    output_file: # optional
-    # A list of paths to exclude from the diagram, separated by commas. For example: dist,node_modules
-    excluded_paths: # optional
-    # The maximum number of nested folders to show files within. Default: 9
-    max_depth: # optional
+name: Create Diagram
+on: [push]
+jobs:
+  Create-Diagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Repo Visualizer
+        uses: githubocto/repo-visualizer@0.3.0
