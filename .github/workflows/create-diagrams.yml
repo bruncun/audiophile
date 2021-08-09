@@ -9,4 +9,4 @@ jobs:
       - name: Repo Visualizer
         uses: githubocto/repo-visualizer@0.3.0
         with:
-          excluded_paths: ./public/
+          excluded_paths: public
