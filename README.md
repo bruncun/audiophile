@@ -1,10 +1,14 @@
-# Project Title
+# Audiophile
 
 This project is my solution to Frontend Mentor's Audiophile e-commerce website challenge. I made this to both showcase my front-end skills and practice advanced techniques. It took approximately 6 weeks to complete.
 
 ## Demo
 
 [View demo](https://bruncun-audiophile.herokuapp.com)
+
+## Project Structure
+
+![Visualization of the codebase](./diagram.svg)
 
 ## Tech Stack
 
