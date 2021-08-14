@@ -23,7 +23,7 @@ This is my solution to [Frontend Mentor's Audiophile e-commerce website challeng
 
 ## Environment Variables
 
-To locally run this project, you'll need to add the following environment variables:
+To run this project, add the following environment variable:
 
 `REACT_APP_API_URL=http://localhost:3004/api`
 
