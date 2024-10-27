@@ -1,25 +1,8 @@
 # Audiophile
 
-This is my solution to [Frontend Mentor's Audiophile e-commerce website challenge](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). [View the project live](https://bruncun-audiophile.herokuapp.com).
+![A screenshot of the home screen](home-screenshot.png "Audiophile home screen")
 
-## Codebase
-
-![Visualization of the codebase](./diagram.svg)
-
-## Stack
-
-- React
-- React Query
-- React Router
-- React Hook Form
-- React Intersection Observer
-- Create React App
-- Craco
-- TypeScript
-- Bootstrap
-- Sass
-- Cypress
-- JSON Server
+This is my solution to [Frontend Mentor's Audiophile e-commerce website challenge](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The motivation for this project was to use create a performant and visually engaging e-commerce experience. This app is built using React, TypeScript, React Query, React Hook Form, Bootstrap, and tested using Cypress.
 
 ## Environment Variables
 
